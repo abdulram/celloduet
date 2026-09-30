@@ -1,0 +1,5 @@
+,0
+n_genes,17
+genes,Fbln1;Col3a1;Mmp2;Lum;Ecm1;Pmp22;Col16a1;Timp3;Col4a1;Serpinh1;Myl9;Tnfrsf11b;Fgf2;Matn2;Anpep;Calu;Magee1
+spearman_rho_vs_Spp1_5xFAD,0.8251748251748254
+p,0.0009513628555555001

@@ -4,3 +4,5 @@ scipy
 matplotlib
 pydeseq2==0.5.4
 gseapy
+statsmodels
+cellxgene-census

@@ -74,3 +74,11 @@ Depth is 12–21 M reads per library with 78–88% uniquely mapped and about 18�
 | `genotype_DE_sensitivity.csv`, `genotype_signature_gene_classes.csv` | Confound diagnostics |
 | `pca_scores.csv`, `pca_loadings_top2000.csv`, `pc_covariate_spearman.csv` | PCA |
 | `figures/01`–`10` | QC, PCA, composition, Spp1, volcanoes, heatmap, GSEA, marker panel, confound plot |
+
+---
+
+## Follow-up: fibroblast-specific re-analysis
+See **`results/fibroblast/FIBROBLAST_REPORT.md`**. In short:
+- Using a CELLxGENE single-cell reference plus deconvolution, 443 genes were selected whose bulk signal comes mostly from fibroblasts, and DE was re-run on them with fibroblast-based normalization.
+- The genotype contrast is still driven by the technical axis.
+- SPP1 vs NTC shows a modest, sex-consistent reduction in fibroblast matrix/barrier genes (Cldn11, Fbln1, Loxl3, collagens; EMT/ECM GSEA FDR 0.006). Part of this effect overlaps with osteoblast content.
