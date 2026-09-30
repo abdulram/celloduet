@@ -1,0 +1,8 @@
+covariate,genotype_DE_padj<0.05,"rho(covariate, genotype)"
+(none),6811,
+pct_multi,379,0.6982832889729843
+pct_mito,1,0.7956875359485239
+mod_osteoclast,6688,0.17037894716276158
+mod_choroid_plexus,6757,-0.09876450629792385
+mod_olfactory_mucosa,7023,0.2612755281664929
+mod_skeletal_muscle,4594,0.4664137728628652
