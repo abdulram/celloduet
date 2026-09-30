@@ -1,0 +1,3 @@
+reference,"spearman_rho(SPP1 effect, 5xFAD effect)",perm_p_two_sided,interpretation
+"5xFAD effect, unadjusted",-0.11070407807598465,0.645,negative = SPP1 moves fibroblasts towards WT
+"5xFAD effect, % mito adjusted",-0.0006971070059254096,1.0,negative = SPP1 moves fibroblasts towards WT

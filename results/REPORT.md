@@ -83,3 +83,9 @@ See **`results/fibroblast/FIBROBLAST_REPORT.md`**. In short:
 - The genotype contrast is still driven by the technical axis.
 - SPP1 vs NTC shifts a few fibroblast genes: Cldn11, Thbd and Fbln1 down; Matn4 and Ifit3b up.
 - A broader fibroblast ECM-program change is suggestive only (p ≈ 0.1) after a deconvolution fix.
+
+## Follow-up: SPP1 and 5xFAD-associated changes in dura fibroblasts
+See **`results/fibroblast_5xfad_spp1/REPORT.md`**.
+- Within fibroblast-specific genes, no 5xFAD vs WT difference can be separated from the technical axis.
+- SPP1 does not shift 5xFAD fibroblasts along the 5xFAD signature (permutation p ≈ 0.7).
+- Genotype cannot be verified from the count matrix; FASTQ/BAM files are needed.

@@ -1,0 +1,3 @@
+signature,n_genes,SPP1_minus_NTC,perm_p_two_sided,NTC_minus_WT,fraction_of_5xFAD_gap_shifted_by_SPP1
+all genotype-DE fibroblast genes (5xFAD vs WT padj<0.05),60,-0.10521488432934639,0.66,3.3866148688448896,0.03106786227665539
+technically robust candidates (padj<0.05 & 616 WT-like),6,-0.14417685425825055,0.725,2.4260897587296197,0.0594276669853082
