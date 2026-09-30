@@ -79,6 +79,7 @@ Depth is 12–21 M reads per library with 78–88% uniquely mapped and about 18�
 
 ## Follow-up: fibroblast-specific re-analysis
 See **`results/fibroblast/FIBROBLAST_REPORT.md`**. In short:
-- Using a CELLxGENE single-cell reference plus deconvolution, 443 genes were selected whose bulk signal comes mostly from fibroblasts, and DE was re-run on them with fibroblast-based normalization.
+- A CELLxGENE single-cell reference and ensemble deconvolution were used to estimate each sample's cell-type makeup and to select 151 genes whose bulk signal comes mostly from fibroblasts.
 - The genotype contrast is still driven by the technical axis.
-- SPP1 vs NTC shows a modest, sex-consistent reduction in fibroblast matrix/barrier genes (Cldn11, Fbln1, Loxl3, collagens; EMT/ECM GSEA FDR 0.006). Part of this effect overlaps with osteoblast content.
+- SPP1 vs NTC shifts a few fibroblast genes: Cldn11, Thbd and Fbln1 down; Matn4 and Ifit3b up.
+- A broader fibroblast ECM-program change is suggestive only (p ≈ 0.1) after a deconvolution fix.

@@ -1,5 +1,5 @@
 model,design,contrast,genes_tested,padj<0.05,up,down,padj<0.1
-fibnorm,~sex + group,5xFAD_NTC_vs_WT_NTC,443,198,107,91,228
-fibnorm,~sex + group,5xFAD_SPP1_vs_5xFAD_NTC,443,1,0,1,1
-fibnorm_mitoadj,~sex + pct_mito + group,5xFAD_NTC_vs_WT_NTC,443,0,0,0,0
-fibnorm_mitoadj,~sex + pct_mito + group,5xFAD_SPP1_vs_5xFAD_NTC,443,5,1,4,5
+fibnorm,~sex + group,5xFAD_NTC_vs_WT_NTC,151,57,30,27,65
+fibnorm,~sex + group,5xFAD_SPP1_vs_5xFAD_NTC,151,3,1,2,4
+fibnorm_mitoadj,~sex + pct_mito + group,5xFAD_NTC_vs_WT_NTC,151,0,0,0,0
+fibnorm_mitoadj,~sex + pct_mito + group,5xFAD_SPP1_vs_5xFAD_NTC,151,5,2,3,5

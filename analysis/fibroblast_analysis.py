@@ -105,24 +105,71 @@ def rowcorr(Y, v):
 
 
 # ---------------------------------------------------------------- 2. deconvolution (NNLS on marker genes)
-# markers per class: top 25 genes by (class / max other class) ratio, expressed >= 1 CP10K in that class
-ref_e = ref.loc[ref.index.intersection(expressed.index[expressed])]
-markers = {}
-for c in ref.columns:
-    others = ref_e.drop(columns=c).max(axis=1)
-    r = (ref_e[c] + EPS) / (others + EPS)
-    m = r[(ref_e[c] >= 1) & (r >= 3)].sort_values(ascending=False).head(25).index
-    if len(m) >= 5:
-        markers[c] = m
-mk = pd.Index(sorted(set().union(*markers.values())))
-S = ref.loc[mk, list(markers)] * 100  # CP10K -> CPM scale
-B = cpm.loc[mk]
-w = 1 / (S.mean(axis=1) + 1)  # down-weight very highly expressed markers
-props = {}
-for l in libs:
-    coef, _ = nnls((S.values * w.values[:, None]), B[l].values * w.values)
-    props[l] = coef
+# Deconvolution design (see FIBROBLAST_REPORT.md, "Deconvolution"):
+#   * markers per class = genes expressed >= 1 CP10K in that class and >= `minratio`-fold above every other class
+#     (top `ntop` by ratio). Excluded as markers: mitochondrial / ribosomal genes (they follow the technical axis)
+#     and Ig / TCR variable-region genes (clonotype-specific).
+#   * NNLS of each bulk sample (CPM) on the class profiles (CP10K x 100), rows weighted 1/sqrt(mean + 1).
+#   * iterative trimming: markers the fit misses by > 2^thr-fold in that sample are dropped and the fit repeated;
+#     this removes genes from cell types absent from the reference (e.g. nasal glands: Scgb1c1, Agr2).
+#   * final estimate = mean of 4 fits (ntop/minratio in {25/3, 50/5} x thr/iterations in {2/4, 1.5/5}),
+#     because single settings proved sensitive; the ensemble agreed best with independent marker modules.
+gname = g2name.reindex(ref.index).astype(str)
+bad = (gname.str.match(r"^(mt-|Rp[ls]\d|Mrp[ls]\d)") | g2type.reindex(ref.index).astype(str).str.match(r"^(IG|TR|Mt)_")
+       | gname.str.match(r"^(Igkv|Iglv|Ighv|Trav|Trbv|Trgv|Trdv)"))
+ref_e = ref.loc[ref.index.intersection(expressed.index[expressed]).difference(ref.index[bad])]
+
+
+def build_markers(ntop, minratio):
+    out = {}
+    for c in ref.columns:
+        others = ref_e.drop(columns=c).max(axis=1)
+        r = (ref_e[c] + EPS) / (others + EPS)
+        m = r[(ref_e[c] >= 1) & (r >= minratio)].sort_values(ascending=False).head(ntop).index
+        if len(m) >= 5:
+            out[c] = m
+    return out
+
+
+def trimmed_nnls(mkd, thr, iters):
+    genes = pd.Index(sorted(set().union(*mkd.values())))
+    Sx = ref.loc[genes, list(mkd)] * 100
+    Bx = cpm.loc[genes]
+    wx = 1 / np.sqrt(Sx.mean(axis=1).values + 1)
+    coefs, fitq, trimmed_n = {}, {}, {}
+    for l in libs:
+        keep = np.ones(len(genes), bool)
+        for it in range(iters):
+            coef, _ = nnls(Sx.values[keep] * wx[keep, None], Bx[l].values[keep] * wx[keep])
+            pred = Sx.values @ coef
+            miss = np.abs(np.log2((Bx[l].values + 1) / (pred + 1))) > thr
+            if it < iters - 1:
+                keep = ~miss
+        coefs[l] = pd.Series(coef, index=list(mkd))
+        fitq[l] = spearmanr(np.log2(Bx[l].values[keep] + 1), np.log2(pred[keep] + 1))[0]
+        trimmed_n[l] = int((~keep).sum())
+    return pd.DataFrame(coefs).T, pd.Series(fitq), pd.Series(trimmed_n), genes
+
+
+SETTINGS = [(25, 3, 2, 4), (25, 3, 1.5, 5), (50, 5, 2, 4), (50, 5, 1.5, 5)]
+fits, fitqs, trims, markers = [], [], [], {}
+for ntop, mr, thr, it in SETTINGS:
+    mkd = build_markers(ntop, mr)
+    for c, g in mkd.items():
+        markers[c] = markers.get(c, pd.Index([])).union(g)
+    cf_, fq_, tr_, _ = trimmed_nnls(mkd, thr, it)
+    fits.append(cf_)
+    fitqs.append(fq_)
+    trims.append(tr_)
+all_cls = [c for c in ref.columns if c in markers]
+coef_mean = sum(f.reindex(columns=all_cls).fillna(0) for f in fits) / len(fits)  # CPM-scale coefficients
+props = {l: coef_mean.loc[l].values for l in libs}
 raw_coef = {l: v.copy() for l, v in props.items()}
+markers = {c: markers[c] for c in all_cls}
+fit_quality = pd.DataFrame({"marker_fit_spearman": sum(fitqs) / len(fitqs), "markers_trimmed_mean": sum(trims) / len(trims)})
+fit_quality.to_csv(os.path.join(OUT, "deconvolution_fit_quality.csv"))
+pd.DataFrame([(c, g, g2name.get(g)) for c, gs in markers.items() for g in gs], columns=["class", "gene_id", "gene"]).to_csv(
+    os.path.join(OUT, "deconvolution_markers.csv"), index=False)
 props = pd.DataFrame(props, index=list(markers)).T
 props = props.div(props.sum(axis=1), axis=0)
 props.to_csv(os.path.join(OUT, "deconvolution_proportions.csv"))
@@ -149,7 +196,13 @@ cont_r = pd.DataFrame({m: rowcorr(logc.loc[cand], qc[m]) for m in CONTAMINANTS})
 spec["max_abs_r_contaminant_bulk"] = cont_r.abs().max(axis=1).reindex(spec.index)
 spec["worst_contaminant_bulk"] = cont_r.abs().idxmax(axis=1).reindex(spec.index)
 spec["tier"] = "not_specific"
-ok = spec.index.isin(cand) & (spec.max_abs_r_contaminant_bulk < 0.5)
+# canonical markers of contaminating tissues are never allowed into the fibroblast set, whatever the reference says
+CANONICAL_CONTAMINANT = {"Bglap", "Bglap2", "Bglap3", "Ibsp", "Sp7", "Dmp1", "Phex", "Mepe", "Sost", "Ctsk", "Acp5",
+                         "Mmp9", "Atp6v0d2", "Dcstamp", "Ocstamp", "Calcr", "Ttr", "Kl", "Folr1", "Kcnj13", "Clic6",
+                         "Omp", "Cyp2g1", "Ugt2a1", "Cyp2a5", "Scgb1c1", "Bpifa1", "Hbb-bs", "Hbb-bt", "Hba-a1",
+                         "Hba-a2", "S100a8", "S100a9", "Ngp", "Camp", "Acta1", "Ckm", "Myh1", "Snap25", "Plp1", "Mbp"}
+spec["canonical_contaminant"] = spec.gene_name.astype(str).isin(CANONICAL_CONTAMINANT)
+ok = spec.index.isin(cand) & (spec.max_abs_r_contaminant_bulk < 0.5) & ~spec.canonical_contaminant
 spec.loc[ok & (spec.fib_share_median >= 0.6) & (spec.fib_share_min >= 0.4), "tier"] = "relaxed"
 spec.loc[ok & (spec.fib_share_median >= 0.8) & (spec.fib_share_min >= 0.6), "tier"] = "strict"
 spec.loc[spec.index.isin(cand) & (spec.max_abs_r_contaminant_bulk >= 0.5), "tier"] = "dropped_bulk_contaminant"
@@ -319,6 +372,65 @@ ax.set_title(f"Fibroblast fraction by group\n5xFAD vs WT p={p1:.3f}; SPP1 vs NTC
 ax.grid(axis="x", visible=False)
 fig.tight_layout()
 save(fig, "F2_deconvolution.png")
+
+# F2b: per-sample cell representation, stacked bars of grouped classes
+CATS = [
+    ("Fibroblast", ["FIB_dura", "FIB_leptomeningeal", "FIB_brain_perivascular"], "#2a78d6"),
+    ("Osteoblast / chondrocyte", ["osteoblast", "chondrocyte"], "#eb6834"),
+    ("Osteoclast", ["osteoclast"], "#1baf7a"),
+    ("Erythrocyte (blood)", ["erythrocyte"], "#eda100"),
+    ("Immune", ["macrophage", "monocyte", "microglia", "neutrophil", "B_cell", "T_cell", "NK_ILC", "plasma_cell",
+                "dendritic_cell", "mast_cell"], "#e87ba4"),
+    ("Vascular", ["endothelial", "pericyte", "smooth_muscle"], "#008300"),
+    ("Olfactory / nasal", ["olfactory_epithelial", "olfactory_receptor_neuron", "olfactory_ensheathing"], "#4a3aa7"),
+    ("Neural / CP / ependymal", ["neuron", "astrocyte", "oligodendrocyte", "OPC", "schwann", "ependymal",
+                                 "choroid_plexus_epithelial"], "#e34948"),
+]
+cat_df = pd.DataFrame({name: props.reindex(columns=cl).fillna(0).sum(axis=1) for name, cl, _ in CATS})
+cat_df["Other (muscle, adipocyte, keratinocyte)"] = 1 - cat_df.sum(axis=1)
+cat_df.to_csv(os.path.join(OUT, "deconvolution_grouped_categories.csv"))
+colors = [c for _, _, c in CATS] + ["#c9c8c3"]
+order = []
+for grp in GROUP_ORDER:
+    order += list(meta[meta.group == grp].sort_values("sex").index)
+ypos, yl, y = [], [], 0
+for i, l in enumerate(order):
+    if i and meta.group[l] != meta.group[order[i - 1]]:
+        y += 0.7
+    ypos.append(y)
+    y += 1
+fig, ax = plt.subplots(figsize=(13, 8.5))
+for idx, l in enumerate(order):
+    left = 0
+    for j, col in enumerate(cat_df.columns):
+        v = cat_df.loc[l, col] * 100
+        if v <= 0:
+            continue
+        ax.barh(ypos[idx], v, left=left, color=colors[j], height=0.78, edgecolor=SURFACE, linewidth=2)
+        if v >= 8:
+            ax.text(left + v / 2, ypos[idx], f"{v:.0f}", ha="center", va="center", fontsize=7.5,
+                    color="white" if j in (0, 5, 6) else INK)
+        left += v
+    fq = fit_quality.marker_fit_spearman[l]
+    ax.text(101.5, ypos[idx], f"{fq:.2f}", va="center", fontsize=7.5, color=INK2)
+ax.set_yticks(ypos, [f"{meta.animal[l]}  {meta.sex[l]}" for l in order], fontsize=8.5)
+for t, l in zip(ax.get_yticklabels(), order):
+    t.set_color(GROUP_COLORS[meta.group[l]])
+for grp in GROUP_ORDER:
+    ys = [ypos[i] for i, l in enumerate(order) if meta.group[l] == grp]
+    ax.text(-13, np.mean(ys), grp.replace("_", " "), rotation=90, va="center", ha="center", fontsize=9.5,
+            fontweight="bold", color=GROUP_COLORS[grp])
+ax.text(101.5, -1.1, "fit ρ", fontsize=7.5, color=INK2)
+ax.set_xlim(0, 100)
+ax.invert_yaxis()
+ax.set_xlabel("Estimated share of marker-gene signal (%)")
+ax.grid(axis="y", visible=False)
+from matplotlib.patches import Patch
+ax.legend(handles=[Patch(color=c, label=n) for n, c in zip(cat_df.columns, colors)], ncol=3, fontsize=8.5,
+          loc="upper center", bbox_to_anchor=(0.5, -0.07))
+ax.set_title("Estimated cell-type representation per sample (reference-based deconvolution; numbers shown where ≥8%)", fontsize=11)
+fig.tight_layout()
+save(fig, "F2b_cell_representation_per_sample.png")
 
 # F3: fibroblast content vs technical axis
 fig, axes = plt.subplots(1, 2, figsize=(12, 4.8))
