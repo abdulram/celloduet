@@ -1,0 +1,43 @@
+                signature  markers_detected  mean_pairwise_r  median_item_rest_r  validated
+0      fibroblast_stromal                 8             0.40                0.67       True
+1       blood_endothelial                 8             0.45                0.85       True
+2   lymphatic_endothelial                 5             0.13                0.33      False
+3      mural_pericyte_SMC                 7             0.00                0.09      False
+4          macrophage_BAM                 8             0.24                0.50       True
+5                monocyte                 4             0.51                0.64       True
+6          dendritic_cell                 6             0.32                0.43       True
+7                  T_cell                 5            -0.02               -0.03      False
+8                  B_cell                 6             0.54                0.71       True
+9             plasma_cell                 5             0.13                0.22      False
+10                NK_cell                 4             0.35                0.50       True
+11              mast_cell                 6             0.35                0.65       True
+12             neutrophil                 7             0.91                0.98       True
+13             CNS_neural                 6             0.56                0.70       True
+14        bone_osteoblast                 6             0.19                0.52       True
+15             osteoclast                 6             0.95                0.98       True
+16        olfactory_nasal                 6             0.84                0.97       True
+17         choroid_plexus                 5             0.93                0.96       True
+18        erythroid_blood                 5             0.93                0.97       True
+19        skeletal_muscle                 5             0.98                0.99       True
+          reference_class  median_pct  max_pct  stability_across_settings_rho  agreement_with_marker_signature_rho  reliable
+0      fibroblast_stromal        21.2     44.1                           0.79                                 0.68      True
+1       blood_endothelial         2.7      6.3                           0.90                                 0.66      True
+2          macrophage_BAM         0.3      1.9                           0.67                                -0.16     False
+3                monocyte         0.9      7.1                           0.33                                -0.08     False
+4          dendritic_cell         0.3      1.0                           0.81                                 0.38     False
+5              neutrophil         0.0      0.3                           0.89                                 0.45     False
+6                  B_cell         0.1      0.7                           0.34                                 0.25     False
+7             plasma_cell         0.3      1.2                           0.78                                 0.13     False
+8                  T_cell         0.2      3.6                           0.54                                 0.10     False
+9                  NK_ILC         0.0      0.1                            NaN                                 0.33     False
+10              mast_cell         0.2      0.5                           0.81                                 0.45     False
+11  lymphatic_endothelial         0.0      3.3                           0.43                                 0.46     False
+12     mural_pericyte_SMC         1.6      4.1                           0.81                                 0.26     False
+13             osteoblast         1.5      9.2                           0.84                                 0.56      True
+14             osteoclast         2.3     20.9                           0.74                                 0.85      True
+15              erythroid         5.9     19.4                           0.96                                 0.90      True
+16   olfactory_epithelium         0.1     10.0                           0.66                                 0.32     False
+17         choroid_plexus        43.6     61.9                           0.90                                 0.76      True
+18        skeletal_muscle         4.4     10.8                           0.81                                 0.54      True
+19       CNS_neural_glial         6.1     17.3                           0.69                                 0.29     False
+validated signatures: ['fibroblast_stromal', 'blood_endothelial', 'macrophage_BAM', 'monocyte', 'dendritic_cell', 'B_cell', 'NK_cell', 'mast_cell', 'neutrophil', 'CNS_neural', 'bone_osteoblast', 'osteoclast', 'olfactory_nasal', 'choroid_plexus', 'erythroid_blood', 'skeletal_muscle']

@@ -1,0 +1,29 @@
+      model                                          formula rank n_coef
+1     comp1                   ~sex + Composition_PC1 + group    5      5
+2    comp12 ~sex + Composition_PC1 + Composition_PC2 + group    6      6
+3    comp13 ~sex + Composition_PC1 + Composition_PC3 + group    6      6
+4      tech                          ~sex + pct_mito + group    5      5
+5 comp1tech        ~sex + Composition_PC1 + pct_mito + group    6      6
+  max_VIF VIF_group                      covariates cor_with_genotype_NTC
+1    2.30      1.51                 Composition_PC1                 -0.69
+2    2.51      1.63 Composition_PC1+Composition_PC2            -0.69;0.13
+3    2.58      1.78 Composition_PC1+Composition_PC3            -0.69;0.69
+4    2.90      1.69                        pct_mito                   0.8
+5    3.79      1.95        Composition_PC1+pct_mito             -0.69;0.8
+comp1 padj<0.05: 1678 
+comp12 padj<0.05: 426 
+comp13 padj<0.05: 0 
+tech padj<0.05: 1 
+comp1tech padj<0.05: 2 
+      model baseline_sig robust sensitive masked adjusted_sig retained_and_sig
+1     comp1         6787   5692      1095    127         1678             1542
+2    comp12         6787   5026      1761     16          426              404
+3    comp13         6787   3693      3094      0            0                0
+4      tech         6787   2025      4762      0            1                1
+5 comp1tech         6787   1891      4896      0            2                2
+  median_retention LFC_correlation
+1             0.72            0.95
+2             0.63            0.93
+3             0.53            0.89
+4             0.32            0.74
+5             0.30            0.67

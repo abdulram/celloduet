@@ -1,0 +1,6 @@
+PC	pct_variance	top_loading_genes
+Tx_PC1	40.2	Cyp2a5,Cyp2g1,Scgb1c1,S100a5,Ugt2a1,Ugt2a2,Vmo1,Gpx6
+Tx_PC2	22.9	Scgb1c1,Bpifb3,Mylpf,Tnni2,Mb,Vmo1,Myh4,Cox6a2
+Tx_PC3	8.5	Myh4,Acta1,Tnnt3,Atp2a1,Myh2,Ckm,Tnnc2,Ttn
+Tx_PC4	5.5	Xist,Ddx3y,Eif2s3y,Uty,Kdm5d,Ttr,Prlr,Gm29650
+Tx_PC5	3.9	Ighg1,Alb,Elane,Ngp,Camp,S100a8,S100a9,Lcn2

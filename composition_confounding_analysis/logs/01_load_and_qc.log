@@ -1,0 +1,9 @@
+genes kept: 19622 of 78317 
+null device 
+          1 
+Tx PC variance %: 40.2 22.9 8.5 5.5 3.9 
+            
+             A_low_multimap B_high_multimap
+  WT_NTC                  4               2
+  5xFAD_NTC               0               6
+  5xFAD_SPP1              0               6

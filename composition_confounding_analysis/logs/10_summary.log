@@ -1,0 +1,40 @@
+                                                                                                          finding                                               confidence_tier
+0                    Genome-wide baseline 5xFAD vs WT signature (6.8k genes) tracks the technical/processing axis                                                        Tier 4
+1   Composition_PC1 differs between genotypes (dura-purity axis (fibroblast/endothelial vs olfactory/CNS/muscle))                                                      Tier 3/4
+2                                   Composition_PC3 differs between genotypes (bone axis (osteoblast/osteoclast))                                                      Tier 3/4
+3                                                       blood_endothelial signature differs by genotype (nominal)                                                        Tier 3
+4                                                         bone_osteoblast signature differs by genotype (nominal)                                                        Tier 3
+5                                                          dendritic_cell signature differs by genotype (nominal)                                                        Tier 3
+6                                                                  B_cell signature differs by genotype (nominal)                                                        Tier 3
+7                                                                            CURATED_FIBROBLAST_ACTIVATION module                               Tier 3 - composition-associated
+8                                                                         CURATED_ANGIOGENESIS_ENDOTHELIAL module  Tier 4 - uninterpretable (follows technical/processing axis)
+9                                                          MSIGDB_HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY module  Tier 4 - uninterpretable (follows technical/processing axis)
+10                                                                  CURATED_VASCULAR_INFLAMMATION_ADHESION module                              no baseline genotype association
+11                                                                              CURATED_DAM_KerenShaul2017 module                              no baseline genotype association
+12                                                                 MSIGDB_HALLMARK_IL6_JAK_STAT3_SIGNALING module                              no baseline genotype association
+13                                                                            TECHNICAL_CYTOSOLIC_RIBOSOME module                         technical sentinel (negative control)
+14                                                                                  TECHNICAL_MITO_ENCODED module                         technical sentinel (negative control)
+15                                                               MSIGDB_HALLMARK_OXIDATIVE_PHOSPHORYLATION module                         technical sentinel (negative control)
+16                                          CURATED_MHCII_ANTIGEN_PRESENTATION in macrophage_BAM beyond abundance                                                        Tier 4
+17                                                  CURATED_DAM_KerenShaul2017 in macrophage_BAM beyond abundance                                                        Tier 4
+18                                           CURATED_FIBROBLAST_ACTIVATION in fibroblast_stromal beyond abundance                                                        Tier 4
+19                                     CURATED_MENINGEAL_IMMUNE_TRAFFICKING in blood_endothelial beyond abundance                                                        Tier 4
+20                                                lymphatic_endothelial cannot be quantified (markers incoherent)                                                        Tier 4
+21                                                   mural_pericyte_SMC cannot be quantified (markers incoherent)                                                        Tier 4
+22                                                               T_cell cannot be quantified (markers incoherent)                                                        Tier 4
+23                                                          plasma_cell cannot be quantified (markers incoherent)                                                        Tier 4
+python 3.11.15
+numpy 2.4.6
+pandas 2.3.3
+scipy 1.17.1
+statsmodels 0.15.0
+matplotlib 3.11.2
+tiledbsoma 2.3.0
+R version 4.3.3 (2024-02-29) 
+DESeq2 1.42.0 
+limma 3.58.1 
+MatchIt 4.5.5 
+car 3.1.2 
+ggplot2 3.4.4 
+pheatmap 1.0.12 
+

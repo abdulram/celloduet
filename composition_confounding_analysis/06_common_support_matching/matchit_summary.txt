@@ -1,0 +1,30 @@
+
+Call:
+matchit(formula = treat ~ Composition_PC1 + Composition_PC3, 
+    data = pool, method = "nearest", distance = "mahalanobis", 
+    replace = FALSE, caliper = c(Composition_PC1 = 1, Composition_PC3 = 1), 
+    std.caliper = TRUE, ratio = 1)
+
+Summary of Balance for All Data:
+                Means Treated Means Control Std. Mean Diff. Var. Ratio
+Composition_PC1       -0.5293        2.0571         -1.8839     0.7597
+Composition_PC3        0.8020       -0.7624          1.3454     6.0633
+                eCDF Mean eCDF Max
+Composition_PC1    0.4167   0.8333
+Composition_PC3    0.4444   0.8333
+
+Summary of Balance for Matched Data:
+                Means Treated Means Control Std. Mean Diff. Var. Ratio
+Composition_PC1        0.6925        0.3680          0.2364     0.2602
+Composition_PC3        0.1053       -0.3798          0.4173     2.9600
+                eCDF Mean eCDF Max Std. Pair Dist.
+Composition_PC1    0.0833      0.5          1.0978
+Composition_PC3    0.1667      0.5          0.4173
+
+Sample Sizes:
+          Control Treated
+All             6       6
+Matched         2       2
+Unmatched       4       4
+Discarded       0       0
+

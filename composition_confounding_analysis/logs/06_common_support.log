@@ -1,0 +1,22 @@
+Common-support ranges: PC1 -0.63 1.2  PC3 -0.59 -0.11 
+                
+                 5xFAD_NTC WT_NTC
+  matched                2      2
+  restricted             1      1
+  tech_profile_B         6      2
+                       cohort n_WT n_5xFAD                   note
+restricted         restricted    1       1 too few animals for DE
+matched               matched    2       2                       
+tech_profile_B tech_profile_B    2       6                       
+                        design padj05 LFC_cor_baseline_sig
+restricted                <NA>     NA                   NA
+matched              ~genotype      4                 0.85
+tech_profile_B ~sex + genotype      9                 0.92
+               direction_concordance_baseline_sig median_retention
+restricted                                     NA               NA
+matched                                     0.953             0.62
+tech_profile_B                              0.994             0.59
+               baseline_sig_also_sig
+restricted                        NA
+matched                            0
+tech_profile_B                     4

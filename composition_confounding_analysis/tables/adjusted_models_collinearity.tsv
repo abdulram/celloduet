@@ -1,0 +1,6 @@
+model	formula	rank	n_coef	max_VIF	VIF_group	covariates	cor_with_genotype_NTC
+comp1	~sex + Composition_PC1 + group	5	5	2.3	1.51	Composition_PC1	-0.69
+comp12	~sex + Composition_PC1 + Composition_PC2 + group	6	6	2.51	1.63	Composition_PC1+Composition_PC2	-0.69;0.13
+comp13	~sex + Composition_PC1 + Composition_PC3 + group	6	6	2.58	1.78	Composition_PC1+Composition_PC3	-0.69;0.69
+tech	~sex + pct_mito + group	5	5	2.9	1.69	pct_mito	0.8
+comp1tech	~sex + Composition_PC1 + pct_mito + group	6	6	3.79	1.95	Composition_PC1+pct_mito	-0.69;0.8

@@ -1,0 +1,15 @@
+cohort	animal	group	sex	Composition_PC1	Composition_PC3	tech_profile
+restricted	616	WT_NTC	M	-0.63	-0.11	B_high_multimap
+restricted	451	5xFAD_NTC	M	0.18	-0.36	B_high_multimap
+matched	616	WT_NTC	M	-0.63	-0.11	B_high_multimap
+matched	626	WT_NTC	M	1.37	-0.65	A_low_multimap
+matched	617	5xFAD_NTC	M	1.2	0.57	B_high_multimap
+matched	451	5xFAD_NTC	M	0.18	-0.36	B_high_multimap
+tech_profile_B	616	WT_NTC	M	-0.63	-0.11	B_high_multimap
+tech_profile_B	623	WT_NTC	F	3.83	-0.69	B_high_multimap
+tech_profile_B	617	5xFAD_NTC	M	1.2	0.57	B_high_multimap
+tech_profile_B	452	5xFAD_NTC	M	0.47	1.35	B_high_multimap
+tech_profile_B	451	5xFAD_NTC	M	0.18	-0.36	B_high_multimap
+tech_profile_B	629	5xFAD_NTC	F	-1.76	-0.59	B_high_multimap
+tech_profile_B	469	5xFAD_NTC	F	-0.95	1.36	B_high_multimap
+tech_profile_B	620	5xFAD_NTC	F	-2.32	2.48	B_high_multimap

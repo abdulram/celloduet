@@ -1,0 +1,47 @@
+Composition PC variance %: [26.9 22.7 16.8 11.7  5. ]
+                    Composition_PC1  Composition_PC2  Composition_PC3
+fibroblast_stromal             0.45            -0.04             0.10
+blood_endothelial              0.47             0.03             0.02
+macrophage_BAM                 0.10             0.40             0.29
+monocyte                      -0.07             0.47            -0.08
+dendritic_cell                 0.29             0.22            -0.24
+B_cell                         0.25             0.22            -0.28
+NK_cell                       -0.13             0.46             0.00
+mast_cell                     -0.06             0.31             0.16
+neutrophil                    -0.16             0.35             0.04
+CNS_neural                    -0.37             0.02            -0.06
+bone_osteoblast               -0.02             0.09             0.55
+osteoclast                    -0.06            -0.26             0.48
+olfactory_nasal               -0.33            -0.08            -0.37
+choroid_plexus                -0.16            -0.02             0.05
+erythroid_blood                0.05             0.05             0.23
+skeletal_muscle               -0.31             0.10             0.13
+    Tx_PC  pct_transcriptome_variance  R2_composition_PC1to3  R2_technical_mito_multimap  R2_composition_plus_technical  R2_group  weighted_share_composition
+0  Tx_PC1                       40.23                   0.90                        0.60                           0.94      0.45                       36.08
+1  Tx_PC2                       22.85                   0.83                        0.50                           0.89      0.34                       19.01
+2  Tx_PC3                        8.46                   0.02                        0.31                           0.42      0.03                        0.19
+3  Tx_PC4                        5.50                   0.46                        0.01                           0.50      0.01                        2.51
+4  Tx_PC5                        3.89                   0.25                        0.01                           0.51      0.20                        0.97
+               measure  hedges_g  AUC_5xFAD_gt_WT  MWU_p  overlap_fraction_of_range common_support
+0      Composition_PC1    -1.616            0.083  0.015                      0.298           poor
+1      Composition_PC2     0.229            0.611  0.589                      0.472       adequate
+2      Composition_PC3     1.627            0.944  0.009                      0.119           poor
+3   fibroblast_stromal    -0.938            0.222  0.132                      0.620       adequate
+4    blood_endothelial    -1.808            0.083  0.015                      0.289           poor
+5       macrophage_BAM     0.564            0.639  0.485                      0.324       adequate
+6             monocyte     0.069            0.500  1.000                      0.679       adequate
+7       dendritic_cell    -0.986            0.167  0.065                      0.079       adequate
+8               B_cell    -1.048            0.194  0.093                      0.388       adequate
+9              NK_cell     0.848            0.778  0.132                      0.525       adequate
+10           mast_cell     0.510            0.611  0.589                      0.399       adequate
+11          neutrophil     0.464            0.639  0.485                      0.720       adequate
+12          CNS_neural     1.103            0.806  0.093                      0.275       adequate
+13     bone_osteoblast     1.606            0.889  0.026                      0.248       adequate
+14          osteoclast     0.773            0.639  0.485                      0.238       adequate
+15     olfactory_nasal     0.456            0.750  0.180                      0.604       adequate
+16      choroid_plexus    -0.147            0.389  0.589                      0.718       adequate
+17     erythroid_blood    -0.111            0.556  0.818                      0.721       adequate
+18     skeletal_muscle     0.991            0.778  0.132                      0.312       adequate
+19            pct_mito     2.260            0.861  0.041                      0.124       adequate
+20           pct_multi     1.494            0.833  0.065                      0.279       adequate
+Done 03

@@ -1,0 +1,4 @@
+cohort	n_WT	n_5xFAD	note	design	padj05	LFC_cor_baseline_sig	direction_concordance_baseline_sig	median_retention	baseline_sig_also_sig
+restricted	1	1	too few animals for DE	NA	NA	NA	NA	NA	NA
+matched	2	2		~genotype	4	0.85	0.953	0.62	0
+tech_profile_B	2	6		~sex + genotype	9	0.92	0.994	0.59	4

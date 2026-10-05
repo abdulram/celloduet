@@ -1,0 +1,6 @@
+model	baseline_sig	robust	sensitive	masked	adjusted_sig	retained_and_sig	median_retention	LFC_correlation
+comp1	6787	5692	1095	127	1678	1542	0.72	0.95
+comp12	6787	5026	1761	16	426	404	0.63	0.93
+comp13	6787	3693	3094	0	0	0	0.53	0.89
+tech	6787	2025	4762	0	1	1	0.32	0.74
+comp1tech	6787	1891	4896	0	2	2	0.3	0.67

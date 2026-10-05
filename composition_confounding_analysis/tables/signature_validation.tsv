@@ -1,0 +1,21 @@
+signature	category	markers_defined	markers_detected	mean_pairwise_r	median_item_rest_r	validated	markers_used
+fibroblast_stromal	native dura	8	8	0.3972645732319354	0.6749365431996426	True	Pdgfra,Dcn,Fbln1,Mfap4,Igfbp6,Slc47a1,Col14a1,Smoc2
+blood_endothelial	native dura	8	8	0.4484585490995858	0.8516050461259381	True	Pecam1,Cdh5,Cldn5,Flt1,Kdr,Emcn,Tek,Esam
+lymphatic_endothelial	native dura	6	5	0.13211575977498466	0.3313943848419369	False	Prox1,Flt4,Ccl21a,Mmrn1,Reln
+mural_pericyte_SMC	native dura	7	7	0.0002463233098936617	0.09485784694549522	False	Myh11,Cnn1,Rgs5,Kcnj8,Abcc9,Acta2,Tagln
+macrophage_BAM	native dura	8	8	0.2372992085821126	0.5048798630867908	True	Mrc1,Cd163,F13a1,Pf4,C1qa,C1qb,Adgre1,Ms4a7
+monocyte	native dura	5	4	0.5145926010979781	0.6425271866857526	True	Ly6c2,Ccr2,Plac8,Ms4a4c
+dendritic_cell	native dura	6	6	0.32064550017083004	0.4307441794325664	True	Flt3,Xcr1,Clec9a,Cd209a,Itgax,Siglech
+T_cell	native dura	7	5	-0.02485152199857359	-0.03375188501937017	False	Cd3g,Cd3d,Cd5,Cd28,Lck
+B_cell	native dura	6	6	0.5383321144446238	0.7051624297685891	True	Cd79a,Cd79b,Ms4a1,Cd19,Pax5,Fcmr
+plasma_cell	native dura	5	5	0.12857910982161297	0.22418577373760795	False	Jchain,Mzb1,Prdm1,Tnfrsf17,Sdc1
+NK_cell	native dura	6	4	0.3499507254228324	0.4971794381047387	True	Nkg7,Klrb1c,Gzma,Klrd1
+mast_cell	native dura	6	6	0.3508713221752283	0.6546277776203193	True	Cpa3,Mcpt4,Cma1,Tpsb2,Kit,Fcer1a
+neutrophil	native dura	7	7	0.9092941052667433	0.9758754619114375	True	S100a8,S100a9,Ngp,Camp,Ltf,Retnlg,Chil3
+CNS_neural	adjacent/contaminant	6	6	0.556397754886922	0.7001224105905208	True	Snap25,Syt1,Stmn2,Plp1,Mobp,Aqp4
+bone_osteoblast	adjacent/contaminant	6	6	0.19348869534962618	0.5202313049549852	True	Bglap,Bglap2,Ibsp,Sp7,Dmp1,Sost
+osteoclast	adjacent/contaminant	6	6	0.9466182460296676	0.9759419821616536	True	Ctsk,Acp5,Mmp9,Atp6v0d2,Dcstamp,Ocstamp
+olfactory_nasal	adjacent/contaminant	6	6	0.8437453216631624	0.9660361872740612	True	Omp,Cyp2g1,Ugt2a1,Gnal,Scgb1c1,Bpifa1
+choroid_plexus	adjacent/contaminant	5	5	0.9302688794888117	0.9611689200849832	True	Ttr,Kl,Folr1,Kcnj13,Clic6
+erythroid_blood	adjacent/contaminant	5	5	0.9255979861794532	0.9711736737417895	True	Hbb-bs,Hbb-bt,Hba-a1,Hba-a2,Alas2
+skeletal_muscle	adjacent/contaminant	5	5	0.9768844258413927	0.9867211146499314	True	Acta1,Ckm,Myh1,Tnnt3,Mylpf

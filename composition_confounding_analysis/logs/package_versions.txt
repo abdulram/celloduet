@@ -1,0 +1,14 @@
+python 3.11.15
+numpy 2.4.6
+pandas 2.3.3
+scipy 1.17.1
+statsmodels 0.15.0
+matplotlib 3.11.2
+tiledbsoma 2.3.0
+R version 4.3.3 (2024-02-29) 
+DESeq2 1.42.0 
+limma 3.58.1 
+MatchIt 4.5.5 
+car 3.1.2 
+ggplot2 3.4.4 
+pheatmap 1.0.12 
