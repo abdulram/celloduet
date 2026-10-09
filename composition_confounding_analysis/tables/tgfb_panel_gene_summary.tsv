@@ -1,0 +1,15 @@
+	confidence	median_CPM_WT	median_CPM_5xFAD_NTC	median_CPM_5xFAD_SPP1	top_reference_cell_types	item_rest_r
+Serpine1	High	14.946166447465947	16.129664938339392	11.677686875668517	mural_pericyte_SMC 35%, skeletal_muscle 29%, osteoblast 14%	0.4274510239146445
+Smad7	High	45.80506079403115	21.69324638711513	20.566316176346298	mast_cell 22%, blood_endothelial 18%, CNS_neural_glial 9%	0.7706639790541759
+Tgfbi	High	106.18398606004163	70.41111716691552	71.32325653014625	monocyte 21%, macrophage_BAM 21%, neutrophil 11%	0.6490192347846905
+Pmepa1	High	265.5381703311212	112.99145626470423	115.64707933903759	fibroblast_stromal 28%, osteoclast 20%, osteoblast 8%	0.6383875079757666
+Skil	Medium	90.46240645054985	75.1244286058316	57.5288327160222	mast_cell 28%, skeletal_muscle 11%, NK_ILC 9%	0.6532130504541103
+Ccn2	Medium	269.7242197366388	213.78889367648225	185.18332626332295	mural_pericyte_SMC 54%, skeletal_muscle 18%, lymphatic_endothelial 16%	0.7745698836718213
+Fn1	Medium	419.5036757263887	335.68510752259317	264.19549702500274	monocyte 47%, osteoblast 15%, mural_pericyte_SMC 9%	0.6602172487419294
+Smurf2	Low	78.3562623094498	65.93722172657203	60.79497252735652	osteoclast 18%, choroid_plexus 17%, olfactory_epithelium 16%	0.5250070173616481
+Tgfb1	context	5.365063837321747	2.2819078221816875	3.454652573957124	monocyte 16%, B_cell 16%, dendritic_cell 10%	
+Tgfb2	context	75.3653528544735	37.28131274363335	43.319166777003055	olfactory_epithelium 21%, osteoclast 14%, mural_pericyte_SMC 12%	
+Tgfb3	context	49.03056946292631	25.764788435016406	28.065021590480463	fibroblast_stromal 31%, mural_pericyte_SMC 18%, lymphatic_endothelial 14%	
+Tgfbr1	context	88.64368634522972	85.94328029580632	75.0887990098355	osteoclast 62%, olfactory_epithelium 14%, osteoblast 4%	
+Tgfbr2	context	261.90975768945	165.33040647330895	149.636460751005	lymphatic_endothelial 20%, osteoclast 15%, macrophage_BAM 12%	
+Ltbp1	context	30.61601762455711	24.674168735448255	22.768847861438104	olfactory_epithelium 27%, osteoblast 18%, mural_pericyte_SMC 15%	

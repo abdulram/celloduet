@@ -207,3 +207,10 @@ Once plausible differences in dissection, composition and library processing are
 | Final figures | `10_final_figures/Fig01`–`Fig12` |
 | Summaries | `analysis_summary.tsv`, `EXECUTIVE_SUMMARY.md` |
 | Logs and versions | `logs/` |
+
+## Addendum: TGF-β signaling panel (`11_tgfb_panel/TGFB_REPORT.md`)
+- The user-supplied target panel (Serpine1, Smad7, Tgfbi, Pmepa1, Skil, Ccn2/Ctgf, Fn1, Smurf2) co-varies in two composition-linked modules: fibroblast/endothelial and bone/mural.
+- The lower SMAD-target expression in 5xFAD (high-confidence score −1.19 SD, p = 0.035) disappears after composition or technical adjustment, and WT 616 looks 5xFAD on it. Tier 3/4.
+- **Tgfb2 ligand is lower in 5xFAD** (about 35%, no overlap between groups). It is robust to composition, % mito, ID series and all covariates jointly (p = 0.018), and WT 616 is WT-like. **Tier 2 candidate.**
+- SPP1: no change in pathway activity. Fn1 is lower (permutation p = 0.01, composition-robust).
+- Scripts: `scripts/11a_tgfb_panel_deseq2.R`, `scripts/11b_tgfb_panel_analysis.py`.
