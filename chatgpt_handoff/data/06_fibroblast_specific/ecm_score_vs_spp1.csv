@@ -1,0 +1,5 @@
+id,0
+n_genes,5
+genes,Fbln1;Col3a1;Mmp2;Lum;Col16a1
+spearman_rho_vs_Spp1_5xFAD,0.5664335664335665
+p,0.054842119775407906
