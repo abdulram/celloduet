@@ -1,0 +1,95 @@
+              model                                          formula padj05
+baseline   baseline                                     ~sex + group      4
+comp1         comp1                   ~sex + Composition_PC1 + group      3
+comp13       comp13 ~sex + Composition_PC1 + Composition_PC3 + group      3
+tech           tech                          ~sex + pct_mito + group     15
+5xFADonly 5xFADonly                   ~ sex + treatment (12 animals)      9
+          padj10 up05 down05
+baseline       6    1      3
+comp1          3    0      3
+comp13         3    0      3
+tech          24    0     15
+5xFADonly     10    2      7
+      gene_name baseMean LFC_baseline padj_baseline padj_comp1 padj_comp13
+9554       Rgs4   108.38       -0.913      0.000797     0.0047     0.00799
+9233     Cldn11  1687.22       -0.437      0.001087     0.0047     0.00626
+848        Prg4   484.96       -0.649      0.001321     0.0107     0.00626
+5287     Bpifa1   143.69        5.290      0.022591     0.4890     0.74634
+18982   Gm32900     6.19        3.080      0.080282     0.2814     0.20656
+11549      Cltc  4211.02       -0.174      0.080282     0.3721     0.54515
+14261    Wfdc17   887.75       -0.774      0.199819     0.3721     0.30120
+7212      Adam9   473.44       -0.367      0.239201     0.4579     0.55004
+6560    Bhlhe40   538.79       -0.574      0.267788     0.4890     0.55004
+4662        Fn1  2776.76       -0.451      0.271011     0.4579     0.30120
+4806      Capn2   618.07       -0.382      0.271011     0.4890     0.55004
+14923  Igkv4-70     7.23       -4.236      0.271011     0.3769     0.30120
+8214     Lrrc58  1553.14       -0.267      0.311956     0.4890     0.55004
+5433      Wwtr1   743.37       -0.390      0.424729     0.6054     0.68200
+100       Loxl3   387.32       -0.576      0.439576     0.6547     0.78410
+11375    Hpcal4    87.57       -1.191      0.455070     0.3769     0.49231
+7626    Col12a1  5467.92       -0.408      0.455070     0.6685     0.85727
+890       Fbln1  2450.46       -0.405      0.472491     0.7035     0.84878
+12241     Ywhag   984.15       -0.406      0.584773     0.6547     0.74634
+7385      Cmtm3   531.72       -0.339      0.593250     0.7683     0.90284
+1749       Lsp1   518.64       -0.460      0.605868     0.8060     0.95175
+      padj_tech padj_5xFADonly n_models_padj05
+9554         NA        0.01724               4
+9233   0.000189        0.01724               5
+848    0.000819        0.00975               5
+5287         NA        0.01513               2
+18982        NA        0.01869               1
+11549  0.042798        0.18846               1
+14261  0.049306        0.03962               2
+7212   0.030221        0.31928               1
+6560   0.042798        0.20432               1
+4662   0.049306        0.40004               1
+4806   0.026538        0.18846               1
+14923        NA        0.01869               1
+8214   0.049306        0.45499               1
+5433   0.049306        0.38062               1
+100    0.049306        0.34480               1
+11375        NA        0.01724               1
+7626   0.049306        0.46777               1
+890    0.049306        0.48929               1
+12241  0.259157        0.04903               1
+7385   0.049306        0.58134               1
+1749   0.049306        0.65375               1
+                                                                                                set
+CURATED_DAM_KerenShaul2017                                               CURATED_DAM_KerenShaul2017
+CURATED_FIBROBLAST_ACTIVATION                                         CURATED_FIBROBLAST_ACTIVATION
+MSIGDB_HALLMARK_TGF_BETA_SIGNALING                               MSIGDB_HALLMARK_TGF_BETA_SIGNALING
+CURATED_TYPE_I_IFN_ISG                                                       CURATED_TYPE_I_IFN_ISG
+MSIGDB_HALLMARK_ANGIOGENESIS                                           MSIGDB_HALLMARK_ANGIOGENESIS
+MSIGDB_HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION MSIGDB_HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION
+CURATED_LIPID_HANDLING                                                       CURATED_LIPID_HANDLING
+MSIGDB_HALLMARK_HYPOXIA                                                     MSIGDB_HALLMARK_HYPOXIA
+MSIGDB_HALLMARK_COMPLEMENT                                               MSIGDB_HALLMARK_COMPLEMENT
+CURATED_ECM_REMODELING                                                       CURATED_ECM_REMODELING
+MSIGDB_HALLMARK_TNFA_SIGNALING_VIA_NFKB                     MSIGDB_HALLMARK_TNFA_SIGNALING_VIA_NFKB
+TECHNICAL_CYTOSOLIC_RIBOSOME                                           TECHNICAL_CYTOSOLIC_RIBOSOME
+                                                  n_genes Direction     mean_t
+CURATED_DAM_KerenShaul2017                             22      Down -1.0966673
+CURATED_FIBROBLAST_ACTIVATION                          11      Down -1.8637760
+MSIGDB_HALLMARK_TGF_BETA_SIGNALING                     53      Down -0.7209972
+CURATED_TYPE_I_IFN_ISG                                 17        Up  2.1072502
+MSIGDB_HALLMARK_ANGIOGENESIS                           33      Down -0.9072602
+MSIGDB_HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION     189      Down -1.0089824
+CURATED_LIPID_HANDLING                                 11      Down -0.6663695
+MSIGDB_HALLMARK_HYPOXIA                               179      Down -0.4193122
+MSIGDB_HALLMARK_COMPLEMENT                            169      Down -0.4053228
+CURATED_ECM_REMODELING                                 17      Down -1.7059874
+MSIGDB_HALLMARK_TNFA_SIGNALING_VIA_NFKB               177      Down -0.6644283
+TECHNICAL_CYTOSOLIC_RIBOSOME                           28      Down -1.1458777
+                                                      PValue       FDR
+CURATED_DAM_KerenShaul2017                        0.05201686 0.5091703
+CURATED_FIBROBLAST_ACTIVATION                     0.06439993 0.5091703
+MSIGDB_HALLMARK_TGF_BETA_SIGNALING                0.07171647 0.5091703
+CURATED_TYPE_I_IFN_ISG                            0.08664802 0.5091703
+MSIGDB_HALLMARK_ANGIOGENESIS                      0.10513440 0.5091703
+MSIGDB_HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION 0.10773936 0.5091703
+CURATED_LIPID_HANDLING                            0.11058355 0.5091703
+MSIGDB_HALLMARK_HYPOXIA                           0.12768856 0.5091703
+MSIGDB_HALLMARK_COMPLEMENT                        0.13101947 0.5091703
+CURATED_ECM_REMODELING                            0.13749301 0.5091703
+MSIGDB_HALLMARK_TNFA_SIGNALING_VIA_NFKB           0.14739140 0.5091703
+TECHNICAL_CYTOSOLIC_RIBOSOME                      0.18368003 0.5816534

@@ -202,6 +202,14 @@ for g in G:
                  "permutation_p_within_sex": tp.loc[g, "spp1_perm_p"] if g in tp.index else np.nan})
 out(pd.DataFrame(rows), "09_spp1_matrix_genes", "spp1_vs_ntc_matrix_gene_summary.csv")
 
+# ------------------------------------------------------------ 10 PRIMARY: SPP1 vs NTC within 5xFAD
+for f, n in [("SPP1_vs_NTC_all_models.tsv.gz", "SPP1_vs_NTC_all_genes_all_models.csv.gz"), ("SPP1_vs_NTC_DE_summary.tsv", "SPP1_vs_NTC_DE_summary.csv"),
+             ("SPP1_vs_NTC_key_genes.tsv", "SPP1_vs_NTC_key_genes.csv"), ("SPP1_vs_NTC_module_effects.tsv", "SPP1_vs_NTC_module_effects.csv"),
+             ("SPP1_vs_NTC_composition_balance.tsv", "SPP1_vs_NTC_composition_balance.csv"), ("pathways_camera_SPP1_vs_NTC.tsv", "SPP1_vs_NTC_camera_pathways.csv")]:
+    cp(os.path.join(T, f), "10_SPP1_vs_NTC_PRIMARY", n)
+for f in glob.glob(os.path.join(T, "DE_SPP1_vs_NTC_*.tsv")):
+    out(rd(f), "10_SPP1_vs_NTC_PRIMARY", os.path.basename(f).replace(".tsv", ".csv.gz"))
+
 # ------------------------------------------------------------ figures
 FIGS = {
     "A01_initial_PCA.png": "results/figures/02_pca.png",
@@ -221,6 +229,8 @@ for f in sorted(glob.glob(os.path.join(CA, "10_final_figures", "*.png"))):
     FIGS["D_" + os.path.basename(f)] = os.path.relpath(f, ROOT)
 for f in sorted(glob.glob(os.path.join(CA, "11_tgfb_panel", "*.png"))):
     FIGS["E_" + os.path.basename(f)] = os.path.relpath(f, ROOT)
+for f in sorted(glob.glob(os.path.join(CA, "12_spp1_vs_ntc", "*.png"))):
+    FIGS["F_" + os.path.basename(f)] = os.path.relpath(f, ROOT)
 for dst, src in FIGS.items():
     shutil.copy(os.path.join(ROOT, src), os.path.join(FIG, dst))
 
@@ -228,7 +238,6 @@ for dst, src in FIGS.items():
 man = []
 for p in sorted(glob.glob(os.path.join(D, "**", "*.csv*"), recursive=True)):
     df = pd.read_csv(p, nrows=5)
-    n = sum(1 for _ in pd.read_csv(p, chunksize=50000, usecols=[0]))
     nrows = len(pd.read_csv(p, usecols=[0]))
     cols = list(df.columns)
     man.append({"file": os.path.relpath(p, H), "rows": nrows, "n_columns": len(cols),

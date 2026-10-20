@@ -1,0 +1,6 @@
+model,formula,padj05,padj10,up05,down05
+baseline,~sex + group,4,6,1,3
+comp1,~sex + Composition_PC1 + group,3,3,0,3
+comp13,~sex + Composition_PC1 + Composition_PC3 + group,3,3,0,3
+tech,~sex + pct_mito + group,15,24,0,15
+5xFADonly,~ sex + treatment (12 animals),9,10,2,7

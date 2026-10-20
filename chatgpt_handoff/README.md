@@ -15,6 +15,73 @@ This package has everything needed to understand, re-plot and critique the analy
 
 ---
 
+## 0. PRIMARY QUESTION: 5xFAD_SPP1 vs 5xFAD_NTC (`data/10_SPP1_vs_NTC_PRIMARY/`, figures F_*)
+The main interest of this study is the **SPP1-targeted vs non-targeting-control comparison within 5xFAD mice** (n = 6 vs 6, 3F/3M each).
+
+**This is the cleanest comparison in the dataset:**
+- SPP1 and NTC libraries share the same technical profile: % mito 9.9 vs 10.0, % multi-mapped 16.5 vs 16.8.
+- So the processing confound that ruins 5xFAD vs WT does not apply here.
+
+### 0.1 Methods specific to this contrast
+- **DESeq2 genome-wide** (19,622 genes) under 5 models:
+
+  | Model | Formula | Animals |
+  |---|---|---|
+  | baseline | `~ sex + group` | all 18 (contrast SPP1 vs NTC) |
+  | comp1 | `~ sex + Composition_PC1 + group` | all 18 |
+  | comp13 | `~ sex + Composition_PC1 + Composition_PC3 + group` | all 18 |
+  | tech | `~ sex + pct_mito + group` | all 18 |
+  | 5xFADonly | `~ sex + treatment` | 12 5xFAD |
+
+  Output: `SPP1_vs_NTC_all_genes_all_models.csv.gz` has LFC, p and padj for every model, plus `n_models_padj05` and `sign_consistent`.
+- **Composition balance:** does SPP1 vs NTC differ in dissected tissue? Each composition signature, composition PC and technical metric is tested with an exact within-sex permutation (all 20 × 20 = 400 relabelings of SPP1/NTC that keep 3 F and 3 M per group) (`SPP1_vs_NTC_composition_balance.csv`).
+- **Module scores** (38 gene sets, mean z of VST): SPP1 effect in SD units, adjusted for (i) nothing, (ii) Composition PC1 + PC3, (iii) % mito, (iv) fibroblast abundance (`signature__fibroblast_stromal`). Plus the exact permutation p and limma camera (`SPP1_vs_NTC_module_effects.csv`, `SPP1_vs_NTC_camera_pathways.csv`).
+- **Key genes:** the same set of adjustments, plus per-sex median differences and the permutation p (`SPP1_vs_NTC_key_genes.csv`).
+
+### 0.2 Results
+**Composition balance (figure F_SPP1_A).**
+- SPP1 and NTC are balanced on Composition PC1/2/3, % mito, % multi-mapped, bone, osteoclast, olfactory, blood and all immune signatures (permutation p ≥ 0.15).
+- **Exception: the fibroblast/stromal signature is lower in SPP1** (−1.11 SD, p = 0.025; AUC 0.14).
+- So SPP1 samples contain relatively less fibroblast RNA. This could be a treatment effect (fewer or less active fibroblasts) or dissection; bulk data cannot distinguish them.
+
+**Genes robust in every model** (padj < 0.05 in ≥ 4 of 5 DESeq2 models; also robust to fibroblast-abundance adjustment; permutation p = 0.005; down in both sexes; figure F_SPP1_B):
+
+| Gene | log2FC | What it is |
+|---|---|---|
+| **Cldn11** | −0.44 | Claudin-11, tight junction of arachnoid barrier cells |
+| **Prg4** | −0.65 | Lubricin / proteoglycan 4 |
+| **Rgs4** | −0.91 | Regulator of G-protein signaling 4 |
+
+**Robust to composition and fibroblast adjustment, but significant in fewer DESeq2 models:**
+- Wfdc17 down (−0.77; padj < 0.05 in tech and 5xFAD-only models).
+- **Ifit3b up** (+0.47) and **Matn4 up** (+0.45). Both have permutation p ≤ 0.05 and stay significant after fibroblast adjustment (p = 0.017 and 0.006).
+
+**Matrix / mechanotransduction genes: down, but about half the effect is explained by lower fibroblast signal.**
+- Fn1, Fbln1, Thbd, Loxl3, Col12a1 and Wwtr1 (TAZ): log2FC −0.39 to −0.58, permutation p = 0.01–0.03, mostly stronger in males.
+- They reach padj < 0.05 only in the % mito model.
+- After fibroblast-abundance adjustment the effects shrink by about 50% (p = 0.05–0.15).
+- Fbln1 is itself a marker in the fibroblast signature, so that adjustment is partly circular for Fbln1.
+
+**Pathways (figure F_SPP1_C).**
+- Unadjusted module scores: SPP1 lowers Hallmark TGF-β (−1.10 SD, permutation p = 0.035), fibroblast activation (−1.14, p = 0.045), DAM (−1.13, p = 0.06), EMT, angiogenesis, hypoxia and lipid handling (p = 0.07–0.09). It **raises type-I interferon/ISG** (+1.05, p = 0.055).
+- Camera FDR is 0.51 for all of these.
+- **After fibroblast-abundance adjustment,** the TGF-β/EMT/ECM/DAM decreases mostly disappear (p 0.3–0.8). The **interferon increase strengthens** (+1.63 SD, p = 0.019).
+- Composition PC1 + PC3 or % mito adjustment leaves most effects in place.
+
+**Spp1 itself:** not significantly lower (log2FC −1.2, permutation p = 0.115). The drop is only in males (VST −1.40 in M vs +0.01 in F). Bulk Spp1 mostly reflects osteoclasts (Section 4), so knockdown in the targeted cells cannot be assessed.
+
+**SPP1 and 5xFAD disease state:** SPP1 does **not** move 5xFAD animals toward or away from WT on any 5xFAD signature (Section 7). The TGF-β ligand Tgfb2, the one robust 5xFAD-vs-WT gene, shifts only slightly and non-significantly toward WT with SPP1 (Section 8).
+
+### 0.3 Interpretation (conservative)
+- **Robust SPP1-associated changes** in 5xFAD dura:
+  - lower **Cldn11** (arachnoid barrier), **Prg4** and **Rgs4**;
+  - higher **Ifit3b** and **Matn4**;
+  - a likely increase in **type-I interferon** response.
+- **Matrix / TGF-β / fibroblast-activation decreases** (Fn1, Fbln1, collagens, Loxl3, Wwtr1) go together with lower overall fibroblast signal. Either SPP1 reduces fibroblast abundance or activity (a real effect), or SPP1 dissections contained less fibroblast tissue. Immunostaining is needed to decide.
+- Effects are about 20–45% and often stronger in males; n = 3 per sex per group.
+
+---
+
 ## 1. Study in one paragraph
 Dura (dural meninges, dissected from the skull) was collected from 18 mice:
 
@@ -28,7 +95,7 @@ There is no WT_SPP1 group. Bulk RNA-seq was done by a sequencing facility (run I
 1. Are there 5xFAD-associated changes in the dura, especially in dural fibroblasts?
 2. Does SPP1 treatment change them?
 
-**Short answer:**
+**Short answer** (the SPP1 vs NTC comparison is the primary interest; see Section 0):
 - The 5xFAD-vs-WT comparison is dominated by a **technical/library-processing difference** and by **differences in dissected tissue composition**. Almost no genotype effect survives scrutiny. The exception is lower **Tgfb2** ligand expression, which is a candidate (Tier 2).
 - SPP1-vs-NTC is a clean comparison (same processing). It shows a **small, sex-consistent reduction of a few fibroblast/barrier/matrix genes**: Cldn11, Fbln1, Thbd and Fn1 down; Matn4 and Ifit3b up.
 - SPP1 does **not** move 5xFAD animals toward or away from WT on any 5xFAD signature.
@@ -196,6 +263,7 @@ This is a structured analysis of whether 5xFAD effects survive differences in di
 | Ifit3b | Interferon-induced | +0.56 | 17 → 23 | padj 0.001 (mito-adjusted) |
 | Rgs4, Prg4 | — | whole tissue −0.91 / −0.65 | — | padj 0.001 (about 0.056 after composition adjustment) |
 
+- **Update (Section 0, genome-wide R analysis):** Cldn11, Prg4 and Rgs4 are the only genes significant in ≥ 4 of 5 models. Fn1, Fbln1, Thbd, Loxl3 and Col12a1 are significant only with the % mito covariate, and lose about half their effect after adjusting for the lower fibroblast signal in SPP1 samples.
 - Col3a1, Lum, Mmp2, Col16a1 and Loxl3 all trend down but are **not individually significant**.
 - Effects are small (about 20%), n = 6 per group, often stronger in males.
 - SPP1 knockdown itself is not detectable in this tissue.
@@ -222,10 +290,12 @@ This is a structured analysis of whether 5xFAD effects survive differences in di
 - **The genome-wide 5xFAD signature is not interpretable as disease biology.**
 - **SPP1 does not shift the 5xFAD signature.**
 
+**SPP1 vs NTC (primary comparison; clean of the technical confound)**
+- **Robust:** Cldn11, Prg4 and Rgs4 down; Ifit3b and Matn4 up; type-I interferon module up after fibroblast adjustment.
+- **Conditional:** matrix / TGF-β / fibroblast-activation decreases (Fn1, Fbln1, Thbd, Loxl3, Col12a1, Wwtr1), accompanied by lower fibroblast signal in SPP1 samples. These are either a real reduction in fibroblast content or activity, or dissection.
+
 **Suggestive / candidate**
 - Tgfb2 lower in 5xFAD (Tier 2 candidate).
-- SPP1-associated decreases in Cldn11, Fbln1, Thbd and Fn1, and increases in Matn4 and Ifit3b.
-- A weak SPP1 matrix trend.
 
 **Cannot determine**
 - Cell-intrinsic 5xFAD effects.
@@ -283,6 +353,10 @@ Figures are in `figures/`. The `group` palette used throughout: WT_NTC `#2a78d6`
 | E_TGFb_C | Panel scores per animal | `08_tgfb_panel/tgfb_panel_scores.csv` |
 | E_TGFb_D | Gene-gene correlations; cell origin | `08_tgfb_panel/tgfb_panel_gene_correlations.csv`; `tgfb_panel_reference_expression_cp10k.csv` (log10) |
 | — | SPP1 matrix-gene table | `09_spp1_matrix_genes/spp1_vs_ntc_matrix_gene_summary.csv` |
+| **F_SPP1_A** | **SPP1 vs NTC composition balance** | master table (5xFAD rows) + `10_SPP1_vs_NTC_PRIMARY/SPP1_vs_NTC_composition_balance.csv` |
+| **F_SPP1_B** | **Key SPP1 genes per animal** | `00_core/vst_blind_filtered_genes.csv.gz` (5xFAD columns) + `10_SPP1_vs_NTC_PRIMARY/SPP1_vs_NTC_key_genes.csv` |
+| **F_SPP1_C** | **Module effects under 4 adjustments** | `10_SPP1_vs_NTC_PRIMARY/SPP1_vs_NTC_module_effects.csv` (`SPP1_effect_SD*`, `perm_p_within_sex`) |
+| **F_volcano / F_MA** | **Genome-wide SPP1 vs NTC (5xFAD-only model)** | `10_SPP1_vs_NTC_PRIMARY/DE_SPP1_vs_NTC_5xFADonly.csv.gz` |
 
 ## 16. Key data dictionary
 **`00_core/sample_master_table.csv`** has one row per animal (18 rows) and is the main file for per-sample plots:
@@ -334,3 +408,14 @@ Figures are in `figures/`. The `group` palette used throughout: WT_NTC `#2a78d6`
 - **Deconvolution numbers are RNA shares, not cell counts.**
 - **Gene-permutation GSEA q-values are optimistic;** prefer camera or sample-permutation results.
 - **Do not re-derive a 5xFAD signature from WT vs NTC and then test SPP1 on it** (selection bias, Section 12.3).
+
+**`10_SPP1_vs_NTC_PRIMARY/` columns:**
+- `SPP1_vs_NTC_all_genes_all_models.csv.gz`: `LFC_<model>`, `p_<model>` and `padj_<model>` for models baseline, comp1, comp13, tech and 5xFADonly; plus `min_padj_any_model`, `n_models_padj05` and `sign_consistent`.
+- `SPP1_vs_NTC_key_genes.csv`:
+  - `SPP1_effect_SD` (VST, standardized across the 12 5xFAD animals; `~ sex`);
+  - `_fibroblast_adj` and `_compPC1PC3` variants, each with its p;
+  - DESeq2 padj per model;
+  - `VST_diff_females` / `VST_diff_males` (median SPP1 − median NTC);
+  - `perm_p_within_sex` (exact, 400 relabelings).
+- `SPP1_vs_NTC_module_effects.csv`: module effects with the same adjustments, plus `camera_p` and `camera_FDR`.
+- `SPP1_vs_NTC_composition_balance.csv`: SPP1 − NTC difference (SD), `perm_p`, `AUC_SPP1_gt_NTC` per composition or technical measure.
