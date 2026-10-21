@@ -43,6 +43,13 @@
   - Lipid uptake (Trem2, Lrp1, Cd36, Lpl) and efflux (Abca1) are unchanged.
   - Tier 2 hypothesis: fewer lipid-laden microglia, or Spp1 upstream of part of the lipid program. Needs lipid-droplet staining or single-cell data.
 
+## ECM (round 4)
+- **No change in ECM production.**
+  - Microglia-intrinsic ECM genes as a set: −1%.
+  - Collagen/basement-membrane differences follow vascular/fibroblast carry-over in each sort: up in CD11b, down in ACSA-2. That is the dura artifact again.
+- **Microglial ECM-remodelling enzymes are lower:** Hpse −24%, Mrc2 −24%, Chst1 −31%, Gusb −16% (nominal), Ctss −9%. Tier 2, and not independent of round 1.
+- **ACSA-2:** proteoglycan changes are astrocyte-share composition. Hapln1, Timp4 and Chst2 are about +23–26% per astrocyte (nominal only).
+
 ## What the data are (inferred from file and sample names)
 - 12 libraries, provider order 55ZS67 (all names carry the prefix `rerun_`). No FASTQ/BAM files.
 - 2 sorted fractions × 2 treatments × n = 3:

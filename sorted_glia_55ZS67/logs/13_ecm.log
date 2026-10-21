@@ -1,0 +1,140 @@
+
+######## CD11b: 112 ECM genes expressed; nominal p<0.05: 29
+call
+no change                            66
+carry-over                           35
+nominal (p<0.05)                      5
+changed (padj<0.1, LOO-robust)        4
+nominal (p<0.05, groups separate)     2
+--- Collagens
+  gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic       call  flagged_in_round1
+Col1a1    7.459    11.770      57.801                       NaN 0.352   0.006         VLMC_fibroblast                False carry-over              False
+Col1a2   10.229    16.357      59.902                       NaN 0.160   0.002         VLMC_fibroblast                False carry-over              False
+Col3a1    3.942     8.362     112.119                       NaN 0.017   0.000         VLMC_fibroblast                False carry-over              False
+Col4a1    3.970     7.414      86.749                       NaN 0.082   0.001         VLMC_fibroblast                False carry-over              False
+Col6a3    7.520    10.445      38.904                       NaN 0.839   0.046         VLMC_fibroblast                False carry-over              False
+Col8a1    5.306     8.593      61.950                       NaN 0.587   0.017               ependymal                False carry-over              False
+--- Basement membrane/glycoproteins
+   gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic             call  flagged_in_round1
+    Fn1   32.104    40.762      26.968                       NaN 0.584   0.017                monocyte                False nominal (p<0.05)              False
+    Vtn    9.041    18.498     104.600                       NaN 0.000   0.000                pericyte                False       carry-over               True
+Tinagl1    7.803    11.073      41.896                       NaN 0.551   0.015                pericyte                False       carry-over              False
+ Igfbp7   18.608    25.081      34.790                       NaN 0.307   0.005           smooth_muscle                False       carry-over              False
+--- Matricellular
+   gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                              call  flagged_in_round1
+   Spp1 2049.421  1173.803     -42.725                       NaN 0.000   0.000         VLMC_fibroblast                 True    changed (padj<0.1, LOO-robust)               True
+Sparcl1   27.657    42.910      55.154                       NaN 0.001   0.000               astrocyte                False                        carry-over               True
+   Ccn1    8.410    15.060      79.083                       NaN 0.886   0.057                pericyte                False                        carry-over              False
+ Lgals1   31.362    41.494      32.307                       NaN 0.266   0.004                monocyte                False nominal (p<0.05, groups separate)              False
+    Mgp   17.404    23.893      37.282                       NaN 0.652   0.023         VLMC_fibroblast                False                        carry-over              False
+--- Proteoglycans (CNS/PNN)
+ gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic       call  flagged_in_round1
+Cspg5    4.872     9.314      91.174                       NaN 0.132   0.001                     OPC                False carry-over              False
+ Sdc4  131.369   179.946      36.977                       NaN 0.895   0.059               astrocyte                False  no change              False
+--- GAG/hyaluronan synthesis & sulfation
+ gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                           call  flagged_in_round1
+Chst1   76.038    52.378     -31.116                       NaN 0.005     0.0               astrocyte                False changed (padj<0.1, LOO-robust)               True
+--- ECM degradation
+ gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                              call  flagged_in_round1
+ Hpse   82.404    62.683     -23.932                       NaN 0.019   0.000                monocyte                 True    changed (padj<0.1, LOO-robust)               True
+Mmp12   21.480    27.049      25.927                       NaN 0.766   0.036                    T_NK                 True                  nominal (p<0.05)              False
+ Ctss 6725.192  6145.446      -8.621                       NaN 0.834   0.045               microglia                 True nominal (p<0.05, groups separate)              False
+ Plat    4.637     8.477      82.837                       NaN 0.091   0.001             endothelial                False                        carry-over              False
+ Mrc2  150.444   113.613     -24.482                       NaN 0.013   0.000         VLMC_fibroblast                 True    changed (padj<0.1, LOO-robust)               True
+ Gusb  490.742   410.636     -16.323                       NaN 0.247   0.003               microglia                 True                  nominal (p<0.05)              False
+--- ECM crosslinking/collagen processing
+    gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic       call  flagged_in_round1
+Serpinh1    7.287     9.916      36.086                       NaN 0.879   0.056         VLMC_fibroblast                False carry-over              False
+--- ECM inhibitors/regulators
+    gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic             call  flagged_in_round1
+   Timp3   26.093    35.651      36.630                       NaN 0.099   0.001         VLMC_fibroblast                False       carry-over              False
+Serpine1  159.060   230.064      44.639                       NaN 1.000   0.114         VLMC_fibroblast                 True        no change              False
+Serpine2 1420.296  1259.954     -11.289                       NaN 0.765   0.036                     OPC                 True nominal (p<0.05)              False
+Serpinf1   15.272    19.187      25.641                       NaN 0.895   0.059         VLMC_fibroblast                False       carry-over              False
+   Itih5    4.996     8.129      62.710                       NaN 0.328   0.006         VLMC_fibroblast                False       carry-over              False
+--- ECM receptors
+ gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic             call  flagged_in_round1
+Itga1    7.528    11.268      49.691                       NaN 0.535   0.014                pericyte                False       carry-over              False
+Itga6  395.804   350.199     -11.522                       NaN 0.680   0.025             endothelial                 True nominal (p<0.05)              False
+ Ddr1    3.684     7.479     103.029                       NaN 0.142   0.001               ependymal                False       carry-over              False
+Lyve1    4.961     6.916      39.420                       NaN 1.000   0.408                     BAM                 True        no change              False
+--- ECM-related TGF-beta
+ gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic       call  flagged_in_round1
+Ltbp4   15.076    19.803      31.354                       NaN 0.526   0.014             endothelial                False carry-over              False
+
+######## ACSA2: 166 ECM genes expressed; nominal p<0.05: 24
+call
+no change                                        80
+composition (fibroblast/VLMC share down)         36
+composition (ependymal/microglial share down)    23
+composition (astrocyte share up ~+0.24 log2)     17
+nominal (p<0.05, groups separate)                 6
+nominal (p<0.05)                                  4
+--- Collagens
+   gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                                     call  flagged_in_round1
+ Col1a1   52.691    38.770     -26.421                   -35.077 0.594   0.037         VLMC_fibroblast                False composition (fibroblast/VLMC share down)              False
+ Col3a1   21.034    13.140     -37.529                   -44.996 0.200   0.003         VLMC_fibroblast                False composition (fibroblast/VLMC share down)              False
+ Col6a3    9.383     6.717     -28.406                   -36.616 0.957   0.185         VLMC_fibroblast                False composition (fibroblast/VLMC share down)              False
+Col11a1   16.794     9.885     -41.138                   -47.681 0.998   0.265                     OPC                False                                no change              False
+Col11a2   31.809    22.459     -29.394                   -37.756 0.440   0.019                     OPC                False        nominal (p<0.05, groups separate)              False
+Col12a1   14.308    10.170     -28.924                   -37.527 0.885   0.127         VLMC_fibroblast                False composition (fibroblast/VLMC share down)              False
+Col23a1   37.263    19.952     -46.456                   -52.199 0.913   0.150         VLMC_fibroblast                False composition (fibroblast/VLMC share down)              False
+--- Basement membrane/glycoproteins
+ gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic      call  flagged_in_round1
+  Vtn  348.942   416.113      19.250                     4.493 0.882   0.122                pericyte                False no change               True
+Fbln2   42.321    31.426     -25.744                   -34.057 0.998   0.438              neutrophil                False no change              False
+--- Matricellular
+   gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                                          call  flagged_in_round1
+   Spp1   39.646    29.830     -24.759                   -33.616 0.736   0.066         VLMC_fibroblast                False      composition (fibroblast/VLMC share down)               True
+Sparcl1 1863.213  2042.751       9.636                    -3.225 0.873   0.112               astrocyte                False  composition (astrocyte share up ~+0.24 log2)               True
+  Thbs4    7.131     9.177      28.696                    14.472 0.981   0.219         VLMC_fibroblast                False                                     no change              False
+   Ccn1   43.216    53.484      23.759                     8.922 0.654   0.048                pericyte                False                              nominal (p<0.05)              False
+   Ccn2    5.978     8.966      49.983                    32.097 0.474   0.023         VLMC_fibroblast                False             nominal (p<0.05, groups separate)              False
+ Lgals3   14.999    10.489     -30.069                   -38.032 0.872   0.111                monocyte                False composition (ependymal/microglial share down)              False
+--- Proteoglycans (CNS/PNN)
+  gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                                         call  flagged_in_round1
+  Bcan  525.777   610.221      16.061                     2.300 0.593   0.036                     OPC                False composition (astrocyte share up ~+0.24 log2)              False
+Hapln1   19.461    27.772      42.705                    26.357 0.241   0.005               astrocyte                False            nominal (p<0.05, groups separate)              False
+ Cspg5  554.318   661.044      19.254                     5.103 0.554   0.030                     OPC                False composition (astrocyte share up ~+0.24 log2)              False
+  Fmod    8.513    11.180      31.333                    16.716 0.910   0.148         VLMC_fibroblast                False                                    no change              False
+  Sdc4  311.145   366.847      17.902                     4.160 0.598   0.038               astrocyte                False composition (astrocyte share up ~+0.24 log2)              False
+--- GAG/hyaluronan synthesis & sulfation
+ gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                                         call  flagged_in_round1
+Chst1   86.908    104.94      20.748                     6.437 0.454   0.020               astrocyte                False composition (astrocyte share up ~+0.24 log2)               True
+Chst2   76.361    106.41      39.351                    23.063 0.142   0.001               astrocyte                False            nominal (p<0.05, groups separate)              False
+  Ust   29.712     38.18      28.501                    13.430 0.481   0.024         VLMC_fibroblast                False            nominal (p<0.05, groups separate)              False
+--- ECM degradation
+gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                                          call  flagged_in_round1
+Ctss  112.787    60.584     -46.284                   -52.691 0.067   0.000               microglia                False composition (ependymal/microglial share down)              False
+Mrc2   13.562    13.211      -2.591                   -14.356 0.998   0.930         VLMC_fibroblast                False                                     no change               True
+Hexb  188.814   135.083     -28.457                   -37.010 0.299   0.007               microglia                False composition (ependymal/microglial share down)              False
+--- ECM crosslinking/collagen processing
+ gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic             call  flagged_in_round1
+Loxl1   13.576    16.999      25.215                    10.428 0.808   0.087         VLMC_fibroblast                False        no change              False
+P4ha1   77.506    92.975      19.958                     5.753 0.474   0.023               microglia                False nominal (p<0.05)              False
+--- ECM inhibitors/regulators
+    gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                                         call  flagged_in_round1
+   Timp4  230.586   322.330      39.788                    23.080 0.254   0.005               astrocyte                False                             nominal (p<0.05)              False
+Serpine2  337.492   388.692      15.171                     1.621 0.591   0.035                     OPC                False composition (astrocyte share up ~+0.24 log2)              False
+Serpinf1   17.197    11.111     -35.391                   -43.013 0.301   0.007         VLMC_fibroblast                False     composition (fibroblast/VLMC share down)              False
+    Cst3 3147.368  3972.417      26.214                    11.119 0.333   0.010               microglia                False                             nominal (p<0.05)              False
+--- ECM receptors
+ gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                                          call  flagged_in_round1
+Itgav  149.822   170.386      13.725                     0.229 0.537   0.029               microglia                False             nominal (p<0.05, groups separate)              False
+Itgam    7.730     4.554     -41.083                   -48.462 0.622   0.043               microglia                False composition (ependymal/microglial share down)              False
+Itgb2    7.061     3.742     -47.013                   -53.245 0.334   0.010                monocyte                False composition (ependymal/microglial share down)              False
+--- ECM-related TGF-beta
+  gene  NTC_cpm  SPP1_cpm  pct_change  pct_change_per_astrocyte  padj  pvalue dominant_brain_celltype  microglia_intrinsic                                          call  flagged_in_round1
+ Tgfb1    9.151     5.433     -40.626                   -47.844 0.432   0.018                monocyte                False composition (ependymal/microglial share down)              False
+Tgfbr2   36.293    25.272     -30.366                   -38.639 0.273   0.006               microglia                False composition (ependymal/microglial share down)              False
+    gene                    family  pct_change  padj  flagged_in_round1
+    Spp1             Matricellular     -42.725 0.000               True
+    Hpse           ECM degradation     -23.932 0.019               True
+   Mmp12           ECM degradation      25.927 0.766              False
+    Ctss           ECM degradation      -8.621 0.834              False
+    Mrc2           ECM degradation     -24.482 0.013               True
+    Gusb           ECM degradation     -16.323 0.247              False
+Serpine2 ECM inhibitors/regulators     -11.289 0.765              False
+   Itga6             ECM receptors     -11.522 0.680              False
+
+Microglia-intrinsic ECM genes in CD11b (n=48, Spp1 excluded): set -0.9%, perm p=0.60; down 28/48

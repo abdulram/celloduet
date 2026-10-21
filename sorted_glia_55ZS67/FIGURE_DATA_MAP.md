@@ -9,3 +9,4 @@
 | figures/fig09_carryover_CD11b.png | Carry-over genes in CD11b (oligo/astro/neutrophil/BAM) | 02_purity_celltyping/purity_carryover_per_sample.tsv | same |
 | figures/fig10_pathology_programs_forest.png | 20 pathology programs, SPP1 vs NTC % change with 95% CI | 09_pathology/pathology_programs_SPP1_vs_NTC.tsv | scripts/10_pathology_programs.py |
 | figures/fig11_mmp_phago_lipid_CD11b.png | Every expressed MMP/protease, phagocytosis and lipid gene, % change, coloured by call | 07_modules/CD11b_MMP_phagocytosis_lipid_gene_detail.tsv | scripts/12_mmp_phago_lipid_detail.py |
+| figures/fig12_ECM_both_fractions.png | All expressed ECM genes in both fractions, % change, coloured by call | 07_modules/ECM_gene_detail_both_fractions.tsv | scripts/13_ecm_detail.py |

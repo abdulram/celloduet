@@ -36,6 +36,7 @@ The brief from the user is in `BRIEF_FROM_USER.md`. The one-page results are in 
 | `09_figures_key_genes.py` | Per-sample plots. |
 | `10_pathology_programs.py` | 20 literature 5xFAD pathology programs. Spp1 removed from all sets; dissociation genes excluded. Per-animal scores; Welch CI and exact permutation; minimal detectable difference; Spp1/DAM knockdown index; ACSA-2 sets normalised to host-lineage content → `09_pathology/`, `figures/fig10`. |
 | `12_mmp_phago_lipid_detail.py` | Every expressed member of the MMP/ADAM/TIMP, cathepsin, phagocytosis and lipid families in CD11b, with DE, LOO, separation and carry-over calls; SREBP2 target set. |
+| `13_ecm_detail.py` | Matrisome families in both fractions, with reference-based cell-of-origin, carry-over and composition calls, per-astrocyte normalisation, and a microglia-intrinsic ECM set score. |
 | `11_rna_quality_checks.py` | Gene-length vs log2FC and a long/short-gene index per sample (degradation proxy without BAMs). |
 
 **Software:** R 4.3 / DESeq2 1.42 / limma / edgeR (`logs/sessionInfo_R.txt`); Python 3 with pandas, numpy, scipy and tiledbsoma. Seeds are fixed (1 and 7).
@@ -229,6 +230,47 @@ The brief from the user is in `BRIEF_FROM_USER.md`. The one-page results are in 
   - (b) Spp1 sitting upstream of part of the lipid-response arm.
 - Bulk RNA cannot separate (a) from (b). BODIPY/Plin2 staining, filipin, or scRNA-seq would be needed.
 - Gpnmb, Fabp5 and Ch25h were selected from these animals in round 1 and are not independent confirmation. **Apoe and the SREBP2 set are new, and both are only nominal.**
+
+### 11. Extracellular matrix (round 4; `07_modules/ECM_gene_detail_both_fractions.tsv`, `figures/fig12`)
+**Method.** Matrisome families (Naba divisions plus CNS perineuronal-net / hyaluronan genes, GAG sulfation, ECM degradation, crosslinking, inhibitors, receptors and TGF-β/LTBP). Every expressed member is reported: 112 genes in CD11b and 166 in ACSA2. Each gene is tagged with its dominant cell type in the Census brain reference and called as one of:
+- carry-over;
+- composition;
+- changed;
+- nominal;
+- no change.
+
+**CD11b+ (microglia).**
+- **Microglia-intrinsic ECM genes as a set are unchanged:** n = 48 (genes ≥ 2× higher in CD11b than ACSA2, Spp1 excluded), −0.9%, permutation p = 0.6, 28/48 down.
+- **Every collagen and basement-membrane "up" is vascular/meningeal carry-over,** because SPP1 CD11b sorts contain more vascular RNA (PC1):
+  - Col1a1/1a2/3a1/4a1/6a3, Vtn, Tinagl1, Igfbp7, Mgp, Fn1, Ltbp4, Itga1, Timp3, Serpinh1.
+  - These genes are at 4–40 CPM, so the absolute amounts are tiny.
+- **What changes is a small set of microglial ECM-remodelling enzymes:**
+
+  | gene | function | change | padj |
+  |---|---|---|---|
+  | Hpse | heparanase; degrades heparan sulfate | −24% | 0.02 |
+  | Mrc2 | Endo180; collagen uptake/turnover receptor | −24% | 0.01 |
+  | Chst1 | keratan-sulfate sulfotransferase | −31% | 0.005 (down despite astrocyte carry-over pushing it up) |
+  | Gusb | β-glucuronidase; lysosomal GAG degradation | −16% | 0.25 (nominal, new) |
+  | Ctss | cathepsin S; ECM-degrading cathepsin | −9% | nominal |
+
+  - Hpse, Mrc2 and Chst1 were flagged in round 1, so this is categorisation, not independent confirmation.
+- **Unchanged:** Mmp14, Adam10/17, Timp2, Sparc, Lgals3, Cd44, integrins (Itgav/b1/b3/b5), Tgfb1/Tgfbr.
+
+**ACSA-2+ (astrocyte-enriched mixed glia).**
+- **Most ECM differences track composition** (~75% of the non-flat calls):
+  - Collagens and fibroblast genes (Col1a1, Col3a1, Col6a3, Col12a1, Col23a1, Serpinf1) are lower in SPP1, matching lower VLMC/fibroblast content (0.46% vs 0.73%).
+  - Microglial genes (Ctss, Hexb, Itgam, Tgfbr2, Tgfb1) are lower, matching less microglial carry-over.
+  - Astrocyte/OPC proteoglycans (Bcan, Ncan, Ptprz1, Sdc4, Chst1) are higher, matching the astrocyte share; per astrocyte they are −4 to +6%.
+- **A few astrocyte genes exceed composition (nominal only).** Per-astrocyte changes:
+  - Hapln1 (link protein of the hyaluronan/lectican net) +26%;
+  - Timp4 +23%;
+  - Chst2 (GlcNAc-6-sulfotransferase) +23%.
+- The perineuronal-net core is flat per astrocyte: Bcan +2%, Ncan −3%, Acan and Tnr not detected / not changed.
+
+**Comparison with dura.** In dura, the SPP1 matrix decrease was partly explained by lower fibroblast content. Here the collagen differences go in **opposite directions in the two sorts** (up in CD11b, down in ACSA-2), and each follows that sort's fibroblast/vascular carry-over. That is the same artifact class, and it is not evidence of SPP1 regulating collagen.
+
+**Interpretation.** Spp1 (osteopontin, itself a matricellular ECM protein) is the only ECM gene with a large, robust change. Microglia show modestly lower expression of matrix-remodelling enzymes for heparan sulfate (Hpse), collagen (Mrc2) and keratan sulfate (Chst1) — Tier 2 at best and not independent of round 1. There is no evidence of altered ECM production by either cell type.
 
 ## Deviations from the brief and reasons
 - **No 5xFAD-vs-WT contrast, no sex term, no 400-relabeling permutation:** none is possible with this design (single genotype, all male, 3 vs 3 → 20 relabelings, minimum p = 0.1).
