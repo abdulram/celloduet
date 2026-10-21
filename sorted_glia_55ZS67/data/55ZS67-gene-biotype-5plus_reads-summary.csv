@@ -1,0 +1,13 @@
+,protein_coding,lncRNA,processed_pseudogene,Other,miRNA,snoRNA,snRNA,tRNA,transcribed_unprocessed_pseudogene,transgene,rRNA,ribozyme,scaRNA
+rerun_NTC_microglia_1_1,12739,2449,1476,712,59,54,21,9,8,5,4,1,0
+rerun_NTC_microglia_2_2,13030,2600,1469,758,62,61,32,8,6,5,5,0,0
+rerun_NTC_microglia_3_3,12911,2560,1491,733,63,52,25,9,7,5,5,0,0
+rerun_Spp1_microglia_1_4,13035,2367,1493,688,58,53,18,9,5,6,4,1,0
+rerun_Spp1_microglia_2_5,12783,2194,1411,665,53,45,22,8,5,6,4,0,0
+rerun_Spp1_microglia_3_6,13177,2411,1465,703,59,49,26,8,6,6,4,0,0
+rerun_NTC_astrocyte_1_7,14219,2982,1648,975,60,35,22,13,8,8,5,0,0
+rerun_NTC_astrocyte_2_8,14495,3578,1707,1155,69,49,27,15,12,7,6,0,0
+rerun_NTC_astrocyte_3_9,14294,3187,1504,969,51,34,17,14,10,5,5,0,0
+rerun_Spp1_astrocyte_1_10,14164,3080,1436,1033,59,38,22,11,11,4,5,1,0
+rerun_Spp1_astrocyte_2_11,14143,2793,1455,916,62,31,14,16,7,7,5,1,0
+rerun_Spp1_astrocyte_3_12,14141,2881,1477,948,65,38,14,16,7,4,4,1,0

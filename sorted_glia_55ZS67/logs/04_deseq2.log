@@ -1,0 +1,137 @@
+CD11b assigned cor with treatment: -0.71 
+CD11b carry_astro cor with treatment: 0.84 
+CD11b ieg cor with treatment: 0.48 
+
+== CD11b : genes tested 15493 | padj<0.05: 70 | padj<0.1: 116 
+    gene    baseMean     log2FC         padj loo_max_pvalue loo_same_sign
+    Spp1 15356.28835 -0.8093623 1.874603e-07   7.916509e-04          TRUE
+ Gpr37l1    60.01618  1.8113678 3.144373e-07   3.141165e-07          TRUE
+  Atp1a2   490.58828  0.8274728 5.966981e-06   3.164119e-06          TRUE
+  Slc1a2   259.64662  0.8989838 4.743247e-05   2.158293e-05          TRUE
+     Ptn   309.13721  0.8765576 5.801620e-05   2.405655e-05          TRUE
+  Gpr165    84.86411  1.3230289 1.731191e-04   9.722641e-05          TRUE
+  Spock2   189.04662  0.8987504 1.731191e-04   6.046905e-05          TRUE
+    Pllp   105.84801  1.3063848 2.423015e-04   2.372909e-04          TRUE
+    Klf9   207.72972  0.8123517 2.983420e-04   8.045128e-05          TRUE
+     Vtn   131.29964  1.0238818 4.596144e-04   1.316555e-04          TRUE
+ Sparcl1   336.27892  0.6267966 6.464502e-04   1.183197e-04          TRUE
+   Rgs16   136.14442 -1.0478943 1.087619e-03   4.385633e-04          TRUE
+   Efnb3    53.77969  1.6497705 1.276875e-03   1.170089e-02          TRUE
+           203.01548  0.7613411 1.569783e-03   2.236493e-04          TRUE
+  Slc4a4    61.61552  1.2596494 1.902399e-03   3.790123e-04          TRUE
+  Cxcl12    77.42348  1.0906624 2.023628e-03   7.570269e-04          TRUE
+   Chst1   612.04218 -0.5429532 5.312646e-03   6.369406e-04          TRUE
+   Ndrg1   181.65088  0.7878966 5.807200e-03   1.562834e-03          TRUE
+    Il33    49.92657  1.4204749 5.807200e-03   2.576917e-03          TRUE
+   Plpp3   162.71608  0.8329362 5.807200e-03   1.955457e-03          TRUE
+  Slain1    42.19900  1.5205041 5.807200e-03   5.697602e-03          TRUE
+    Ccl7   107.35843  0.9035478 6.716870e-03   1.903652e-03          TRUE
+   Ncam1    65.25223  1.1494148 7.535985e-03   2.722106e-03          TRUE
+    Pltp   297.70098  0.6408663 7.535985e-03   7.142526e-04          TRUE
+ Fam107a    86.07339  0.9101650 7.638298e-03   5.506745e-04          TRUE
+     Vim  1484.40986  0.4108787 7.814645e-03   7.380788e-04          TRUE
+    Mobp   157.86832  0.8320701 1.076665e-02   3.367802e-03          TRUE
+ Gm44010    68.83494  1.1557573 1.192847e-02   1.696725e-03          TRUE
+   Sox10    25.34047  1.7825491 1.287953e-02   2.380242e-03          TRUE
+ Gm16198    66.66325  1.0618302 1.287953e-02   2.839636e-03          TRUE
+ collection                                        set n_tested Direction
+   Hallmark HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION      147        Up
+    curated                                L_Astrocyte        8        Up
+    curated                                    M_Lipid        9      Down
+   Hallmark           HALLMARK_TNFA_SIGNALING_VIA_NFKB      178        Up
+    curated                          L_Oligodendrocyte        4        Up
+    curated                                     M_DAM2       10      Down
+    curated                                     M_MGnD       12      Down
+   Hallmark                        HALLMARK_MYOGENESIS      140        Up
+   Hallmark                 HALLMARK_PROTEIN_SECRETION       89      Down
+    curated                                   A_Glut_K        4        Up
+    curated                              A_Cholesterol       10      Down
+    curated                              M_DAM2_noSpp1        9      Down
+    curated                         X_Dissociation_IEG       19        Up
+    curated                                      L_BAM        6        Up
+    curated                           M_Lysosome_phago       11      Down
+       PValue          FDR
+ 1.029604e-08 5.148018e-07
+ 1.075204e-08 3.333134e-07
+ 8.847937e-07 1.371430e-05
+ 1.216324e-06 3.040810e-05
+ 2.260531e-06 2.335882e-05
+ 8.550097e-06 6.626326e-05
+ 2.177728e-05 1.350191e-04
+ 3.628177e-05 6.046962e-04
+ 9.779879e-05 1.222485e-03
+ 1.420370e-04 7.139630e-04
+ 1.612175e-04 7.139630e-04
+ 3.234038e-04 1.244899e-03
+ 3.614224e-04 1.244899e-03
+ 6.438129e-04 1.831700e-03
+ 6.499579e-04 1.831700e-03
+ACSA2 unmapped cor with treatment: -0.81 
+ACSA2 carry_mg cor with treatment: -0.82 
+ACSA2 oligo cor with treatment: -0.54 
+ACSA2 ieg cor with treatment: -0.26 
+
+== ACSA2 : genes tested 17529 | padj<0.05: 16 | padj<0.1: 61 
+       gene   baseMean     log2FC       padj loo_max_pvalue loo_same_sign
+    Gm19439  285.77997  1.2007234 0.01402449   0.0043403694          TRUE
+    Gm19439  296.90418  1.1604047 0.01402449   0.0041056050          TRUE
+      Kif5a  345.94841  1.2183627 0.01402449   0.0301867696          TRUE
+    Gm12144   47.55303 -1.7866481 0.01775275   0.0013641364          TRUE
+     Gm6109  178.71509 -1.1317716 0.01795547   0.0006728801          TRUE
+     Polr3e  637.91606  0.9847610 0.01912391   0.0364514253          TRUE
+      Iqca1  233.57665 -1.1643027 0.01946909   0.0010510122          TRUE
+      Kif5c  238.48381  1.1078137 0.01946909   0.0238147283          TRUE
+    Fam216b   99.64959 -1.1790196 0.02187166   0.0014292069          TRUE
+      Tcte1   60.59206 -1.3501330 0.02435703   0.0017874178          TRUE
+     Dnah12  349.03036 -1.0732404 0.04107562   0.0450054090          TRUE
+    Tsc22d3 3054.35293  0.7094839 0.04139513   0.0013288379          TRUE
+    Rapgef4  220.45828  1.0771588 0.04273343   0.0388388987          TRUE
+    Gm44010  113.97594 -1.0786715 0.04273343   0.0028508632          TRUE
+ Rpl13a-ps1  154.00169 -0.9959975 0.04360586   0.0025913009          TRUE
+             312.28465 -0.9162673 0.04652018   0.0029978556          TRUE
+     Spag17  165.62173 -1.0539052 0.05030706   0.0045578323          TRUE
+       Sspo   72.85707 -1.2972668 0.05186715   0.0036157435          TRUE
+     Gm8996   79.14803 -1.1776825 0.05186715   0.0035875364          TRUE
+ Rpl18a-ps1  278.44125 -0.8710314 0.05517439   0.0039991843          TRUE
+      Dnah6  269.43203 -1.0104549 0.05709899   0.0063719610          TRUE
+       C1qb  407.53860 -0.7907046 0.05817127   0.0041449296          TRUE
+     Tyrobp  306.85662 -0.8041676 0.05817127   0.0040224180          TRUE
+    Gm17241  193.93388 -0.8261226 0.06701848   0.0048993646          TRUE
+     Gm6402  170.36792 -0.9270269 0.06701848   0.0055713865          TRUE
+   Rps6-ps1   95.36628 -0.9755493 0.06701848   0.0051483371          TRUE
+        Ak9  109.67755 -1.3390183 0.06701848   0.0590791249          TRUE
+       Ctss  682.80776 -0.8368327 0.06701848   0.0483353652          TRUE
+    Rasl11a  172.47821  1.0312878 0.06701848   0.0150693548          TRUE
+    Gm17511  319.23330 -0.8928925 0.06734658   0.0056608998          TRUE
+ collection                                set n_tested Direction       PValue
+   Hallmark HALLMARK_OXIDATIVE_PHOSPHORYLATION      196        Up 3.302275e-14
+   Hallmark              HALLMARK_ADIPOGENESIS      189        Up 4.403615e-09
+   Hallmark     HALLMARK_FATTY_ACID_METABOLISM      129        Up 5.929848e-08
+    curated                        L_Microglia        8      Down 2.152136e-06
+   Hallmark     HALLMARK_XENOBIOTIC_METABOLISM      141        Up 4.321945e-06
+    curated                      A_Cholesterol       10        Up 4.747821e-06
+    curated                        L_Astrocyte        8        Up 3.806193e-05
+    curated                              A_IFN       11        Up 1.020849e-04
+   Hallmark          HALLMARK_MTORC1_SIGNALING      188        Up 1.472107e-04
+   Hallmark                HALLMARK_PEROXISOME       86        Up 2.605204e-04
+    curated                          M_IRM_IFN       12        Up 2.823944e-04
+    curated                       M_Complement        6      Down 6.448281e-04
+   Hallmark      HALLMARK_BILE_ACID_METABOLISM       86        Up 1.032108e-03
+   Hallmark                HALLMARK_GLYCOLYSIS      165        Up 1.189188e-03
+    curated                      M_Homeostatic        4      Down 1.472216e-03
+          FDR
+ 1.651137e-12
+ 1.100904e-07
+ 9.883080e-07
+ 6.671621e-05
+ 5.402431e-05
+ 7.359123e-05
+ 3.933066e-04
+ 7.911582e-04
+ 1.472107e-03
+ 2.171003e-03
+ 1.750845e-03
+ 3.331612e-03
+ 7.372198e-03
+ 7.432428e-03
+ 6.519814e-03

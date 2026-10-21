@@ -1,0 +1,16 @@
+finding	fraction	tier	effect	evidence	supporting_file
+CD11b sort is pure microglia (96-99% RNA share)	CD11b	1	microglia 95-99%; astro/oligo markers ~1% of ACSA2 level	deconvolution stable across 3 marker settings; marker ratios	02_purity_celltyping/deconvolution_rna_share_pct_median.tsv
+Strong DAM program present in all CD11b samples	CD11b	1	Cst7 ~1900, Itgax ~250, Clec7a ~480 CPM	raw CPM; consistent with amyloid model, genotype unconfirmed	02_purity_celltyping/marker_cpm_raw.tsv
+Spp1 knockdown in microglia with SPP1 treatment	CD11b	1	-43% CPM; log2FC -0.81 (adjusted -0.55 to -1.21)	padj 2e-7; complete separation (exact perm p=0.1, minimum possible); all LOO; carry-over predicts 0	05_DE_CD11b/DE_Spp1_vs_NTC_CD11b_annotated.tsv; figures/fig05
+Core DAM genes unchanged by SPP1	CD11b	1	Cst7/Itgax/Clec7a/Lpl/Trem2 |log2FC|<0.17	DESeq2	figures/fig06
+Lipid/plaque-associated microglial genes lower with SPP1 (Gpnmb, Ch25h, Fabp5, Rgs16, Lgi2, Mcoln3, Hpse)	CD11b	2	Gpnmb -40%, Ch25h -29%, Fabp5 -18%	padj<0.1, LOO-robust, microglia-enriched; camera lipid FDR 1e-5; n=3	05_DE_CD11b/DE_Spp1_vs_NTC_CD11b_annotated.tsv; 07_modules/camera_Spp1_vs_NTC_CD11b.tsv
+Interferon module up with SPP1 in ACSA2 fraction	ACSA2	2	Ifit3 +0.52, Ifit3b +0.58 log2FC	camera FDR 8e-4 (set-level only); no single gene significant	07_modules/camera_Spp1_vs_NTC_ACSA2.tsv
+Astrocyte/oligo genes up in SPP1 CD11b sorts	CD11b	3	astro marker share 1.52% vs 0.95%	carry-over model; complete separation	03_artifacts/metric_vs_treatment_tests.tsv
+BAM share higher in SPP1 CD11b sorts	CD11b	3	1.8% vs 0.35% RNA share; Pf4/Cd163/Mrc1 up	deconvolution + markers	02_purity_celltyping/deconvolution_rna_share_pct_median.tsv
+Pseudogene/unnamed-locus DE tracks library-quality axis	both	4	~20% of padj<0.1 genes	% unmapped / % assigned perfectly separated by treatment within each fraction	01_QC/qc_metrics.tsv; 03_artifacts/metric_vs_treatment_tests.tsv
+ACSA2 DE dominated by composition (ependymal down, microglial carry-over down, astrocyte share up in SPP1)	ACSA2	3	ependymal 5.3 vs 7.3%; microglia 0.5 vs 1.4%	deconvolution; cilia genes	06_DE_ACSA2/DE_Spp1_vs_NTC_ACSA2_annotated.tsv
+Glucocorticoid/stress program up in SPP1 (Fkbp5, Tsc22d3, Sgk1, Klf9, Per1)	both	4	driven by SPP1 replicate 2 in both fractions	clock genes flat; cannot separate harvest stress from treatment	figures/fig08
+Fractions likely paired by replicate number	both	2	matched pairing ranks 1/6 in both arms (p~1/36)	residual-profile correlation	08_crosstalk/pairing_residual_correlation.tsv
+Astrocyte Spp1 knockdown	ACSA2	cannot determine	ACSA2 Spp1 ~2% of microglial level; Spp1/Hexb unchanged	mostly microglial carry-over	figures/fig07
+ACSA2 fraction only ~30-40% astrocyte RNA (~55% oligodendrocyte)	ACSA2	1 (QC)	Plp1 ~20000 CPM	deconvolution (setting range up to 20 points) + markers	02_purity_celltyping/deconvolution_rna_share_pct_median.tsv
+Spp1 receptors unchanged	both	1 (null)	|log2FC|<0.25	DESeq2	05_DE_CD11b, 06_DE_ACSA2

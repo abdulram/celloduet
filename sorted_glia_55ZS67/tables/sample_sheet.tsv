@@ -1,0 +1,13 @@
+sample	facility_name	treatment	fraction	replicate	sex_call
+55ZS67_1	rerun_NTC_microglia_1_1	NTC	CD11b	1	M
+55ZS67_2	rerun_NTC_microglia_2_2	NTC	CD11b	2	M
+55ZS67_3	rerun_NTC_microglia_3_3	NTC	CD11b	3	M
+55ZS67_4	rerun_Spp1_microglia_1_4	Spp1	CD11b	1	M
+55ZS67_5	rerun_Spp1_microglia_2_5	Spp1	CD11b	2	M
+55ZS67_6	rerun_Spp1_microglia_3_6	Spp1	CD11b	3	M
+55ZS67_7	rerun_NTC_astrocyte_1_7	NTC	ACSA2	1	M
+55ZS67_8	rerun_NTC_astrocyte_2_8	NTC	ACSA2	2	M
+55ZS67_9	rerun_NTC_astrocyte_3_9	NTC	ACSA2	3	M
+55ZS67_10	rerun_Spp1_astrocyte_1_10	Spp1	ACSA2	1	M
+55ZS67_11	rerun_Spp1_astrocyte_2_11	Spp1	ACSA2	2	M
+55ZS67_12	rerun_Spp1_astrocyte_3_12	Spp1	ACSA2	3	M

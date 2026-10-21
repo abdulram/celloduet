@@ -1,0 +1,16 @@
+ref_class,cells,datasets
+BAM,1200,9
+B_cell,900,3
+OPC,1200,10
+T_NK,578,3
+VLMC_fibroblast,1200,9
+astrocyte,1200,11
+endothelial,1200,13
+ependymal,1012,5
+microglia,1200,12
+monocyte,1200,1
+neuron,1200,12
+neutrophil,900,3
+oligodendrocyte,1200,12
+pericyte,1200,9
+smooth_muscle,649,4
