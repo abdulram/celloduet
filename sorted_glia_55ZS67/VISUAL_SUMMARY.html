@@ -1,0 +1,184 @@
+<title>SPP1 Knockdown in 5xFAD Glia</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow reading column; verdict first, then three evidence panels, then a short "set aside" strip. */
+:root{
+  --bg:#f6f8f8; --surface:#ffffff; --fg:#1b2627; --muted:#5d6d6f; --line:#d9e1e2;
+  --ntc:#d9612a; --spp1:#14946a; --flat:#8a9a9c; --hypo:#b7791f; --hypo-bg:#fdf5e6;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121a1b; --surface:#1a2425; --fg:#e4ecec; --muted:#9aaaac; --line:#2c3a3c;
+  --ntc:#f07a45; --spp1:#2fc08d; --flat:#7d8f91; --hypo:#e0a84a; --hypo-bg:#2a2416; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121a1b; --surface:#1a2425; --fg:#e4ecec; --muted:#9aaaac; --line:#2c3a3c;
+  --ntc:#f07a45; --spp1:#2fc08d; --flat:#7d8f91; --hypo:#e0a84a; --hypo-bg:#2a2416; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding-block:32px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1{font-size:clamp(24px,4vw,32px);line-height:1.15;margin:0;text-wrap:balance;font-weight:700;letter-spacing:-.01em}
+h2{font-size:17px;margin:0;text-wrap:balance;font-weight:600}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.lede{margin:8px 0 0;color:var(--muted);max-width:62ch}
+.design{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font-family:var(--mono);font-size:12px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted);background:var(--surface)}
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.v{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:6px;align-content:start}
+.v .tag{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.v.yes .tag{color:var(--spp1)} .v.no .tag{color:var(--muted)} .v.hyp .tag{color:var(--hypo)}
+.v.hyp{background:var(--hypo-bg)}
+.v .big{font-size:20px;font-weight:600;line-height:1.25}
+.v p{margin:0;color:var(--muted);font-size:14px}
+section{display:grid;gap:12px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:12px;min-width:0}
+.panel p{margin:0;max-width:65ch}
+.note{font-size:13px;color:var(--muted)}
+.chart{overflow-x:auto}
+svg{display:block;max-width:100%;height:auto}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+svg .lbl{font-family:var(--sans);font-size:12.5px;fill:var(--fg)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.two>*{min-width:0}
+ul.plain{margin:0;padding-left:18px;display:grid;gap:4px}
+ul.plain li{color:var(--muted)} ul.plain b{color:var(--fg);font-weight:600}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+code{font-family:var(--mono);font-size:12px}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Bulk RNA-seq · sorted CD11b⁺ and ACSA-2⁺ cells · run 55ZS67</div>
+    <h1>SPP1 treatment lowers microglial Spp1 without changing the amyloid response</h1>
+    <p class="lede">The findings below held up across every robustness check we ran: leave-one-out refits, covariate adjustment, contamination modelling and exact permutation. Weaker or artifact-driven results are listed at the end.</p>
+    <div class="design">
+      <span class="chip">all 5xFAD · all male</span><span class="chip">NTC n=3 · SPP1 n=3</span><span class="chip">whole brain · warm dissociation</span><span class="chip">CD11b depleted before ACSA-2</span>
+    </div>
+  </header>
+
+  <div class="verdict">
+    <div class="v yes"><span class="tag">Changed</span><span class="big">Spp1 in microglia −43%</span><p>No overlap between arms. The top gene genome-wide. Specific: core DAM genes are flat.</p></div>
+    <div class="v no"><span class="tag">Unchanged</span><span class="big">Plaque-response and glial disease programs</span><p>DAM, plaque-induced genes, homeostatic, astrocyte and oligodendrocyte disease states. Also MMPs, phagocytosis machinery, ECM production.</p></div>
+    <div class="v hyp"><span class="tag">Worth testing</span><span class="big">Lipid-processing arm slightly lower</span><p>Apoe, Gpnmb, Ch25h, Fabp5 and cholesterol synthesis fall together. Each is individually modest, so confirm with staining.</p></div>
+  </div>
+
+  <section>
+    <h2>1 · The knockdown works, and it is specific</h2>
+    <div class="two">
+      <div class="panel">
+        <div class="chart">
+        <svg viewBox="0 0 300 230" role="img" aria-label="Spp1 counts per million in microglia, per animal: NTC 1608, 2385, 2156; SPP1 1187, 1024, 1311">
+          <!-- y scale: 0..2500 CPM -> 190..20 -->
+          <g stroke="var(--line)" stroke-width="1">
+            <line x1="56" y1="190" x2="290" y2="190"/><line x1="56" y1="155.4" x2="290" y2="155.4"/><line x1="56" y1="120.8" x2="290" y2="120.8"/><line x1="56" y1="86.2" x2="290" y2="86.2"/><line x1="56" y1="51.6" x2="290" y2="51.6"/><line x1="56" y1="17" x2="290" y2="17"/>
+          </g>
+          <text x="50" y="194" text-anchor="end">0</text><text x="50" y="125" text-anchor="end">1000</text><text x="50" y="56" text-anchor="end">2000</text>
+          <text x="14" y="105" transform="rotate(-90 14 105)" text-anchor="middle">Spp1, CPM</text>
+          <!-- NTC: 1608->78.7, 2385->25.0, 2156->40.8 ; mean 2049->48.2 -->
+          <line x1="95" y1="48.2" x2="145" y2="48.2" stroke="var(--fg)" stroke-width="1.5"/>
+          <circle cx="110" cy="78.7" r="6" fill="var(--ntc)"/><circle cx="120" cy="25.0" r="6" fill="var(--ntc)"/><circle cx="130" cy="40.8" r="6" fill="var(--ntc)"/>
+          <!-- SPP1: 1187->107.9, 1024->119.2, 1311->99.3 ; mean 1174->108.8 -->
+          <line x1="205" y1="108.8" x2="255" y2="108.8" stroke="var(--fg)" stroke-width="1.5"/>
+          <circle cx="220" cy="107.9" r="6" fill="var(--spp1)"/><circle cx="230" cy="119.2" r="6" fill="var(--spp1)"/><circle cx="240" cy="99.3" r="6" fill="var(--spp1)"/>
+          <text class="lbl" x="120" y="212" text-anchor="middle">NTC</text><text class="lbl" x="230" y="212" text-anchor="middle">SPP1</text>
+          <text x="230" y="86" text-anchor="middle" style="fill:var(--spp1)">−43%</text>
+        </svg>
+        </div>
+        <p class="note">Each dot is one animal. DESeq2 log2FC −0.81, adjusted p = 2×10⁻⁷. The effect holds when any one animal is dropped and after adjusting for purity, library quality or dissociation (log2FC −0.55 to −1.21).</p>
+      </div>
+      <div class="panel">
+        <p><b>Not a weaker DAM state.</b> Spp1 is a disease-associated microglia (DAM) gene, but the other DAM genes did not move:</p>
+        <div class="chart">
+        <svg viewBox="0 0 300 200" role="img" aria-label="Percent change SPP1 vs NTC: Spp1 -43, Cst7 0, Itgax -3, Clec7a -10, Lpl -8, Trem2 -2, P2ry12 0">
+          <!-- x scale: -50..+10 % -> 70..290 ; zero at 253.3 -->
+          <line x1="253.3" y1="8" x2="253.3" y2="182" stroke="var(--line)"/>
+          <g class="rows">
+            <text class="lbl" x="64" y="24" text-anchor="end">Spp1</text><rect x="95.7" y="13" width="157.6" height="16" fill="var(--spp1)"/><text x="90" y="25" text-anchor="end">−43%</text>
+            <text class="lbl" x="64" y="50" text-anchor="end">Cst7</text><rect x="252.3" y="39" width="1.5" height="16" fill="var(--flat)"/><text x="262" y="51">0%</text>
+            <text class="lbl" x="64" y="76" text-anchor="end">Itgax</text><rect x="243.5" y="65" width="9.8" height="16" fill="var(--flat)"/><text x="262" y="77">−3%</text>
+            <text class="lbl" x="64" y="102" text-anchor="end">Clec7a</text><rect x="216.8" y="91" width="36.5" height="16" fill="var(--flat)"/><text x="262" y="103">−10%</text>
+            <text class="lbl" x="64" y="128" text-anchor="end">Lpl</text><rect x="224.0" y="117" width="29.3" height="16" fill="var(--flat)"/><text x="262" y="129">−8%</text>
+            <text class="lbl" x="64" y="154" text-anchor="end">Trem2</text><rect x="246.0" y="143" width="7.3" height="16" fill="var(--flat)"/><text x="262" y="155">−2%</text>
+            <text class="lbl" x="64" y="180" text-anchor="end">P2ry12</text><rect x="252.3" y="169" width="1.5" height="16" fill="var(--flat)"/><text x="262" y="181">0%</text>
+          </g>
+        </svg>
+        </div>
+        <p class="note">Relative to each animal's own DAM level, Spp1 output is roughly halved (log2 index 0.96–1.68 in NTC vs 0.46–0.70 in SPP1).</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2 · No detectable change in 5xFAD pathology programs</h2>
+    <div class="panel">
+      <p>We scored published gene sets per animal, with Spp1 removed from every set. All confidence intervals cross zero. DAM intensity scales with plaque exposure, so a large change in plaque load is unlikely. Histology is still needed to confirm this.</p>
+      <div class="chart">
+      <svg viewBox="0 0 560 250" role="img" aria-label="Forest plot of program changes with 95% confidence intervals">
+        <!-- x scale: -30..+30 % -> 200..540 ; zero 370 ; 1% = 5.667px -->
+        <g stroke="var(--line)"><line x1="200" y1="10" x2="200" y2="222"/><line x1="285" y1="10" x2="285" y2="222"/><line x1="370" y1="10" x2="370" y2="222" stroke="var(--muted)"/><line x1="455" y1="10" x2="455" y2="222"/><line x1="540" y1="10" x2="540" y2="222"/></g>
+        <text x="200" y="240" text-anchor="middle">−30%</text><text x="285" y="240" text-anchor="middle">−15%</text><text x="370" y="240" text-anchor="middle">0</text><text x="455" y="240" text-anchor="middle">+15%</text><text x="540" y="240" text-anchor="middle">+30%</text>
+        <!-- rows: label, est, lo, hi -->
+        <text class="lbl" x="190" y="29" text-anchor="end">DAM stage 2 (microglia)</text><line x1="283.9" y1="25" x2="426.7" y2="25" stroke="var(--fg)" stroke-width="2"/><circle cx="350.5" cy="25" r="5" fill="var(--flat)"/>
+        <text class="lbl" x="190" y="59" text-anchor="end">Plaque-induced genes</text><line x1="308.1" y1="55" x2="384.4" y2="55" stroke="var(--fg)" stroke-width="2"/><circle cx="345.0" cy="55" r="5" fill="var(--flat)"/>
+        <text class="lbl" x="190" y="89" text-anchor="end">MGnD (microglia)</text><line x1="241.3" y1="85" x2="401.6" y2="85" stroke="var(--fg)" stroke-width="2"/><circle cx="315.1" cy="85" r="5" fill="var(--flat)"/>
+        <text class="lbl" x="190" y="119" text-anchor="end">Homeostatic microglia</text><line x1="309.9" y1="115" x2="429.5" y2="115" stroke="var(--fg)" stroke-width="2"/><circle cx="366.7" cy="115" r="5" fill="var(--flat)"/>
+        <text class="lbl" x="190" y="149" text-anchor="end">Phagocytosis genes</text><line x1="297.3" y1="145" x2="492.5" y2="145" stroke="var(--fg)" stroke-width="2"/><circle cx="386.7" cy="145" r="5" fill="var(--flat)"/>
+        <text class="lbl" x="190" y="179" text-anchor="end">Reactive astrocytes (DAA)</text><line x1="234.3" y1="175" x2="503.6" y2="175" stroke="var(--fg)" stroke-width="2"/><circle cx="352.8" cy="175" r="5" fill="var(--flat)"/>
+        <text class="lbl" x="190" y="209" text-anchor="end">Disease oligodendrocytes</text><line x1="245.5" y1="205" x2="541" y2="205" stroke="var(--fg)" stroke-width="2"/><circle cx="375.0" cy="205" r="5" fill="var(--flat)"/>
+      </svg>
+      </div>
+      <p class="note">SPP1 vs NTC, % change in program score with 95% CI (n = 3 vs 3). The smallest change this design can detect is about ±10–17% for microglial programs and about ±30% for astrocyte and oligodendrocyte programs. The oligodendrocyte interval runs past +30%.</p>
+    </div>
+    <div class="panel">
+      <p><b>Also unchanged in microglia:</b></p>
+      <ul class="plain">
+        <li><b>MMPs</b>: Mmp14 0%, Mmp2 n.s. Mmp9 and Mmp8 are essentially not expressed.</li>
+        <li><b>Phagocytic machinery</b>: Trem2, Tyrobp, Mertk, C1q, Cd68, NADPH oxidase.</li>
+        <li><b>ECM production</b>: microglia-made ECM genes −1% as a group.</li>
+        <li><b>Spp1 receptors</b>: Cd44 and the integrins (Itgav, Itgb1, Itgb3, Itgb5), in both fractions.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>3 · One coherent pattern worth following up</h2>
+    <div class="panel" style="background:var(--hypo-bg)">
+      <p>Lipid-processing genes that sit alongside Spp1 in "lipid-laden" macrophages and microglia are lower. Lipid uptake and efflux are not.</p>
+      <div class="chart">
+      <svg viewBox="0 0 560 230" role="img" aria-label="Lipid genes percent change: Gpnmb -40, Ch25h -29, Apoe -22, Fabp5 -19, cholesterol synthesis -12; uptake and efflux genes Trem2 -2, Lrp1 -3, Abca1 -3">
+        <!-- x: -45..+5 % -> 150..530 ; zero at 492 ; 1% = 7.6px -->
+        <line x1="492" y1="6" x2="492" y2="214" stroke="var(--muted)"/>
+        <text class="lbl" x="140" y="24" text-anchor="end">Gpnmb</text><rect x="188" y="12" width="304" height="17" fill="var(--hypo)"/><text x="182" y="25" text-anchor="end">−40%</text>
+        <text class="lbl" x="140" y="50" text-anchor="end">Ch25h</text><rect x="271.6" y="38" width="220.4" height="17" fill="var(--hypo)"/><text x="265" y="51" text-anchor="end">−29%</text>
+        <text class="lbl" x="140" y="76" text-anchor="end">Apoe</text><rect x="324.8" y="64" width="167.2" height="17" fill="var(--hypo)"/><text x="318" y="77" text-anchor="end">−22%</text>
+        <text class="lbl" x="140" y="102" text-anchor="end">Fabp5</text><rect x="347.6" y="90" width="144.4" height="17" fill="var(--hypo)"/><text x="341" y="103" text-anchor="end">−19%</text>
+        <text class="lbl" x="140" y="128" text-anchor="end">Cholesterol synthesis</text><rect x="400.8" y="116" width="91.2" height="17" fill="var(--hypo)"/><text x="394" y="129" text-anchor="end">−12% (18 of 19 genes down)</text>
+        <text class="lbl" x="140" y="160" text-anchor="end">Trem2 (uptake)</text><rect x="476.8" y="148" width="15.2" height="17" fill="var(--flat)"/><text x="470" y="161" text-anchor="end">−2%</text>
+        <text class="lbl" x="140" y="186" text-anchor="end">Lrp1 (uptake)</text><rect x="469.2" y="174" width="22.8" height="17" fill="var(--flat)"/><text x="463" y="187" text-anchor="end">−3%</text>
+        <text class="lbl" x="140" y="212" text-anchor="end">Abca1 (efflux)</text><rect x="469.2" y="200" width="22.8" height="17" fill="var(--flat)"/><text x="463" y="213" text-anchor="end">−3%</text>
+      </svg>
+      </div>
+      <p class="note">There are two possible readings: fewer lipid-loaded microglia, or Spp1 acting upstream of part of the lipid response. Bulk RNA cannot separate them. BODIPY/Plin2 or filipin staining around plaques, or single-cell data, would.</p>
+      <p class="note">Gpnmb, Ch25h and Fabp5 were first noticed in these same animals, so their changes are not independent confirmation. Apoe (p = 0.002, not significant after correction) and the cholesterol-synthesis set (exact permutation p = 0.2) were checked separately and are only nominal.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Set aside: differences explained by sample handling</h2>
+    <div class="panel">
+      <ul class="plain">
+        <li><b>Most microglia "DE genes"</b> are astrocyte, oligodendrocyte and vascular RNA. SPP1 microglia sorts are slightly less pure (95.5% vs 98.2% microglial RNA).</li>
+        <li><b>Pseudogene hits</b> track a library-quality axis that differs by arm within each fraction.</li>
+        <li><b>ACSA-2⁺ differences</b> are mostly cell mix. The fraction is only about 35% astrocyte RNA and 55% oligodendrocyte. An earlier interferon signal vanished per astrocyte.</li>
+        <li><b>Collagen changes</b> follow fibroblast/vascular carry-over, up in one sort and down in the other.</li>
+        <li><b>Stress-hormone genes</b> (Fkbp5, Tsc22d3, Sgk1) are driven by one SPP1 animal, so they cannot be separated from harvest stress.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Branch <code>claude/new-session-2e6idk</code>, folder <code>sorted_glia_55ZS67/</code>. Full methods and tiers: <code>ANALYSIS_README.md</code>, <code>EXECUTIVE_SUMMARY.md</code>, <code>tables/analysis_summary.tsv</code>. Every result here is from mRNA in sorted cells, with no histology or protein data.
+  </footer>
+</div>
