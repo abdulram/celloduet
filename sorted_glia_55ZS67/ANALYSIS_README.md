@@ -35,6 +35,7 @@ The brief from the user is in `BRIEF_FROM_USER.md`. The one-page results are in 
 | `08a_build_brain_reference.py`, `08b_deconvolution.py` | CELLxGENE Census (2025-01-30) adult-brain pseudobulk with 15 classes (no choroid-plexus class was available). NNLS with trimming on specific markers (mt, ribosomal, Ig/TCR-V and Hb genes excluded), 20/30/50 markers per class, median reported. |
 | `09_figures_key_genes.py` | Per-sample plots. |
 | `10_pathology_programs.py` | 20 literature 5xFAD pathology programs. Spp1 removed from all sets; dissociation genes excluded. Per-animal scores; Welch CI and exact permutation; minimal detectable difference; Spp1/DAM knockdown index; ACSA-2 sets normalised to host-lineage content → `09_pathology/`, `figures/fig10`. |
+| `12_mmp_phago_lipid_detail.py` | Every expressed member of the MMP/ADAM/TIMP, cathepsin, phagocytosis and lipid families in CD11b, with DE, LOO, separation and carry-over calls; SREBP2 target set. |
 | `11_rna_quality_checks.py` | Gene-length vs log2FC and a long/short-gene index per sample (degradation proxy without BAMs). |
 
 **Software:** R 4.3 / DESeq2 1.42 / limma / edgeR (`logs/sessionInfo_R.txt`); Python 3 with pandas, numpy, scipy and tiledbsoma. Seeds are fixed (1 and 7).
@@ -169,6 +170,65 @@ The brief from the user is in `BRIEF_FROM_USER.md`. The one-page results are in 
 - Degradation does not explain the Spp1 result.
 
 **Interpretation.** SPP1 treatment produced a partial, specific Spp1 knockdown in microglia without a detectable change in the amyloid-response programs of microglia, astrocytes or oligodendrocytes. Transcriptomic proxies therefore give no evidence that plaque burden changed. Small decreases (≤ 20%) in the lipid/lysosomal DAM axis (Apoe, Gpnmb, Ctsb) cannot be excluded or confirmed.
+
+### 10. MMPs, phagocytosis and lipid handling in microglia (round 3; `07_modules/CD11b_MMP_phagocytosis_lipid_gene_detail.tsv`, `figures/fig11`)
+**Method.** All members of pre-defined functional families expressed at ≥ 5 CPM are reported, not just hits (~150 genes).
+- **Dilution baseline:** microglial RNA share is ~3% lower in SPP1 sorts, and the median log2FC of microglia-specific genes is −0.035. So changes of −3 to −5% are dilution, not regulation.
+- **Multiple testing:** ~8 genes at nominal p < 0.05 are expected by chance across these families; ~19 were observed.
+
+**MMPs and other ECM proteases: no microglial change.**
+- Expressed: Mmp14 (38 CPM, 0%), Mmp12 (21→27 CPM, +26%, nominal p = 0.04), Mmp2 (11 CPM, +14%, n.s.).
+  - Mmp12 tracks the higher BAM content of SPP1 sorts (Pf4, Mrc1, Cd163 also up).
+- Mmp9 and Mmp8 are < 3 CPM, except sample 6 (7 CPM), where they come from that sample's neutrophil contamination.
+- ADAM10/17, Adamts1 and Timp2 are flat. Timp3 and Plat (up) are astrocyte carry-over.
+- Note that osteopontin itself is an MMP substrate, so its loss could change MMP activity at the protein level. That is not measurable here.
+
+**Phagocytosis: recognition and engulfment machinery unchanged.**
+- Unchanged: Trem2, Tyrobp, Mertk, Gas6, Lrp1, Cd36, C1qa/b, C3ar1, Itgb2, Fcgr1/3, Cd47–Sirpa, Elmo1, Rac1/2, Cdc42, Ncf/Cybb (NADPH oxidase), Tfeb.
+- A **small, consistent decrease (~10–15%) in a few lysosomal/phagocytic genes**, each nominal only, none padj < 0.1:
+  - Axl −14%, Fcgr2b −12%, Lilrb4a −12%, Dock2 −12%, Lamp2 −10%;
+  - cathepsins Ctss −9%, Ctsh −13%, Ctsc −12%, Ctsb −11%.
+- Msr1 is +43%, but at only 6–9 CPM.
+- The lysosome set as a whole is −7% (CI −17 to +4%).
+- **Reading:** at most a mild lowering of lysosomal tone. Expression is not phagocytic function.
+
+**Lipid handling: a coherent mild decrease in the "lipid-associated" arm of the DAM program, not in uptake or efflux.**
+
+| process | genes | change |
+|---|---|---|
+| Uptake | Trem2, Lrp1, Cd36, Lpl, Scarb1 | flat (Lpl −8%) |
+| Uptake | Ldlr | −16% (p = 0.06) |
+| Apolipoprotein | **Apoe** | **−22%** (p = 0.002, padj 0.16; not flagged in round 1) |
+| Efflux | Abca1 | flat |
+| Efflux | Abcg1 | −9% |
+| Efflux / lipid transfer | Pltp, Clu | up, but astrocyte carry-over |
+| Storage | Soat1 | −12% |
+| Storage | Lpcat2 | −11% |
+| Storage | Plin2 | −10% (n.s.) |
+| Storage | Lipa, Pnpla2 | flat |
+| Oxysterol | Ch25h | −29% (flagged in round 1, so not independent) |
+| Oxysterol | Cyp27a1 | flat |
+| Fatty-acid binding | Fabp5 | −19% (round 1) |
+| Fatty-acid binding | Fabp3 | −18% |
+| Fatty-acid oxidation | Cpt1a, Acadl/m, Ppard | flat |
+| Lipid-stress markers | Gpnmb | −40% (round 1) |
+| Lipid-stress markers | Igf1 | −16% |
+| Lipid-stress markers | Lgals3, Cd9, Itgax, Cst7, Trem2 | flat |
+
+- **Cholesterol synthesis (SREBP2 targets, a priori list of 19 genes):**
+  - 18/19 genes lower; set score −11.5% (exact p = 0.20).
+  - Insig1 −23%, Fdps −18%, Sc5d −19%, Hmgcr −16%, Cyp51 −16%.
+  - Astrocyte carry-over would push this set *up*, so the decrease is conservative.
+  - The drop is driven by SPP1 samples 4 and 5; sample 6 overlaps NTC.
+
+**Interpretation (Tier 2, hypothesis).**
+- Spp1 knockdown coincides with a ~15–40% decrease in the Gpnmb/Fabp5/Apoe/Ch25h module and a ~10% decrease in sterol synthesis.
+- It does so without any change in core DAM, Trem2 or lipid-uptake genes.
+- In peripheral lipid-associated macrophages these genes form one Spp1⁺ Gpnmb⁺ Fabp5⁺ program. The data fit either:
+  - (a) fewer or less-loaded lipid-laden microglia; or
+  - (b) Spp1 sitting upstream of part of the lipid-response arm.
+- Bulk RNA cannot separate (a) from (b). BODIPY/Plin2 staining, filipin, or scRNA-seq would be needed.
+- Gpnmb, Fabp5 and Ch25h were selected from these animals in round 1 and are not independent confirmation. **Apoe and the SREBP2 set are new, and both are only nominal.**
 
 ## Deviations from the brief and reasons
 - **No 5xFAD-vs-WT contrast, no sex term, no 400-relabeling permutation:** none is possible with this design (single genotype, all male, 3 vs 3 → 20 relabelings, minimum p = 0.1).

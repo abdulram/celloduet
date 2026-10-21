@@ -30,6 +30,19 @@
   - DOL −3%.
   - The ACSA-2 **interferon increase from round 1 disappears (−0.1%)**. It was composition, and is now Tier 3.
 
+## MMPs, phagocytosis, lipid handling in microglia (round 3)
+- **MMPs: no microglial change.**
+  - Only Mmp14, Mmp12 and Mmp2 are expressed. Mmp12 +26% is nominal and tracks BAM content.
+  - Mmp9/Mmp8 come from neutrophil contamination in one sample.
+- **Phagocytosis: recognition and engulfment genes are unchanged** (Trem2, Tyrobp, Mertk, C1q, Cd68, NADPH oxidase).
+  - Several lysosomal/phagocytic genes are ~10–15% lower, each only nominal: Axl, Fcgr2b, Lamp2, Ctss/Ctsh/Ctsc/Ctsb.
+  - ~3% of that is dilution from the purity difference.
+- **Lipid handling: a coherent mild decrease in the lipid-associated arm.**
+  - Apoe −22%, Gpnmb −40%, Ch25h −29%, Fabp5 −19%, Fabp3 −18%, Soat1 −12%.
+  - Cholesterol-synthesis (SREBP2) targets −12%, with 18/19 genes down even though astrocyte carry-over would push them up.
+  - Lipid uptake (Trem2, Lrp1, Cd36, Lpl) and efflux (Abca1) are unchanged.
+  - Tier 2 hypothesis: fewer lipid-laden microglia, or Spp1 upstream of part of the lipid program. Needs lipid-droplet staining or single-cell data.
+
 ## What the data are (inferred from file and sample names)
 - 12 libraries, provider order 55ZS67 (all names carry the prefix `rerun_`). No FASTQ/BAM files.
 - 2 sorted fractions × 2 treatments × n = 3:

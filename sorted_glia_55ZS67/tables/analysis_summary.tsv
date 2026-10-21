@@ -18,3 +18,6 @@ No change in microglial plaque-response programs (DAM, MGnD, ARM, PIG, homeostat
 Spp1 lowered per unit of DAM response (knockdown index)	CD11b	1	log2 Spp1-DAM2: 1.34 vs 0.59	complete separation	09_pathology/spp1_knockdown_index.tsv
 No change in astrocyte (DAA/A1/pan-reactive) or oligodendrocyte (DOL) disease programs	ACSA2	2 (null, weakly bounded)	DAA -18% per astrocyte (p=0.26); DOL -3%	MDD ~30%	09_pathology/acsa2_programs_per_host_cell.tsv
 RNA degradation does not explain DE	both	1 (QC)	CD11b length rho 0.02; ACSA2 -0.09, equal across arms	gene-length index	03_artifacts/gene_length_quality_index.tsv
+No microglial MMP change (Mmp14/Mmp2 flat; Mmp12 +26% nominal, tracks BAM; Mmp9/8 neutrophil)	CD11b	1 (null)	see detail table	family-wide report	07_modules/CD11b_MMP_phagocytosis_lipid_gene_detail.tsv; figures/fig11
+Phagocytic recognition/engulfment genes unchanged; lysosomal/phagocytic genes ~10-15% lower (nominal)	CD11b	2-3	Axl -14%, Fcgr2b -12%, Lamp2 -10%, cathepsins -9 to -13%	nominal only; ~3% is purity dilution	07_modules/CD11b_MMP_phagocytosis_lipid_gene_detail.tsv
+Lipid-associated arm lower (Apoe -22%, Fabp3 -18%, Soat1 -12%, SREBP2 targets -12%) with uptake/efflux flat	CD11b	2	SREBP2 set 18/19 down, perm p=0.2	carry-over would bias up; Gpnmb/Ch25h/Fabp5 not independent (round 1)	07_modules/CD11b_MMP_phagocytosis_lipid_gene_detail.tsv
