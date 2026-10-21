@@ -4,7 +4,7 @@ Strong DAM program present in all CD11b samples	CD11b	1	Cst7 ~1900, Itgax ~250, 
 Spp1 knockdown in microglia with SPP1 treatment	CD11b	1	-43% CPM; log2FC -0.81 (adjusted -0.55 to -1.21)	padj 2e-7; complete separation (exact perm p=0.1, minimum possible); all LOO; carry-over predicts 0	05_DE_CD11b/DE_Spp1_vs_NTC_CD11b_annotated.tsv; figures/fig05
 Core DAM genes unchanged by SPP1	CD11b	1	Cst7/Itgax/Clec7a/Lpl/Trem2 |log2FC|<0.17	DESeq2	figures/fig06
 Lipid/plaque-associated microglial genes lower with SPP1 (Gpnmb, Ch25h, Fabp5, Rgs16, Lgi2, Mcoln3, Hpse)	CD11b	2	Gpnmb -40%, Ch25h -29%, Fabp5 -18%	padj<0.1, LOO-robust, microglia-enriched; camera lipid FDR 1e-5; n=3	05_DE_CD11b/DE_Spp1_vs_NTC_CD11b_annotated.tsv; 07_modules/camera_Spp1_vs_NTC_CD11b.tsv
-Interferon module up with SPP1 in ACSA2 fraction	ACSA2	2	Ifit3 +0.52, Ifit3b +0.58 log2FC	camera FDR 8e-4 (set-level only); no single gene significant	07_modules/camera_Spp1_vs_NTC_ACSA2.tsv
+Interferon module up with SPP1 in ACSA2 fraction	ACSA2	3	raw +18%; -0.1% per astrocyte	round 2: explained by higher astrocyte share in SPP1 ACSA2 sorts	07_modules/camera_Spp1_vs_NTC_ACSA2.tsv
 Astrocyte/oligo genes up in SPP1 CD11b sorts	CD11b	3	astro marker share 1.52% vs 0.95%	carry-over model; complete separation	03_artifacts/metric_vs_treatment_tests.tsv
 BAM share higher in SPP1 CD11b sorts	CD11b	3	1.8% vs 0.35% RNA share; Pf4/Cd163/Mrc1 up	deconvolution + markers	02_purity_celltyping/deconvolution_rna_share_pct_median.tsv
 Pseudogene/unnamed-locus DE tracks library-quality axis	both	4	~20% of padj<0.1 genes	% unmapped / % assigned perfectly separated by treatment within each fraction	01_QC/qc_metrics.tsv; 03_artifacts/metric_vs_treatment_tests.tsv
@@ -14,3 +14,7 @@ Fractions likely paired by replicate number	both	2	matched pairing ranks 1/6 in 
 Astrocyte Spp1 knockdown	ACSA2	cannot determine	ACSA2 Spp1 ~2% of microglial level; Spp1/Hexb unchanged	mostly microglial carry-over	figures/fig07
 ACSA2 fraction only ~30-40% astrocyte RNA (~55% oligodendrocyte)	ACSA2	1 (QC)	Plp1 ~20000 CPM	deconvolution (setting range up to 20 points) + markers	02_purity_celltyping/deconvolution_rna_share_pct_median.tsv
 Spp1 receptors unchanged	both	1 (null)	|log2FC|<0.25	DESeq2	05_DE_CD11b, 06_DE_ACSA2
+No change in microglial plaque-response programs (DAM, MGnD, ARM, PIG, homeostatic)	CD11b	1 (null, bounded)	DAM2 -3% (CI -15/+10); PIG -4% (CI -11/+3)	literature sets, Spp1 excluded; MDD DAM2 17%, PIG 10%	09_pathology/pathology_programs_SPP1_vs_NTC.tsv; figures/fig10
+Spp1 lowered per unit of DAM response (knockdown index)	CD11b	1	log2 Spp1-DAM2: 1.34 vs 0.59	complete separation	09_pathology/spp1_knockdown_index.tsv
+No change in astrocyte (DAA/A1/pan-reactive) or oligodendrocyte (DOL) disease programs	ACSA2	2 (null, weakly bounded)	DAA -18% per astrocyte (p=0.26); DOL -3%	MDD ~30%	09_pathology/acsa2_programs_per_host_cell.tsv
+RNA degradation does not explain DE	both	1 (QC)	CD11b length rho 0.02; ACSA2 -0.09, equal across arms	gene-length index	03_artifacts/gene_length_quality_index.tsv

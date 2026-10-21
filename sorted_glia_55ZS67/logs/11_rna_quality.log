@@ -1,0 +1,28 @@
+CD11b: Spearman(log10 length, log2FC) rho=+0.018 (p=4.8e-02, n=12070)
+  sample fraction treatment  long_short_log2
+55ZS67_1    CD11b       NTC           -0.804
+55ZS67_2    CD11b       NTC           -0.777
+55ZS67_3    CD11b       NTC           -0.818
+55ZS67_4    CD11b      Spp1           -0.798
+55ZS67_5    CD11b      Spp1           -0.851
+55ZS67_6    CD11b      Spp1           -0.786
+bin
+Q1 short    0.004
+Q2         -0.017
+Q3         -0.011
+Q4         -0.015
+Q5 long     0.008
+ACSA2: Spearman(log10 length, log2FC) rho=-0.094 (p=6.0e-28, n=13443)
+   sample fraction treatment  long_short_log2
+ 55ZS67_7    ACSA2       NTC           -0.224
+ 55ZS67_8    ACSA2       NTC           -0.139
+ 55ZS67_9    ACSA2       NTC           -0.300
+55ZS67_10    ACSA2      Spp1           -0.216
+55ZS67_11    ACSA2      Spp1           -0.258
+55ZS67_12    ACSA2      Spp1           -0.279
+bin
+Q1 short    0.041
+Q2          0.038
+Q3          0.018
+Q4         -0.002
+Q5 long    -0.011

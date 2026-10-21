@@ -18,7 +18,8 @@ The brief from the user is in `BRIEF_FROM_USER.md`. The one-page results are in 
 | 55ZS67_10–12 | rerun_Spp1_astrocyte_1–3 | ACSA2 | SPP1 | 1–3 |
 
 - **Sex:** all male (Xist < 1 CPM; chrY genes 13–130 CPM).
-- **Genotype and age:** not stated. No WT arm.
+- **Genotype:** all 5xFAD (confirmed by the user). Age not stated. No WT arm.
+- **Sorting:** CD11b+ depleted before ACSA-2 enrichment; warm dissociation; whole brain. The libraries are a re-run after poor RNA quality in the first attempt.
 
 ## Workflow (run in order from `sorted_glia_55ZS67/`)
 | script | what it does |
@@ -33,6 +34,8 @@ The brief from the user is in `BRIEF_FROM_USER.md`. The one-page results are in 
 | `07_pairing_test.py` | Tests whether replicate *k* is the same animal in both fractions (residual-profile correlation). |
 | `08a_build_brain_reference.py`, `08b_deconvolution.py` | CELLxGENE Census (2025-01-30) adult-brain pseudobulk with 15 classes (no choroid-plexus class was available). NNLS with trimming on specific markers (mt, ribosomal, Ig/TCR-V and Hb genes excluded), 20/30/50 markers per class, median reported. |
 | `09_figures_key_genes.py` | Per-sample plots. |
+| `10_pathology_programs.py` | 20 literature 5xFAD pathology programs. Spp1 removed from all sets; dissociation genes excluded. Per-animal scores; Welch CI and exact permutation; minimal detectable difference; Spp1/DAM knockdown index; ACSA-2 sets normalised to host-lineage content → `09_pathology/`, `figures/fig10`. |
+| `11_rna_quality_checks.py` | Gene-length vs log2FC and a long/short-gene index per sample (degradation proxy without BAMs). |
 
 **Software:** R 4.3 / DESeq2 1.42 / limma / edgeR (`logs/sessionInfo_R.txt`); Python 3 with pandas, numpy, scipy and tiledbsoma. Seeds are fixed (1 and 7).
 
@@ -130,10 +133,47 @@ The brief from the user is in `BRIEF_FROM_USER.md`. The one-page results are in 
 - Blood (Hb) and stress genes co-vary within the same replicate numbers.
 - Formal ligand–receptor analysis was **not** run. The ACSA2 fraction is too mixed to attribute ligands to astrocytes, and pairing is not confirmed.
 
+### 9. Pathology programs (round 2; `09_pathology/`)
+**Gene sets.** Sets were fixed from the literature before looking:
+- **Microglia:** DAM stage 1/2 (Keren-Shaul 2017), MGnD (Krasemann 2017), ARM and IRM (Sala Frigerio 2019), plaque-induced genes (Chen 2020, microglia-expressed subset), plus curated programs.
+- **Astrocytes:** DAA (Habib 2020), pan-reactive (Zamanian 2012), A1 (Liddelow 2017).
+- **Oligodendrocytes:** DOL (Kenigsbuch 2022, approximate list).
+- Spp1 was removed from every set. Ch25h and Fabp5 were kept out of the lipid set because round 1 flagged them in these same animals (selection-bias rule).
+
+**Microglia (CD11b):** no program changes beyond its 95% CI.
+
+| program | change | 95% CI |
+|---|---|---|
+| DAM2 | −3% | −15 to +10 |
+| PIG | −4% | −11 to +3 |
+| MGnD | −10% | −23 to +6 |
+| homeostatic | −1% | −11 to +11 |
+| lysosome | −7% | −17 to +4 |
+| proliferation | −5% | |
+| IRM | 0% | |
+| MHC-II | +8% | −28 to +63 (driven by sample 5) |
+
+- Minimal detectable differences at 80% power: DAM2 ±17%, PIG ±10%, homeostatic ±14%.
+
+**Spp1 knockdown index** (log2 Spp1 − mean log2 DAM2): NTC 0.96 / 1.68 / 1.37 vs SPP1 0.62 / 0.46 / 0.70. The groups separate completely. Spp1 output per unit of DAM response is roughly halved.
+
+**ACSA-2:**
+- Raw: DAA −3%, pan-reactive 0%, A1 +7%, DOL +1%, cholesterol +11%, IFN +18%.
+- The astrocyte lineage score is +0.24 log2 in SPP1 (composition). Normalised per astrocyte: DAA −18%, pan-reactive −16%, A1 −10%, cholesterol −6%, IFN −0.1%.
+- Normalised per oligodendrocyte: DOL −3%.
+- Nothing is significant, and the detectable difference is about ±30%. **The round-1 ACSA-2 IFN signal is composition (Tier 3).**
+
+**RNA quality.**
+- CD11b: log2FC is unrelated to gene length (Spearman ρ = 0.02), and the long/short index is the same in both arms.
+- ACSA-2: a mild length trend (ρ = −0.09; short-gene quintile +0.04 vs long −0.01 median log2FC), with the index the same in both arms.
+- Degradation does not explain the Spp1 result.
+
+**Interpretation.** SPP1 treatment produced a partial, specific Spp1 knockdown in microglia without a detectable change in the amyloid-response programs of microglia, astrocytes or oligodendrocytes. Transcriptomic proxies therefore give no evidence that plaque burden changed. Small decreases (≤ 20%) in the lipid/lysosomal DAM axis (Apoe, Gpnmb, Ctsb) cannot be excluded or confirmed.
+
 ## Deviations from the brief and reasons
 - **No 5xFAD-vs-WT contrast, no sex term, no 400-relabeling permutation:** none is possible with this design (single genotype, all male, 3 vs 3 → 20 relabelings, minimum p = 0.1).
 - **No transgene check:** no FASTQ, and no human APP/PSEN1 in the annotation.
-- **No pathology analysis (`09_pathology/` not created):** no pathology data.
+- **No histology:** none provided. `09_pathology/` therefore holds transcriptomic pathology proxies only.
 - **No choroid-plexus class in the deconvolution reference:** none in the Census adult brain data. Ttr-derived RNA is therefore unassigned.
 
 ## Failure conditions present
