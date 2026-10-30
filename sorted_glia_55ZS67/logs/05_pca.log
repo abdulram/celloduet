@@ -1,0 +1,10 @@
+  top = v.var(1).sort_values(ascending=False).index[:2000]
+  top = v.var(1).sort_values(ascending=False).index[:2000]
+CD11b PC1 38.2% treatment=+0.95; score_L_Pericyte_SMC=+0.94; score_L_Astrocyte=+0.93; score_L_Endothelial=+0.87; astro_marker_pct_vs_ACSA2=+0.86
+CD11b PC2 21.6% Ttr_cpm=-0.84; dissociation_IEG_log2cpm_mean=+0.72; score_L_Ependymal_CP=-0.71; genes_ge5=-0.53; microglial_RNA_pct_vs_CD11b=-0.51
+CD11b PC3 18.2% pct_mito=-0.79; pct_ribo=-0.79; genes_ge5=+0.77; pct_assigned_of_unique=+0.64; pct_multi=-0.60
+CD11b PC4 12.7% microglial_RNA_pct_vs_CD11b=+0.80; score_L_Microglia=+0.68; hemoglobin_cpm=+0.53; pct_unmapped=+0.43; score_L_Astrocyte=+0.30
+ACSA2 PC1 42.1% genes_ge5=+0.95; treatment=-0.76; score_L_Oligodendrocyte=-0.75; score_L_Ependymal_CP=+0.68; score_L_Endothelial=-0.65
+ACSA2 PC2 26.5% dissociation_IEG_log2cpm_mean=-0.96; score_L_Astrocyte=+0.86; neutrophil_cpm_sum=-0.85; astro_marker_pct_vs_ACSA2=+0.79; pct_unmapped=-0.76
+ACSA2 PC3 16.0% pct_ribo=-0.78; pct_assigned_of_unique=+0.66; score_L_Pericyte_SMC=-0.51; treatment=+0.43; Ttr_cpm=+0.34
+ACSA2 PC4 8.3% pct_mito=+0.66; pct_assigned_of_unique=-0.61; score_L_Microglia=+0.53; pct_ribo=+0.50; oligo_marker_pct_vs_ACSA2=-0.47

@@ -1,0 +1,39 @@
+/home/user/celloduet/sorted_glia_55ZS67/scripts/01_intake_qc.py:17: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  q["total_reads"] = mp.sum(1)
+/home/user/celloduet/sorted_glia_55ZS67/scripts/01_intake_qc.py:38: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  q["sex_call"] = np.where((q.cpm_Xist > 10) & (q[["cpm_Ddx3y", "cpm_Uty", "cpm_Kdm5d", "cpm_Eif2s3y"]].sum(1) < 2), "F",
+/home/user/celloduet/sorted_glia_55ZS67/scripts/01_intake_qc.py:39: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  np.where((q.cpm_Xist < 2) & (q[["cpm_Ddx3y", "cpm_Uty", "cpm_Kdm5d", "cpm_Eif2s3y"]].sum(1) > 5), "M", "ambiguous"))
+          treatment fraction  replicate  total_reads  uniquely_mapped  pct_unique  pct_multi  pct_unmapped  assigned_counts  pct_assigned_of_unique  genes_ge5  pct_mito  pct_ribo  pct_ERCC  pct_protein_coding  pct_lncRNA  pct_Mt_rRNA  pct_rRNA  pct_misc_RNA  pct_snoRNA  pct_top20_genes  cpm_Xist  cpm_Tsix  cpm_Ddx3y  cpm_Uty  cpm_Kdm5d  cpm_Eif2s3y sex_call
+sample                                                                                                                                                                                                                                                                                                                                                                 
+55ZS67_1        NTC    CD11b          1     20314189         17965234       88.44       8.98          2.59      10458509.16                   58.22      17532      4.74      7.45       0.0               91.77        1.92         1.61      0.24          0.01        0.01            15.49      0.10      0.14     109.67    22.85      13.78        39.68        M
+55ZS67_2        NTC    CD11b          2     19415166         17197550       88.58       8.89          2.54      11274510.09                   65.56      18031      4.49      6.98       0.0               91.53        2.01         1.58      0.58          0.01        0.01            15.72      0.27      0.40      94.90    22.26      15.46        42.71        M
+55ZS67_3        NTC    CD11b          3     19619020         17286610       88.11       8.72          3.17       9713507.57                   56.19      17856      5.16      7.13       0.0               91.29        2.04         1.97      0.34          0.01        0.01            15.82      0.10      0.49      99.28    23.68      16.68        48.44        M
+55ZS67_4       Spp1    CD11b          1     18971683         16466320       86.79       8.97          4.24       8829952.32                   53.62      17731      4.85      7.67       0.0               91.35        2.05         1.65      0.36          0.01        0.01            14.70      0.23      0.42     110.50    23.10      13.14        42.87        M
+55ZS67_5       Spp1    CD11b          2     20184000         17505615       86.73       9.07          4.20       7937117.13                   45.34      17190      5.48      7.92       0.0               90.53        2.04         2.25      0.50          0.01        0.01            15.48      0.13      0.27     104.57    20.66      13.76        42.65        M
+55ZS67_6       Spp1    CD11b          3     19777004         17286934       87.41       8.81          3.78       9565220.03                   55.33      17908      4.74      6.95       0.0               91.69        1.92         1.64      0.42          0.01        0.01            15.30      0.00      0.26     100.50    21.95      13.34        47.05        M
+55ZS67_7        NTC    ACSA2          1     20181577         16595933       82.23       9.17          8.60       7590695.05                   45.74      19967     11.20      2.02       0.0               86.24        3.18         4.56      0.53          0.01        0.01            19.62      0.79      1.11     118.70    29.77      18.44        58.14        M
+55ZS67_8        NTC    ACSA2          2     20575034         17332380       84.24       8.73          7.03       8954454.41                   51.66      21113     10.68      1.82       0.0               85.78        3.82         3.92      1.08          0.01        0.01            19.03      0.45      2.04     114.24    32.61      19.66        62.07        M
+55ZS67_9        NTC    ACSA2          3     20228754         17030569       84.19      10.51          5.30       7082519.57                   41.59      20085     12.03      2.09       0.0               87.33        2.83         3.52      0.24          0.01        0.01            19.71      0.71      2.36     123.83    31.94      18.96        53.79        M
+55ZS67_10      Spp1    ACSA2          1     20235713         17490403       86.43      10.21          3.35       8572796.23                   49.01      19860     10.90      1.88       0.0               88.31        2.77         2.96      0.27          0.01        0.01            18.99      0.47      1.20     129.13    30.68      18.78        62.06        M
+55ZS67_11      Spp1    ACSA2          2     19321606         16320831       84.47      10.55          4.98       7415489.18                   45.44      19443     12.71      1.95       0.0               86.72        2.58         4.21      0.52          0.01        0.01            20.73      0.27      1.15     130.54    25.35      18.07        54.48        M
+55ZS67_12      Spp1    ACSA2          3     20394772         17435597       85.49      10.62          3.89       8165302.88                   46.83      19592     12.00      1.99       0.0               87.38        2.59         3.79      0.42          0.01        0.01            20.21      0.12      1.10     116.16    27.00      15.43        48.87        M
+/home/user/celloduet/sorted_glia_55ZS67/scripts/01_intake_qc.py:48: Pandas4Warning: Starting with pandas version 4.0 all arguments of max will be keyword-only.
+  print("\nERCC detected (>=10 counts in any sample):", int((er.max(1) >= 10).sum()), "of", len(er))
+
+ERCC detected (>=10 counts in any sample): 5 of 92
+ERCC total counts per sample:
+ 55ZS67_1      83.0
+55ZS67_2      84.0
+55ZS67_3     105.0
+55ZS67_4     116.0
+55ZS67_5     108.0
+55ZS67_6     126.0
+55ZS67_7     190.0
+55ZS67_8     167.0
+55ZS67_9     114.0
+55ZS67_10     94.0
+55ZS67_11    107.0
+55ZS67_12     99.0
+
+fraction of non-integer count entries: 0.0921

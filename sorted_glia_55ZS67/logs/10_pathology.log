@@ -1,0 +1,45 @@
+               set fraction                                      source  n_genes  log2_SPP1_vs_NTC  pct_change  ci95_lo_pct  ci95_hi_pct  welch_p  perm_p  separated
+        DAM_stage1    CD11b                            Keren-Shaul 2017        7            -0.092      -6.157      -16.301        5.216    0.148     0.1       True
+        DAM_stage2    CD11b                            Keren-Shaul 2017       12            -0.051      -3.448      -15.232        9.975    0.472     0.4      False
+           MGnD_up    CD11b                              Krasemann 2017       11            -0.147      -9.687      -22.746        5.580    0.122     0.2      False
+               ARM    CD11b                          Sala Frigerio 2019       11            -0.059      -3.977      -19.822       14.999    0.566     0.6      False
+       Homeostatic    CD11b                       Keren-Shaul/Krasemann       12            -0.008      -0.585      -10.594       10.545    0.878     0.9      False
+Plaque_induced_PIG    CD11b      Chen 2020 (microglia-expressed subset)       19            -0.065      -4.426      -10.922        2.544    0.147     0.2      False
+      Phagocytosis    CD11b                                     curated        9             0.042       2.945      -12.833       21.579    0.534     0.4      False
+          Lysosome    CD11b                                     curated       12            -0.100      -6.682      -16.652        4.481    0.133     0.2      False
+        Complement    CD11b                                     curated        7            -0.066      -4.474      -15.029        7.392    0.332     0.5      False
+     MHCII_antigen    CD11b                                     curated        6             0.109       7.844      -28.435       62.513    0.617     0.7      False
+    Interferon_IRM    CD11b                          Sala Frigerio 2019       12            -0.000      -0.031      -20.307       25.403    0.997     1.0      False
+     Proliferation    CD11b                                     curated        8            -0.073      -4.903      -16.888        8.811    0.358     0.6      False
+    Lipid_handling    CD11b curated (no Ch25h/Fabp5: flagged in pass 1)        9            -0.052      -3.511      -11.281        4.940    0.298     0.3      False
+         DAA_astro    ACSA2                                  Habib 2020       10            -0.044      -3.034      -23.939       23.618    0.702     0.8      False
+ PanReactive_astro    ACSA2                               Zamanian 2012       11            -0.006      -0.427      -24.031       30.511    0.961     0.9      False
+          A1_astro    ACSA2                               Liddelow 2017        8             0.092       6.573      -16.936       36.735    0.490     0.6      False
+         DOL_oligo    ACSA2                   Kenigsbuch 2022 (approx.)        8             0.013       0.884      -21.979       30.446    0.916     0.9      False
+ Homeostatic_astro    ACSA2                                     curated        9             0.088       6.293       -9.672       25.079    0.343     0.3      False
+ Cholesterol_astro    ACSA2                                     curated       10             0.146      10.639       -2.436       25.467    0.089     0.1       True
+   Interferon_glia    ACSA2                                     curated       12             0.241      18.189      -18.998       72.448    0.228     0.2      False
+
+          treatment  log2_Spp1  DAM2_mean_log2  Spp1_minus_DAM2
+sample                                                        
+55ZS67_1       NTC     10.652           9.692            0.960
+55ZS67_2       NTC     11.220           9.542            1.678
+55ZS67_3       NTC     11.075           9.709            1.365
+55ZS67_4      Spp1     10.214           9.597            0.618
+55ZS67_5      Spp1     10.001           9.540            0.461
+55ZS67_6      Spp1     10.358           9.655            0.703
+MDD DAM_stage2: +/-17% (pooled SD 0.077 log2)
+MDD Plaque_induced_PIG: +/-10% (pooled SD 0.044 log2)
+MDD Homeostatic: +/-14% (pooled SD 0.063 log2)
+MDD DAA_astro: +/-31% (pooled SD 0.128 log2)
+MDD DOL_oligo: +/-33% (pooled SD 0.135 log2)
+
+ACSA2 programs normalised to host lineage:
+               set normalised_to  host_lineage_log2FC  raw_pct  per_host_pct  perm_p  welch_p
+        DAA_astro         astro                0.243   -3.034       -18.040     0.2    0.256
+PanReactive_astro         astro                0.243   -0.427       -15.837     0.3    0.252
+         A1_astro         astro                0.243    6.573        -9.920     0.3    0.243
+Cholesterol_astro         astro                0.243   10.639        -6.483     0.5    0.491
+Homeostatic_astro         astro                0.243    6.293       -10.157     0.2    0.104
+  Interferon_glia         astro                0.243   18.189        -0.102     1.0    0.991
+        DOL_oligo         oligo                0.056    0.884        -2.990     0.9    0.745

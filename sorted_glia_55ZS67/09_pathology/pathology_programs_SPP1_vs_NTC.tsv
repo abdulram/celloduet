@@ -1,0 +1,21 @@
+set	fraction	source	n_genes	log2_SPP1_vs_NTC	pct_change	ci95_lo_pct	ci95_hi_pct	welch_p	perm_p	separated	per_gene_log2FC
+DAM_stage1	CD11b	Keren-Shaul 2017	7	-0.09168	-6.157	-16.3	5.216	0.1483	0.1	True	Tyrobp:-0.05;Ctsb:-0.17;Ctsd:-0.09;Apoe:-0.36;B2m:-0.00;Fth1:-0.01;Lyz2:+0.04
+DAM_stage2	CD11b	Keren-Shaul 2017	12	-0.05062	-3.448	-15.23	9.975	0.472	0.4	False	Trem2:-0.02;Axl:-0.22;Cst7:-0.00;Ctsl:+0.03;Lpl:-0.12;Cd9:-0.12;Csf1:+0.23;Ccl6:+0.09;Itgax:-0.04;Clec7a:-0.15;Lilrb4a:-0.19;Timp2:-0.09
+MGnD_up	CD11b	Krasemann 2017	11	-0.147	-9.687	-22.75	5.58	0.1224	0.2	False	Apoe:-0.36;Axl:-0.22;Clec7a:-0.15;Itgax:-0.04;Gpnmb:-0.73;Lgals3:+0.03;Ccl2:+0.18;Cst7:-0.00;Lpl:-0.12;Itgb2:-0.09;Cd9:-0.12
+ARM	CD11b	Sala Frigerio 2019	11	-0.05855	-3.977	-19.82	15	0.5657	0.6	False	Cst7:-0.00;Itgax:-0.04;Clec7a:-0.15;Dkk2:+0.02;Gpnmb:-0.73;Cd74:+0.30;H2-Aa:+0.13;H2-Ab1:+0.12;H2-Eb1:+0.16;Apoe:-0.36;Ank:-0.08
+Homeostatic	CD11b	Keren-Shaul/Krasemann	12	-0.008459	-0.5846	-10.59	10.54	0.8781	0.9	False	P2ry12:-0.00;P2ry13:-0.04;Tmem119:+0.06;Cx3cr1:+0.01;Sall1:-0.05;Csf1r:+0.07;Selplg:+0.02;Gpr34:-0.03;Siglech:-0.02;Olfml3:-0.02;Hexb:-0.13;Tgfbr1:+0.03
+Plaque_induced_PIG	CD11b	Chen 2020 (microglia-expressed subset)	19	-0.06531	-4.426	-10.92	2.544	0.1468	0.2	False	C1qa:+0.02;C1qb:+0.03;C1qc:-0.13;C4b:+0.24;Ctss:-0.13;Cd68:-0.10;Trem2:-0.02;Tyrobp:-0.05;Gpnmb:-0.73;Ctsz:-0.05;Itgax:-0.04;Cd9:-0.12;Clec7a:-0.15;B2m:-0.00;Cst7:-0.00;H2-D1:+0.05;H2-K1:-0.01;Ctsd:-0.09;Prdx6:+0.05
+Phagocytosis	CD11b	curated	9	0.04187	2.945	-12.83	21.58	0.5336	0.4	False	Cd68:-0.10;Axl:-0.22;Mertk:+0.17;Cd36:+0.13;Msr1:+0.46;Lrp1:-0.05;Gas6:+0.06;Trem2:-0.02;Tyrobp:-0.05
+Lysosome	CD11b	curated	12	-0.09977	-6.682	-16.65	4.481	0.1331	0.2	False	Ctsb:-0.17;Ctsd:-0.09;Ctsl:+0.03;Ctss:-0.13;Ctsz:-0.05;Lamp1:-0.12;Lamp2:-0.15;Grn:-0.08;Hexa:-0.08;Hexb:-0.13;Npc2:-0.11;Atp6v0d2:-0.12
+Complement	CD11b	curated	7	-0.06604	-4.474	-15.03	7.392	0.3318	0.5	False	C1qa:+0.02;C1qb:+0.03;C1qc:-0.13;C3ar1:-0.04;C5ar1:+0.06;Itgb2:-0.09;C3:-0.31
+MHCII_antigen	CD11b	curated	6	0.1089	7.844	-28.43	62.51	0.6166	0.7	False	H2-Aa:+0.13;H2-Ab1:+0.12;H2-Eb1:+0.16;Cd74:+0.30;H2-DMa:-0.09;H2-DMb1:+0.04
+Interferon_IRM	CD11b	Sala Frigerio 2019	12	-0.0004533	-0.03142	-20.31	25.4	0.9971	1	False	Ifit1:-0.02;Ifit2:-0.16;Ifit3:-0.15;Ifit3b:-0.02;Isg15:+0.13;Irf7:+0.18;Rtp4:-0.05;Oasl2:-0.12;Bst2:-0.03;Usp18:+0.16;Stat1:-0.07;Ifi27l2a:+0.13
+Proliferation	CD11b	curated	8	-0.07253	-4.903	-16.89	8.811	0.3584	0.6	False	Mki67:+0.11;Top2a:+0.14;Ccnb2:-0.10;Cdk1:-0.12;Birc5:-0.08;Cenpf:-0.33;Ube2c:-0.25;Pclaf:+0.05
+Lipid_handling	CD11b	curated (no Ch25h/Fabp5: flagged in pass 1)	9	-0.05156	-3.511	-11.28	4.94	0.2983	0.3	False	Apoe:-0.36;Lpl:-0.12;Abca1:-0.03;Abcg1:-0.13;Plin2:-0.14;Lipa:-0.08;Soat1:-0.19;Cd36:+0.13;Msr1:+0.46
+DAA_astro	ACSA2	Habib 2020	10	-0.04444	-3.034	-23.94	23.62	0.7025	0.8	False	Gfap:+0.31;Vim:-0.53;Serpina3n:-0.16;Ctss:-0.84;C4b:-0.03;Cd9:-0.19;Apoe:+0.15;Osmr:+0.34;Cst3:+0.35;Clu:+0.17
+PanReactive_astro	ACSA2	Zamanian 2012	11	-0.006173	-0.427	-24.03	30.51	0.9611	0.9	False	S1pr3:-0.07;Timp1:-0.02;Hspb1:-0.35;Cxcl10:+0.48;Cd44:-0.12;Osmr:+0.34;Cp:-0.24;Serpina3n:-0.16;Aspg:+0.31;Vim:-0.53;Gfap:+0.31
+A1_astro	ACSA2	Liddelow 2017	8	0.09184	6.573	-16.94	36.73	0.4904	0.6	False	C3:-0.47;Serping1:+0.16;H2-D1:-0.03;Gbp2:+0.09;Fkbp5:+0.78;Psmb8:-0.07;Srgn:-0.04;Amigo2:+0.32
+DOL_oligo	ACSA2	Kenigsbuch 2022 (approx.)	8	0.0127	0.8842	-21.98	30.45	0.9163	0.9	False	Serpina3n:-0.16;C4b:-0.03;H2-D1:-0.03;H2-K1:-0.12;B2m:-0.01;Il33:+0.04;Klk6:-0.22;Cdkn1a:+0.63
+Homeostatic_astro	ACSA2	curated	9	0.08804	6.293	-9.672	25.08	0.3428	0.3	False	Slc1a2:+0.21;Slc1a3:+0.33;Kcnj10:-0.03;Glul:+0.17;Aqp4:+0.20;Gja1:+0.24;Sparcl1:+0.13;Gpc4:-0.31;Gpc6:-0.14
+Cholesterol_astro	ACSA2	curated	10	0.1459	10.64	-2.436	25.47	0.08942	0.1	True	Hmgcr:+0.21;Hmgcs1:+0.13;Sqle:+0.11;Fdft1:+0.18;Srebf2:+0.16;Idi1:+0.22;Cyp51:+0.10;Dhcr24:+0.29;Ldlr:+0.03;Insig1:+0.03
+Interferon_glia	ACSA2	curated	12	0.2411	18.19	-19	72.45	0.2283	0.2	False	Ifit1:+0.25;Ifit3:+0.43;Ifit3b:+0.47;Isg15:+0.09;Irf7:-0.01;Rtp4:+0.41;Oasl2:-0.06;Bst2:-0.03;Stat1:+0.22;Gbp2:+0.09;Iigp1:+0.55;Igtp:+0.49

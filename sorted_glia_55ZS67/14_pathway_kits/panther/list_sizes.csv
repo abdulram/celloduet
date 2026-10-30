@@ -1,0 +1,5 @@
+universe,cutoff,n_up,n_down,n_reference
+all,p<0.01,275,62,15492
+all,p<0.05,634,260,15492
+mg_intrinsic,p<0.01,87,53,13769
+mg_intrinsic,p<0.05,277,238,13769

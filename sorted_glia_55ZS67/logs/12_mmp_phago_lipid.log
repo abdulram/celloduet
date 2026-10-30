@@ -1,0 +1,188 @@
+
+### MMP
+ gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated             call  flagged_in_round1
+ Mmp2   10.472    11.940      14.022 1.000   0.352      False        no change              False
+Mmp12   21.480    27.049      25.927 0.766   0.036      False nominal (p<0.05)              False
+Mmp14   38.073    37.861      -0.558 1.000   0.896      False        no change              False
+
+### ADAM/ADAMTS
+    gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated      call  flagged_in_round1
+   Adam8    8.961     9.891      10.377 1.000   0.533      False no change              False
+   Adam9   57.280    50.571     -11.713 0.993   0.095      False no change              False
+  Adam10  274.526   247.827      -9.725 0.955   0.079      False no change              False
+  Adam15   85.602    92.366       7.901 1.000   0.324       True no change              False
+  Adam17  140.170   137.584      -1.845 1.000   0.689      False no change              False
+ Adamts1  286.842   307.599       7.236 1.000   0.782      False no change              False
+Adamts10   10.382     8.853     -14.722 1.000   0.227       True no change              False
+
+### TIMP/other protease regulators
+    gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated             call  flagged_in_round1
+   Timp2 1043.622   978.286      -6.261 1.000   0.181       True        no change              False
+   Timp3   26.093    35.651      36.630 0.099   0.001       True       carry-over              False
+Serpine1  159.060   230.064      44.639 1.000   0.114      False        no change              False
+Serpine2 1420.296  1259.954     -11.289 0.765   0.036      False nominal (p<0.05)              False
+    Plau   58.797    51.474     -12.455 1.000   0.425      False        no change              False
+   Plaur   37.234    46.527      24.960 1.000   0.276      False        no change              False
+    Plat    4.637     8.477      82.837 0.091   0.001       True       carry-over              False
+
+### Cathepsins (ECM/lysosomal)
+gene   NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated                              call  flagged_in_round1
+Ctsb  5663.904  5044.211     -10.941 0.869   0.052      False                         no change              False
+Ctsd 14157.483 13312.824      -5.966 1.000   0.198      False                         no change              False
+Ctsl  2261.524  2311.367       2.204 1.000   0.769      False                         no change              False
+Ctss  6725.192  6145.446      -8.621 0.834   0.045       True nominal (p<0.05, groups separate)              False
+Ctsz  1749.296  1686.733      -3.576 1.000   0.472      False                         no change              False
+Ctsh   590.064   514.277     -12.844 0.342   0.006       True nominal (p<0.05, groups separate)              False
+Ctsc   534.254   469.149     -12.186 0.597   0.019      False                  nominal (p<0.05)              False
+
+### Phago: recognition receptors
+   gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated                              call  flagged_in_round1
+  Trem2 1911.340  1881.758      -1.548 1.000   0.687      False                         no change              False
+ Tyrobp 2573.900  2482.947      -3.534 1.000   0.507      False                         no change              False
+    Axl  364.184   314.014     -13.776 0.496   0.012       True nominal (p<0.05, groups separate)              False
+  Mertk  294.859   332.908      12.904 0.988   0.092      False                         no change              False
+   Gas6  247.330   257.670       4.181 1.000   0.578      False                         no change              False
+  Pros1  252.521   227.417      -9.942 1.000   0.102      False                         no change              False
+   Cd36    8.284     8.991       8.538 1.000   0.622      False                         no change              False
+   Msr1    6.027     8.597      42.642 0.708   0.028       True nominal (p<0.05, groups separate)              False
+ Scarb1   66.296    58.295     -12.068 0.999   0.098      False                         no change              False
+   Lrp1  622.347   601.355      -3.373 1.000   0.474      False                         no change              False
+   Cd14  874.235   998.262      14.187 1.000   0.424      False                         no change              False
+  Itgam  468.474   461.466      -1.496 1.000   0.674      False                         no change              False
+  Itgb2  341.141   320.590      -6.024 1.000   0.242      False                         no change              False
+  Fcgr1  183.330   178.228      -2.783 1.000   0.594      False                         no change              False
+ Fcgr2b  735.231   649.678     -11.636 0.498   0.012       True nominal (p<0.05, groups separate)              False
+  Fcgr3  720.878   734.230       1.852 1.000   0.828      False                         no change              False
+ Clec7a  505.760   455.425      -9.952 0.998   0.097      False                         no change              False
+   Cd93   18.210    19.282       5.892 1.000   0.638      False                         no change              False
+Siglech  717.100   709.474      -1.063 1.000   0.760      False                         no change              False
+ Cd300a   83.698    81.476      -2.655 1.000   0.658      False                         no change              False
+Lilrb4a  109.418    95.843     -12.407 0.838   0.045       True nominal (p<0.05, groups separate)              False
+  P2ry6  196.406   200.886       2.281 1.000   0.798      False                         no change              False
+
+### Phago: eat-me/bridging & complement
+  gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated       call  flagged_in_round1
+  C1qa 4332.064  4391.732       1.377 1.000   0.890      False  no change              False
+  C1qb 3857.784  3937.357       2.063 1.000   0.786      False  no change              False
+  C1qc 8103.734  7389.075      -8.819 0.886   0.057       True  no change              False
+    C3    7.589     5.752     -24.201 1.000   0.151      False  no change              False
+ C3ar1  404.595   393.680      -2.698 1.000   0.518      False  no change              False
+ C5ar1  165.383   172.695       4.421 1.000   0.556      False  no change              False
+ Mfge8   27.912    30.763      10.213 1.000   0.327      False carry-over              False
+Lgals3   80.658    82.493       2.275 1.000   0.825      False  no change              False
+  Cd47  170.889   175.551       2.728 1.000   0.734      False  no change              False
+ Sirpa 2238.888  2221.421      -0.780 1.000   0.760      False  no change              False
+ Itgav  123.335   113.323      -8.118 1.000   0.139      False  no change              False
+ Itgb5 1448.623  1392.071      -3.904 1.000   0.354      False  no change              False
+
+### Phago: engulfment/phagosome
+    gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated                              call  flagged_in_round1
+   Elmo1  191.069   181.551      -4.981 1.000   0.328      False                         no change              False
+   Dock2  254.871   224.681     -11.845 0.557   0.015       True nominal (p<0.05, groups separate)              False
+    Rac1  937.876   861.703      -8.122 0.918   0.067       True                         no change              False
+    Rac2  103.833    98.592      -5.048 1.000   0.343      False                         no change              False
+   Cdc42  651.133   628.645      -3.454 1.000   0.394      False                         no change              False
+    Cd68 1314.585  1223.304      -6.944 1.000   0.154      False                         no change              False
+   Lamp1  984.790   910.540      -7.540 1.000   0.162      False                         no change              False
+   Lamp2  756.454   683.356      -9.663 0.818   0.041       True nominal (p<0.05, groups separate)              False
+    Rab7  216.235   200.855      -7.113 1.000   0.144       True                         no change              False
+   Rubcn   14.221    15.750      10.751 1.000   0.405       True                         no change              False
+    Ncf1  262.719   280.770       6.871 1.000   0.362      False                         no change              False
+    Ncf2  197.175   203.708       3.313 1.000   0.655      False                         no change              False
+    Ncf4   41.198    41.506       0.748 1.000   0.984      False                         no change              False
+    Cybb  249.796   225.073      -9.898 0.929   0.070      False                         no change              False
+    Cyba  501.649   490.918      -2.139 1.000   0.576      False                         no change              False
+Atp6v0d2   17.479    15.886      -9.112 1.000   0.377      False                         no change              False
+ Atp6v1a  209.844   197.311      -5.972 1.000   0.266      False                         no change              False
+    Tfeb   25.788    25.534      -0.988 1.000   0.867      False                         no change              False
+
+### Lipid: uptake
+  gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated                              call  flagged_in_round1
+  Cd36    8.284     8.991       8.538 1.000   0.622      False                         no change              False
+  Msr1    6.027     8.597      42.642 0.708   0.028       True nominal (p<0.05, groups separate)              False
+  Lrp1  622.347   601.355      -3.373 1.000   0.474      False                         no change              False
+  Ldlr   65.156    54.534     -16.302 0.895   0.059      False                         no change              False
+   Lpl 1225.900  1126.336      -8.122 1.000   0.125      False                         no change              False
+Scarb1   66.296    58.295     -12.068 0.999   0.098      False                         no change              False
+ Trem2 1911.340  1881.758      -1.548 1.000   0.687      False                         no change              False
+  Olr1    4.711     5.362      13.823 1.000   0.514      False                         no change              False
+
+### Lipid: apolipoprotein/efflux
+ gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated             call  flagged_in_round1
+ Apoe 8616.943  6757.541     -21.578 0.160   0.002      False nominal (p<0.05)              False
+  Clu   25.068    40.338      60.917 0.575   0.017       True       carry-over              False
+Abca1  246.103   239.480      -2.691 1.000   0.612      False        no change              False
+Abca7   15.559    12.812     -17.656 1.000   0.099       True        no change              False
+Abcg1  186.920   171.000      -8.517 1.000   0.106       True        no change              False
+ Pltp   24.376    38.166      56.571 0.008   0.000       True       carry-over              False
+Nr1h2   32.041    37.136      15.902 1.000   0.116       True        no change              False
+
+### Lipid: storage/droplets
+  gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated                              call  flagged_in_round1
+ Plin2   67.576    60.828      -9.986 1.000   0.175      False                         no change              False
+ Plin3   54.035    54.079       0.081 1.000   0.931      False                        carry-over              False
+ Soat1  166.100   145.655     -12.309 0.764   0.036       True nominal (p<0.05, groups separate)              False
+ Dgat1   10.974    11.046       0.656 1.000   0.978      False                         no change              False
+  Lipa  176.448   167.334      -5.165 1.000   0.300      False                         no change              False
+Pnpla2   68.557    78.781      14.913 0.934   0.073       True                         no change              False
+Lpcat2  643.104   574.241     -10.708 0.738   0.031      False                  nominal (p<0.05)              False
+
+### Lipid: cholesterol synthesis/oxysterol
+   gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated                              call  flagged_in_round1
+  Hmgcr   36.582    30.853     -15.659 0.834   0.044       True nominal (p<0.05, groups separate)              False
+ Hmgcs1   60.556    54.249     -10.415 1.000   0.111       True                         no change              False
+   Sqle   14.836    14.126      -4.785 1.000   0.714      False                        carry-over              False
+  Fdft1   21.076    20.713      -1.722 1.000   0.822      False                        carry-over              False
+  Cyp51   25.637    21.493     -16.166 0.994   0.096      False                         no change              False
+  Dhcr7   47.715    45.743      -4.133 1.000   0.543      False                         no change              False
+ Dhcr24   10.836     8.943     -17.464 1.000   0.237      False                        carry-over              False
+ Srebf2   57.787    55.844      -3.363 1.000   0.592      False                         no change              False
+ Insig1   66.802    51.448     -22.985 0.352   0.006      False                  nominal (p<0.05)              False
+   Ldlr   65.156    54.534     -16.302 0.895   0.059      False                         no change              False
+  Ch25h  165.316   117.031     -29.208 0.013   0.000       True    changed (padj<0.1, LOO-robust)               True
+Cyp27a1   26.495    24.654      -6.948 1.000   0.417      False                         no change              False
+   Npc1  177.279   161.659      -8.811 1.000   0.143      False                         no change              False
+   Npc2 1643.170  1523.632      -7.275 1.000   0.148      False                         no change              False
+
+### Lipid: fatty acid binding/oxidation/synthesis
+  gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated                              call  flagged_in_round1
+ Fabp3   49.902    40.671     -18.498 0.602   0.019       True nominal (p<0.05, groups separate)              False
+ Fabp5  448.955   365.574     -18.572 0.055   0.000       True    changed (padj<0.1, LOO-robust)               True
+ Fabp7    4.078     6.325      55.087 0.713   0.028       True                        carry-over              False
+ Cpt1a   28.123    26.620      -5.344 1.000   0.516      False                         no change              False
+ Acadl   37.292    39.266       5.293 1.000   0.585       True                         no change              False
+ Acadm   53.152    49.386      -7.087 1.000   0.310      False                         no change              False
+ Ppard   63.426    63.353      -0.115 1.000   0.912      False                         no change              False
+ Acsl1   37.760    37.542      -0.578 1.000   0.902      False                         no change              False
+  Fasn   23.230    23.422       0.826 1.000   0.966      False                        carry-over              False
+  Scd1   13.300    16.124      21.228 1.000   0.166      False                        carry-over              False
+  Scd2  195.645   191.566      -2.085 1.000   0.745      False                        carry-over              False
+Srebf1   61.216    60.177      -1.698 1.000   0.746      False                        carry-over              False
+Elovl1   64.115    61.984      -3.323 1.000   0.580      False                         no change              False
+
+### Lipid: phospholipid/sphingolipid & lysosomal lipid
+   gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated             call  flagged_in_round1
+    Gla   19.584    17.736      -9.436 1.000   0.342      False        no change              False
+  Asah1  313.606   298.553      -4.800 1.000   0.301      False        no change              False
+  Smpd1   30.719    34.345      11.804 1.000   0.218       True        no change              False
+   Psap 1821.496  1733.593      -4.826 1.000   0.404      False        no change              False
+    Grn 2225.177  2106.895      -5.316 1.000   0.245      False        no change              False
+ Pla2g7   12.595    15.375      22.072 1.000   0.122      False       carry-over              False
+Pla2g15  239.735   248.113       3.495 1.000   0.627      False        no change              False
+ Lpcat2  643.104   574.241     -10.708 0.738   0.031      False nominal (p<0.05)              False
+  Plcg2   70.779    67.736      -4.299 1.000   0.508      False        no change              False
+  Sgpl1  188.577   180.968      -4.035 1.000   0.418      False        no change              False
+   Cerk  122.060   116.851      -4.268 1.000   0.430      False        no change              False
+
+### Lipid/lysosome stress markers
+  gene  NTC_cpm  SPP1_cpm  pct_change  padj  pvalue  separated                              call  flagged_in_round1
+ Gpnmb  300.148   180.927     -39.721 0.099   0.001       True    changed (padj<0.1, LOO-robust)               True
+Lgals3   80.658    82.493       2.275 1.000   0.825      False                         no change              False
+   Cd9 3854.066  3550.303      -7.882 0.988   0.092      False                         no change              False
+ Itgax  258.517   251.587      -2.681 1.000   0.673      False                         no change              False
+  Igf1  476.902   402.374     -15.627 0.250   0.003       True nominal (p<0.05, groups separate)              False
+  Spp1 2049.421  1173.803     -42.725 0.000   0.000       True    changed (padj<0.1, LOO-robust)               True
+  Cst7 1906.800  1898.969      -0.411 1.000   0.848      False                         no change              False
+
+SREBP2 targets (n=19): set score SPP1 vs NTC -11.5%, exact perm p=0.20; genes down 18/19; carry-over predicts mean +0.026 log2 (up)
+per-sample scores: {'55ZS67_1': -0.053, '55ZS67_2': -0.02, '55ZS67_3': 0.073, '55ZS67_4': -0.201, '55ZS67_5': -0.281, '55ZS67_6': -0.044}

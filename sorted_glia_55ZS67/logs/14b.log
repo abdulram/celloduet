@@ -1,0 +1,122 @@
+carry_astro vs treatment r = 0.84 
+unadjusted : padj<0.05 = 70 ; intrinsic padj<0.05 = 21 
+carry_adj : padj<0.05 = 10 ; intrinsic padj<0.05 = 7 
+
+== all_genes 
+                                                                    set n_genes
+C_ECM_REMODELING                                       C_ECM_REMODELING      14
+G_A_A2                                                           G_A_A2       6
+H_PROTEIN_SECRETION                                 H_PROTEIN_SECRETION      89
+H_ANGIOGENESIS                                           H_ANGIOGENESIS      28
+H_ESTROGEN_RESPONSE_EARLY                     H_ESTROGEN_RESPONSE_EARLY     132
+C_MONOCYTE_RECRUITMENT                           C_MONOCYTE_RECRUITMENT      10
+M_ARACHNOID_BARRIER                                 M_ARACHNOID_BARRIER       5
+M_TGFB_SMAD_TARGETS                                 M_TGFB_SMAD_TARGETS      15
+G_A_Synapse                                                 G_A_Synapse       5
+H_EPITHELIAL_MESENCHYMAL_TRANSITION H_EPITHELIAL_MESENCHYMAL_TRANSITION     147
+G_M_Lipid                                                     G_M_Lipid       9
+G_M_ARM                                                         G_M_ARM      12
+C_CHEMOKINES                                               C_CHEMOKINES      14
+C_LIPID_HANDLING                                       C_LIPID_HANDLING      11
+C_DAM_KerenShaul2017                               C_DAM_KerenShaul2017      22
+H_PEROXISOME                                               H_PEROXISOME      83
+G_M_MGnD                                                       G_M_MGnD      12
+G_M_DAM2                                                       G_M_DAM2      10
+H_UV_RESPONSE_DN                                       H_UV_RESPONSE_DN     123
+C_INFLAMMATORY_FIBROBLAST                     C_INFLAMMATORY_FIBROBLAST       9
+H_BILE_ACID_METABOLISM                           H_BILE_ACID_METABOLISM      73
+G_A_PanReactive                                         G_A_PanReactive      11
+                                    direction        p      FDR p_conservative
+C_ECM_REMODELING                           Up 8.77e-06 1.20e-04         0.0244
+G_A_A2                                     Up 1.64e-03 7.39e-03         0.0321
+H_PROTEIN_SECRETION                      Down 1.21e-04 8.97e-04         0.0371
+H_ANGIOGENESIS                             Up 9.50e-04 4.56e-03         0.0378
+H_ESTROGEN_RESPONSE_EARLY                  Up 5.73e-03 1.90e-02         0.0416
+C_MONOCYTE_RECRUITMENT                     Up 5.68e-04 2.87e-03         0.0420
+M_ARACHNOID_BARRIER                        Up 4.59e-03 1.67e-02         0.0445
+M_TGFB_SMAD_TARGETS                        Up 8.99e-05 7.22e-04         0.0445
+G_A_Synapse                                Up 5.61e-03 1.90e-02         0.0512
+H_EPITHELIAL_MESENCHYMAL_TRANSITION        Up 1.86e-08 8.94e-07         0.0522
+G_M_Lipid                                Down 6.45e-07 1.55e-05         0.0574
+G_M_ARM                                  Down 2.95e-03 1.13e-02         0.0610
+C_CHEMOKINES                               Up 5.27e-04 2.81e-03         0.0650
+C_LIPID_HANDLING                         Down 5.90e-05 5.66e-04         0.0656
+C_DAM_KerenShaul2017                     Down 1.14e-09 1.09e-07         0.0659
+H_PEROXISOME                             Down 6.49e-02 1.52e-01         0.0677
+G_M_MGnD                                 Down 1.47e-05 1.76e-04         0.0766
+G_M_DAM2                                 Down 5.43e-06 8.69e-05         0.0805
+H_UV_RESPONSE_DN                           Up 3.63e-02 9.42e-02         0.0919
+C_INFLAMMATORY_FIBROBLAST                  Up 1.69e-03 7.39e-03         0.0953
+H_BILE_ACID_METABOLISM                   Down 3.23e-02 9.38e-02         0.0983
+G_A_PanReactive                            Up 4.69e-03 1.67e-02         0.0985
+                                    FDR_conservative n_leading
+C_ECM_REMODELING                               0.406         5
+G_A_A2                                         0.406         1
+H_PROTEIN_SECRETION                            0.406         8
+H_ANGIOGENESIS                                 0.406         6
+H_ESTROGEN_RESPONSE_EARLY                      0.406        20
+C_MONOCYTE_RECRUITMENT                         0.406         2
+M_ARACHNOID_BARRIER                            0.406         1
+M_TGFB_SMAD_TARGETS                            0.406         5
+G_A_Synapse                                    0.406         1
+H_EPITHELIAL_MESENCHYMAL_TRANSITION            0.406        26
+G_M_Lipid                                      0.406         4
+G_M_ARM                                        0.406         3
+C_CHEMOKINES                                   0.406         2
+C_LIPID_HANDLING                               0.406         3
+C_DAM_KerenShaul2017                           0.406         9
+H_PEROXISOME                                   0.406         4
+G_M_MGnD                                       0.430         4
+G_M_DAM2                                       0.430         4
+H_UV_RESPONSE_DN                               0.430        13
+C_INFLAMMATORY_FIBROBLAST                      0.430         3
+H_BILE_ACID_METABOLISM                         0.430         5
+G_A_PanReactive                                0.430         3
+
+== mg_intrinsic 
+                                                 set n_genes direction        p
+H_BILE_ACID_METABOLISM1       H_BILE_ACID_METABOLISM      64      Down 4.43e-03
+G_M_MGnD1                                   G_M_MGnD       9      Down 1.54e-07
+G_M_ARM1                                     G_M_ARM       7      Down 6.76e-06
+H_PROTEIN_SECRETION1             H_PROTEIN_SECRETION      83      Down 8.03e-05
+G_M_Lipid1                                 G_M_Lipid       9      Down 2.97e-07
+C_DAM_KerenShaul20171           C_DAM_KerenShaul2017      18      Down 8.01e-09
+C_LIPID_HANDLING1                   C_LIPID_HANDLING      10      Down 9.22e-06
+G_M_DAM21                                   G_M_DAM2       8      Down 9.65e-05
+H_GLYCOLYSIS1                           H_GLYCOLYSIS     128      Down 2.49e-02
+G_M_DAM11                                   G_M_DAM1       5      Down 8.60e-03
+H_ANGIOGENESIS1                       H_ANGIOGENESIS      13      Down 3.30e-02
+M_CHOLESTEROL_SREBP1             M_CHOLESTEROL_SREBP      17      Down 4.26e-07
+H_PEROXISOME1                           H_PEROXISOME      80      Down 1.70e-01
+H_KRAS_SIGNALING_UP1             H_KRAS_SIGNALING_UP      96      Down 1.38e-02
+M_TGFB_SMAD_TARGETS1             M_TGFB_SMAD_TARGETS       8        Up 1.90e-02
+G_A_Cholesterol1                     G_A_Cholesterol      10      Down 1.44e-04
+G_M_DAM2_noSpp11                     G_M_DAM2_noSpp1       7      Down 5.36e-03
+H_CHOLESTEROL_HOMEOSTASIS1 H_CHOLESTEROL_HOMEOSTASIS      44      Down 7.37e-05
+C_PHAGOCYTOSIS_LYSOSOME1     C_PHAGOCYTOSIS_LYSOSOME      11      Down 3.80e-02
+H_MTORC1_SIGNALING1               H_MTORC1_SIGNALING     167      Down 8.98e-03
+G_M_Lysosome_phago1               G_M_Lysosome_phago      11      Down 4.38e-04
+H_XENOBIOTIC_METABOLISM1     H_XENOBIOTIC_METABOLISM     106      Down 1.70e-01
+                                FDR p_conservative FDR_conservative n_leading
+H_BILE_ACID_METABOLISM1    2.52e-02         0.0221            0.703         5
+G_M_MGnD1                  6.14e-06         0.0359            0.703         4
+G_M_ARM1                   9.01e-05         0.0416            0.703         3
+H_PROTEIN_SECRETION1       6.42e-04         0.0487            0.703         8
+G_M_Lipid1                 7.92e-06         0.0529            0.703         4
+C_DAM_KerenShaul20171      6.41e-07         0.0606            0.703         7
+C_LIPID_HANDLING1          1.05e-04         0.0698            0.703         3
+G_M_DAM21                  7.02e-04         0.0703            0.703         3
+H_GLYCOLYSIS1              9.48e-02         0.0825            0.720         8
+G_M_DAM11                  3.99e-02         0.0955            0.720         1
+H_ANGIOGENESIS1            1.20e-01         0.1001            0.720         2
+M_CHOLESTEROL_SREBP1       8.51e-06         0.1190            0.720         4
+H_PEROXISOME1              4.59e-01         0.1408            0.720         4
+H_KRAS_SIGNALING_UP1       5.81e-02         0.1467            0.720         9
+M_TGFB_SMAD_TARGETS1       7.61e-02         0.1539            0.720         1
+G_A_Cholesterol1           9.61e-04         0.1579            0.720         2
+G_M_DAM2_noSpp11           2.68e-02         0.1672            0.720         2
+H_CHOLESTEROL_HOMEOSTASIS1 6.42e-04         0.1687            0.720         6
+C_PHAGOCYTOSIS_LYSOSOME1   1.27e-01         0.1711            0.720         2
+H_MTORC1_SIGNALING1        3.99e-02         0.1907            0.763        12
+G_M_Lysosome_phago1        2.70e-03         0.2068            0.782         1
+H_XENOBIOTIC_METABOLISM1   4.59e-01         0.2245            0.782         4
