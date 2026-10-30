@@ -214,3 +214,12 @@ Once plausible differences in dissection, composition and library processing are
 - **Tgfb2 ligand is lower in 5xFAD** (about 35%, no overlap between groups). It is robust to composition, % mito, ID series and all covariates jointly (p = 0.018), and WT 616 is WT-like. **Tier 2 candidate.**
 - SPP1: no change in pathway activity. Fn1 is lower (permutation p = 0.01, composition-robust).
 - Scripts: `scripts/11a_tgfb_panel_deseq2.R`, `scripts/11b_tgfb_panel_analysis.py`.
+
+## Addendum: SPP1 vs NTC pathway links + PANTHER/IPA kits (`13_pathway_links/REPORT.md`, `13_pathway_kits/README.md`)
+- Within 5xFAD, SPP1 vs NTC was tested on 50 Hallmark sets plus curated and mechanistic modules with limma camera. Two models: `~ sex + treatment` and `~ sex + fibroblast_stromal + treatment`. Claims use the conservative inter-gene-correlation variant.
+- There are two non-overlapping layers:
+  - Matrix / YAP-TAZ / TGF-β, down. Mostly fibroblast-abundance-driven; Prg4, Cldn11 and Bhlhe40 survive adjustment.
+  - IFN / eosinophil, up, and cholesterol/SREBP, down. Stronger after fibroblast adjustment, but largely tracks monocyte content.
+- No set passes FDR. The genome-wide fibroblast-adjusted model has 5 genes at padj < 0.05, including Rsad2 and Isg20.
+- Upload-ready lists for PANTHER and IPA, with the expressed-gene background, are in `13_pathway_kits/`.
+- Scripts: `scripts/13a_spp1_fibro_adjusted_deseq2.R`, `13b_spp1_pathway_sets.R`, `13c_pathway_links_and_kits.py`, `13d_ifn_eosinophil_robustness.py`.

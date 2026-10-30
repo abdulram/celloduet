@@ -1,0 +1,5 @@
+model,cutoff,n_up,n_down
+unadjusted,p<0.01,129,189
+unadjusted,p<0.05,616,720
+fibro_adj,p<0.01,101,142
+fibro_adj,p<0.05,401,589

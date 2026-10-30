@@ -1,0 +1,68 @@
+        model  cutoff  n_up  n_down
+0  unadjusted  p<0.01   129     189
+1  unadjusted  p<0.05   616     720
+2   fibro_adj  p<0.01   101     142
+3   fibro_adj  p<0.05   401     589
+            signature  rho_with_eosinophil_score  rho_with_IFN_score
+0          neutrophil                       0.74                0.64
+1     erythroid_blood                       0.43                0.30
+2     bone_osteoblast                      -0.08                0.00
+3          osteoclast                      -0.23               -0.40
+4      macrophage_BAM                       0.40                0.64
+5            monocyte                       0.80                0.92
+6              B_cell                       0.37                0.43
+7  fibroblast_stromal                      -0.15                0.13
+8     olfactory_nasal                      -0.08               -0.20
+9           IFN score                       0.82                1.00
+                                    set         p       model direction  fibro_robust  cluster
+25                     H_UV_RESPONSE_DN  0.021241  unadjusted      Down         False        0
+2               C_FIBROBLAST_ACTIVATION  0.064400  unadjusted      Down         False        0
+28                  M_TGFB_SMAD_TARGETS  0.084697  unadjusted      Down         False        0
+9                        H_ANGIOGENESIS  0.105134  unadjusted      Down         False        0
+12  H_EPITHELIAL_MESENCHYMAL_TRANSITION  0.107739  unadjusted      Down         False        0
+1                      C_ECM_REMODELING  0.137493  unadjusted      Down         False        0
+24            H_TNFA_SIGNALING_VIA_NFKB  0.147391  unadjusted      Down         False        0
+15          H_INTERFERON_ALPHA_RESPONSE  0.012059   fibro_adj        Up          True        1
+6                      C_TYPE_I_IFN_ISG  0.019908   fibro_adj        Up          True        1
+29                M_TYPE_I_IFN_EXTENDED  0.021274   fibro_adj        Up          True        1
+14            H_IL6_JAK_STAT3_SIGNALING  0.022464   fibro_adj        Up         False        1
+16          H_INTERFERON_GAMMA_RESPONSE  0.025330   fibro_adj        Up          True        1
+8                 H_ALLOGRAFT_REJECTION  0.138917   fibro_adj        Up         False        1
+0                  C_DAM_KerenShaul2017  0.052017  unadjusted      Down         False        2
+3                      C_LIPID_HANDLING  0.110584  unadjusted      Down         False        2
+4          C_MHCII_ANTIGEN_PRESENTATION  0.087349   fibro_adj        Up          True        3
+5                C_MONOCYTE_RECRUITMENT  0.100149   fibro_adj        Up          True        4
+7      C_VASCULAR_INFLAMMATION_ADHESION  0.095309   fibro_adj        Up         False        5
+10                     H_APICAL_SURFACE  0.113353  unadjusted      Down         False        6
+11                         H_COMPLEMENT  0.131019  unadjusted      Down         False        7
+13                            H_HYPOXIA  0.127689  unadjusted      Down         False        8
+17                  H_KRAS_SIGNALING_UP  0.075984  unadjusted      Down         False        9
+18                    H_NOTCH_SIGNALING  0.061749  unadjusted      Down         False       10
+19          H_OXIDATIVE_PHOSPHORYLATION  0.114217   fibro_adj      Down          True       11
+20                H_PANCREAS_BETA_CELLS  0.040046   fibro_adj      Down          True       12
+21                  H_PROTEIN_SECRETION  0.118796  unadjusted      Down         False       13
+22    H_REACTIVE_OXYGEN_SPECIES_PATHWAY  0.063109   fibro_adj      Down          True       14
+23                 H_TGF_BETA_SIGNALING  0.071716  unadjusted      Down         False       15
+26                  M_CHOLESTEROL_SREBP  0.057692   fibro_adj      Down          True       16
+27                 M_EOSINOPHIL_GRANULE  0.017836   fibro_adj        Up          True       17
+30                    M_YAP_TAZ_PATHWAY  0.039172  unadjusted      Down         False       18
+                                  set_a                                set_b   jaccard                                                                                                               shared_leading_genes
+9                      C_TYPE_I_IFN_ISG                M_TYPE_I_IFN_EXTENDED  0.777778                                                 Bst2;Ifi27l2a;Ifit1;Ifit2;Ifit3;Ifit3b;Irf7;Isg15;Mx1;Oasl2;Rsad2;Rtp4;Stat1;Usp18
+15          H_INTERFERON_ALPHA_RESPONSE          H_INTERFERON_GAMMA_RESPONSE  0.666667  Bst2;Cxcl10;Ddx60;Ifit2;Ifit3;Irf1;Irf7;Irf9;Isg15;Isg20;Lgals3bp;Ly6e;Mx1;Rsad2;Rtp4;Sp110;Tap1;Trafd1;Trim25;Txnip;Ube2l6;Usp18
+17          H_INTERFERON_GAMMA_RESPONSE                M_TYPE_I_IFN_EXTENDED  0.454545                                                   Bst2;Ifit1;Ifit2;Ifit3;Irf7;Irf9;Isg15;Isg20;Mx1;Mx2;Rsad2;Rtp4;Stat1;Usp18;Zbp1
+4                      C_ECM_REMODELING                  M_TGFB_SMAD_TARGETS  0.444444                                                                                                               Col3a1;Fn1;Lox;Timp1
+16          H_INTERFERON_ALPHA_RESPONSE                M_TYPE_I_IFN_EXTENDED  0.343750                                                                        Bst2;Ifit2;Ifit3;Irf7;Irf9;Isg15;Isg20;Mx1;Rsad2;Rtp4;Usp18
+6               C_FIBROBLAST_ACTIVATION                  M_TGFB_SMAD_TARGETS  0.333333                                                                                                                      Fn1;Lox;Timp1
+8                      C_TYPE_I_IFN_ISG          H_INTERFERON_GAMMA_RESPONSE  0.333333                                                                       Bst2;Ifit1;Ifit2;Ifit3;Irf7;Isg15;Mx1;Rsad2;Rtp4;Stat1;Usp18
+1                      C_ECM_REMODELING              C_FIBROBLAST_ACTIVATION  0.300000                                                                                                                      Fn1;Lox;Timp1
+7                      C_TYPE_I_IFN_ISG          H_INTERFERON_ALPHA_RESPONSE  0.300000                                                                                   Bst2;Ifit2;Ifit3;Irf7;Isg15;Mx1;Rsad2;Rtp4;Usp18
+0                  C_DAM_KerenShaul2017                     C_LIPID_HANDLING  0.285714                                                                                                                        Fabp5;Trem2
+3                      C_ECM_REMODELING  H_EPITHELIAL_MESENCHYMAL_TRANSITION  0.170732                                                                                             Col3a1;Col5a1;Fn1;Lox;Mmp2;Timp1;Timp3
+5               C_FIBROBLAST_ACTIVATION  H_EPITHELIAL_MESENCHYMAL_TRANSITION  0.146341                                                                                                   Col12a1;Cthrc1;Fap;Fn1;Lox;Timp1
+12                       H_ANGIOGENESIS                  M_TGFB_SMAD_TARGETS  0.133333                                                                                                                       Col3a1;Timp1
+11                       H_ANGIOGENESIS  H_EPITHELIAL_MESENCHYMAL_TRANSITION  0.130435                                                                                                 Col3a1;Col5a2;Itgav;Lum;Spp1;Timp1
+2                      C_ECM_REMODELING                       H_ANGIOGENESIS  0.125000                                                                                                                       Col3a1;Timp1
+13  H_EPITHELIAL_MESENCHYMAL_TRANSITION                     H_UV_RESPONSE_DN  0.122807                                                                                          Cap2;Col3a1;Col5a2;Gja1;Notch2;Pmp22;Rgs4
+10                H_ALLOGRAFT_REJECTION          H_INTERFERON_GAMMA_RESPONSE  0.116279                                                                                                         Icam1;Irf7;Irf8;Stat1;Tap1
+18            H_TNFA_SIGNALING_VIA_NFKB                     H_UV_RESPONSE_DN  0.114286                                                                                                              Bhlhe40;F3;Ldlr;Smad3
+14            H_IL6_JAK_STAT3_SIGNALING          H_INTERFERON_GAMMA_RESPONSE  0.111111                                                                                                             Cxcl10;Irf1;Irf9;Stat1
