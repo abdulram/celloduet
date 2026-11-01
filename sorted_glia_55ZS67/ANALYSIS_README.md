@@ -296,3 +296,9 @@ The brief from the user is in `BRIEF_FROM_USER.md`. The one-page results are in 
   - SREBP2/cholesterol synthesis down in both tissues (Insig1 the lead gene), the only cross-tissue concordant pathway.
   - The dura interferon signal is absent in microglia.
   - Matrix/YAP/TGF-β in CD11b is carry-over.
+
+## Step 15: ACSA-2 lineage-only genes and the paired link to microglial knockdown
+- `scripts/15_acsa2_lineage_specific.py` → `15_acsa2_lineage/` (REPORT.md, tables, figures 15a–c).
+- Astrocyte-only (131) and oligodendrocyte-only (296) protein-coding genes, defined from the fraction's own cell mix. Each lineage is normalised to its own genes.
+- Per-cell changes: none in astrocytes; in oligodendrocytes only Polr3e (q 0.039).
+- Gene-wide concordance with each mouse's microglial Spp1, within arm: oligodendrocyte ρ −0.52 (perm p 0.028, the minimum possible); astrocyte ρ −0.44 (p 0.083). Robust to leave-one-out, stress-gene removal and the knockdown-index definition. Null for DAM2 and library-quality predictors.

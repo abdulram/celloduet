@@ -1,0 +1,17 @@
+lineage	dropped	rho	perm_p_one_sided	n_perm
+astrocyte	none	-0.4439	0.08333	36
+astrocyte	55ZS67_7 (NTC mouse 1)	-0.4879	0.08333	12
+astrocyte	55ZS67_8 (NTC mouse 2)	-0.3948	0.08333	12
+astrocyte	55ZS67_9 (NTC mouse 3)	-0.5525	0.1667	12
+astrocyte	55ZS67_10 (SPP1 mouse 1)	-0.353	0.1667	12
+astrocyte	55ZS67_11 (SPP1 mouse 2)	-0.3571	0.3333	12
+astrocyte	55ZS67_12 (SPP1 mouse 3)	-0.2815	0.1667	12
+astrocyte	stress_genes	-0.4439	0.08333	36
+oligodendrocyte	none	-0.5244	0.02778	36
+oligodendrocyte	55ZS67_7 (NTC mouse 1)	-0.4521	0.08333	12
+oligodendrocyte	55ZS67_8 (NTC mouse 2)	-0.46	0.08333	12
+oligodendrocyte	55ZS67_9 (NTC mouse 3)	-0.5446	0.08333	12
+oligodendrocyte	55ZS67_10 (SPP1 mouse 1)	-0.4631	0.08333	12
+oligodendrocyte	55ZS67_11 (SPP1 mouse 2)	-0.3919	0.08333	12
+oligodendrocyte	55ZS67_12 (SPP1 mouse 3)	-0.1927	0.08333	12
+oligodendrocyte	stress_genes	-0.5173	0.02778	36

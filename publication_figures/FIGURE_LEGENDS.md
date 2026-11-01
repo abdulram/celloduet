@@ -39,7 +39,7 @@ Conventions: dots = individual animals (circle = female, triangle = male); line 
 
 ## Figures
 
-**00a_workflow_dura.** Dura study design and processing:
+**00a_workflow_dura.** Dura study design and processing (L2-siRNA, Spp1-targeting or non-targeting, 15 nmol single ICV injection at 6 months; harvest at 8 months; the same regimen as the sorted cohort):
 - 3 groups × 6 animals (3F/3M);
 - whole-dura bulk RNA-seq;
 - known limitations carried into the analysis.

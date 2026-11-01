@@ -1,0 +1,3 @@
+lineage	n_genes	spearman_treatmentFC_vs_withinarm_slope	expected_sign_if_knockdown_driven	perm_p_one_sided_negative	n_within_arm_permutations
+astrocyte	131	-0.4655	negative (lower Spp1 -> same direction as SPP1 effect)	0.08333	36
+oligodendrocyte	296	-0.5118	negative (lower Spp1 -> same direction as SPP1 effect)	0.02778	36

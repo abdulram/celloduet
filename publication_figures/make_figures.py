@@ -238,8 +238,10 @@ def schematic_dura():
     fig, ax = plt.subplots(figsize=(11, 5.6))
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
     ax.text(0.0, 0.97, "Dura bulk RNA-seq workflow (run VT3YXB)", fontsize=13, fontweight="bold", va="top")
+    ax.text(0.0, 0.905, "L2-siRNA (Spp1-targeting or non-targeting control), 15 nmol, single ICV injection at 6 months; harvest at 8 months",
+            fontsize=9, color=INK2, va="top")
     gx = [0.03, 0.36, 0.69]
-    for x, g, t in zip(gx, GORD, ["WT + NTC", "5xFAD + NTC", "5xFAD + SPP1-targeting"]):
+    for x, g, t in zip(gx, GORD, ["WT + NTC siRNA", "5xFAD + NTC siRNA", "5xFAD + Spp1 siRNA"]):
         box(ax, x, 0.72, 0.28, 0.13, f"{t}\nn = 6 (3 F / 3 M)", fc="white", ec=COL[g], fs=9.5, bold=True)
     for x in gx:
         arrow(ax, x + 0.14, 0.71, 0.5 if x == gx[1] else (0.3 if x < 0.3 else 0.7), 0.645)

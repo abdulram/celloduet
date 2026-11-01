@@ -1,0 +1,7 @@
+lineage	program	n_lineage_attributable_genes	genes	pct_change_per_host_cell	welch_p	r_with_microglial_Spp1_within_arm	q_BH
+astrocyte	A_PanReactive	5	Cxcl10;Cd44;Osmr;Aspg;Gfap	4.415	0.8144	-0.07657	0.8144
+astrocyte	A_IFN	4	Ifit1;Ifit3;Rtp4;Igtp	14.52	0.09297	-0.293	0.2384
+astrocyte	A_Synapse	4	Sparcl1;Gpc4;Gpc6;Sparc	-17.84	0.1192	0.1583	0.2384
+oligodendrocyte	DOL_disease_oligo	5	Serpina3n;C4b;Il33;Klk6;Stat1	1.694	0.7696	-0.0249	0.8144
+oligodendrocyte	Myelin_structural	12	Plp1;Mbp;Mog;Mag;Mobp;Cldn11;Opalin;Ermn;Mal;Cnp;Pllp;Tspan2	8.55	0.09842	-0.6634	0.2384
+oligodendrocyte	Oligo_cholesterol	7	Hmgcs1;Cyp51;Dhcr24;Dhcr7;Idi1;Insig1;Srebf2	15.72	0.3045	-0.1408	0.4567

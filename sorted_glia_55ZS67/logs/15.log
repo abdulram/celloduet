@@ -1,0 +1,90 @@
+{'astrocyte>=0.9': 131, 'astrocyte>=0.8': 341, 'oligodendrocyte>=0.9': 296, 'oligodendrocyte>=0.8': 614}
+           lineage  log2FC_SPP1_vs_NTC  welch_p  55ZS67_7  55ZS67_8  55ZS67_9  55ZS67_10  55ZS67_11  55ZS67_12
+0        astrocyte               0.304    0.105    -0.248    -0.285     0.074      0.103      0.314      0.035
+1  oligodendrocyte               0.024    0.889     0.224    -0.117    -0.170      0.036     -0.196      0.170
+2        ependymal              -0.548    0.294    -0.519     0.592     0.698     -0.182     -0.339     -0.352
+== astrocyte-only (>= 0.9): 131 genes; p<0.01: 1, q<0.1: 0, q<0.05: 0
+                       gene   baseMean  log2FoldChange  pvalue  q_BH_within_lineage
+gene_id                                                                            
+ENSMUSG00000021071    Trim9  1045.6647         -0.4398  0.0078               0.9886
+ENSMUSG00000050423  Ppp1r3g   109.7552          0.6572  0.0228               0.9886
+ENSMUSG00000031980      Agt  4182.7401         -0.4391  0.0249               0.9886
+ENSMUSG00000028174    Rpe65    50.3410         -0.7321  0.0361               0.9886
+ENSMUSG00000021750  Fam107a  2816.3444          0.3492  0.0385               0.9886
+ENSMUSG00000028128       F3  1752.8555          0.3400  0.0683               0.9886
+ENSMUSG00000053004     Hrh1   179.7830         -0.3667  0.0865               0.9886
+ENSMUSG00000007682     Dio2   262.4174          0.3788  0.0879               0.9886
+ENSMUSG00000045246    Kcng4    43.2583          0.5770  0.0905               0.9886
+ENSMUSG00000035237     Lcat   988.7642          0.3089  0.0927               0.9886
+ENSMUSG00000016194  Hsd11b1   788.4785          0.3351  0.0932               0.9886
+ENSMUSG00000039375    Wdr17    42.0431         -0.5022  0.1162               0.9886
+ENSMUSG00000029307     Dmp1   114.7720         -0.3698  0.1207               0.9886
+ENSMUSG00000023913   Pla2g7  5283.7588          0.2570  0.1210               0.9886
+ENSMUSG00000019232   Etnppl  1380.9727          0.3668  0.1220               0.9886
+== astrocyte-only (>= 0.8): 341 genes; p<0.01: 0, q<0.1: 0, q<0.05: 0
+== oligodendrocyte-only (>= 0.9): 296 genes; p<0.01: 3, q<0.1: 1, q<0.05: 1
+                        gene    baseMean  log2FoldChange  pvalue  q_BH_within_lineage
+gene_id                                                                              
+ENSMUSG00000030880    Polr3e    651.3922          1.0395  0.0001               0.0388
+ENSMUSG00000019970      Sgk1   4501.2834          2.6325  0.0020               0.3033
+ENSMUSG00000060284       Sp7    110.7386          0.7520  0.0077               0.7613
+ENSMUSG00000022358    Fbxo32    478.0200         -0.4739  0.0205               0.9995
+ENSMUSG00000032517      Mobp   6552.1939          0.3489  0.0396               0.9995
+ENSMUSG00000052613    Pcdh15    124.1743         -0.5067  0.0500               0.9995
+ENSMUSG00000066113  Adamtsl1    583.6424         -0.3444  0.0549               0.9995
+ENSMUSG00000021287     Xrcc3    318.0710          0.3754  0.0606               0.9995
+ENSMUSG00000074794    Arrdc3   2171.8786          0.3636  0.0615               0.9995
+ENSMUSG00000030168   Adipor2   1469.1238          0.3332  0.0729               0.9995
+ENSMUSG00000051022    Hs3st1    851.5615         -0.3216  0.0930               0.9995
+ENSMUSG00000029727   Cyp3a13     74.3013         -0.4398  0.1159               0.9995
+ENSMUSG00000032554       Trf  19108.8586          0.2332  0.1260               0.9995
+ENSMUSG00000002007     Srpk3    136.5565         -0.3586  0.1279               0.9995
+ENSMUSG00000039328    Rnf122    206.8441         -0.3254  0.1297               0.9995
+== oligodendrocyte-only (>= 0.8): 614 genes; p<0.01: 6, q<0.1: 2, q<0.05: 1
+            lineage            program  n_lineage_attributable_genes  pct_change_per_host_cell  welch_p  r_with_microglial_Spp1_within_arm   q_BH
+0        astrocyte      A_PanReactive                             5                     4.415    0.814                             -0.077  0.814
+1        astrocyte              A_IFN                             4                    14.520    0.093                             -0.293  0.238
+2        astrocyte          A_Synapse                             4                   -17.839    0.119                              0.158  0.238
+3  oligodendrocyte  DOL_disease_oligo                             5                     1.694    0.770                             -0.025  0.814
+4  oligodendrocyte  Myelin_structural                            12                     8.550    0.098                             -0.663  0.238
+5  oligodendrocyte  Oligo_cholesterol                             7                    15.725    0.304                             -0.141  0.457
+            lineage  n_genes  spearman_treatmentFC_vs_withinarm_slope                       expected_sign_if_knockdown_driven  perm_p_one_sided_negative  n_within_arm_permutations
+0        astrocyte      131                                -0.465531  negative (lower Spp1 -> same direction as SPP1 effect)                   0.083333                         36
+1  oligodendrocyte      296                                -0.511831  negative (lower Spp1 -> same direction as SPP1 effect)                   0.027778                         36
+microglial Spp1 log2CPM per mouse: {'55ZS67_7:NTC': np.float64(10.65), '55ZS67_8:NTC': np.float64(11.22), '55ZS67_9:NTC': np.float64(11.07), '55ZS67_10:SPP1': np.float64(10.21), '55ZS67_11:SPP1': np.float64(10.0), '55ZS67_12:SPP1': np.float64(10.36)}
+figures written
+             lineage                   dropped    rho  perm_p_one_sided  n_perm
+0         astrocyte                      none -0.444             0.083      36
+1         astrocyte    55ZS67_7 (NTC mouse 1) -0.488             0.083      12
+2         astrocyte    55ZS67_8 (NTC mouse 2) -0.395             0.083      12
+3         astrocyte    55ZS67_9 (NTC mouse 3) -0.552             0.167      12
+4         astrocyte  55ZS67_10 (SPP1 mouse 1) -0.353             0.167      12
+5         astrocyte  55ZS67_11 (SPP1 mouse 2) -0.357             0.333      12
+6         astrocyte  55ZS67_12 (SPP1 mouse 3) -0.281             0.167      12
+7         astrocyte              stress_genes -0.444             0.083      36
+8   oligodendrocyte                      none -0.524             0.028      36
+9   oligodendrocyte    55ZS67_7 (NTC mouse 1) -0.452             0.083      12
+10  oligodendrocyte    55ZS67_8 (NTC mouse 2) -0.460             0.083      12
+11  oligodendrocyte    55ZS67_9 (NTC mouse 3) -0.545             0.083      12
+12  oligodendrocyte  55ZS67_10 (SPP1 mouse 1) -0.463             0.083      12
+13  oligodendrocyte  55ZS67_11 (SPP1 mouse 2) -0.392             0.083      12
+14  oligodendrocyte  55ZS67_12 (SPP1 mouse 3) -0.193             0.083      12
+15  oligodendrocyte              stress_genes -0.517             0.028      36
+within-arm r of microglial Spp1 with: {'mg_DAM2_log2': np.float64(-0.18), 'mg_Spp1_minus_DAM2': np.float64(0.96), 'ACSA2_astro_content': np.float64(-0.18), 'ACSA2_pct_unmapped': np.float64(-0.7), 'CD11b_pct_unmapped': np.float64(-0.09)}
+            arm  replicate  mg_Spp1_log2cpm  mg_DAM2_log2  mg_Spp1_minus_DAM2  ACSA2_astro_content  ACSA2_pct_unmapped  CD11b_pct_unmapped
+sample                                                                                                                                    
+55ZS67_7    NTC          1           10.652         9.692               0.960               -0.248               8.601               2.586
+55ZS67_8    NTC          2           11.220         9.542               1.678               -0.285               7.029               2.536
+55ZS67_9    NTC          3           11.075         9.709               1.365                0.074               5.299               3.170
+55ZS67_10  SPP1          1           10.214         9.597               0.618                0.103               3.354               4.240
+55ZS67_11  SPP1          2           10.001         9.540               0.461                0.314               4.976               4.195
+55ZS67_12  SPP1          3           10.358         9.655               0.703                0.035               3.891               3.780
+           lineage         per_mouse_x    rho  perm_p_one_sided_negative
+0        astrocyte     mg_Spp1_log2cpm -0.444                      0.083
+1        astrocyte  mg_Spp1_minus_DAM2 -0.442                      0.111
+2        astrocyte        mg_DAM2_log2  0.278                      0.694
+3        astrocyte  ACSA2_pct_unmapped  0.048                      0.583
+4  oligodendrocyte     mg_Spp1_log2cpm -0.524                      0.028
+5  oligodendrocyte  mg_Spp1_minus_DAM2 -0.472                      0.028
+6  oligodendrocyte        mg_DAM2_log2  0.055                      0.639
+7  oligodendrocyte  ACSA2_pct_unmapped  0.072                      0.611
