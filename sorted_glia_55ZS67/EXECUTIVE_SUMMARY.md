@@ -7,7 +7,11 @@
 - **Warm (enzymatic) dissociation.** Ex vivo activation is expected, and it is present.
 - **CD11b+ cells were depleted before ACSA-2 enrichment.** The ~1% microglial RNA in ACSA-2 is residual carry-over that escaped depletion.
 - **"rerun":** the first libraries had poor RNA quality and were re-sequenced. A gene-length check finds no degradation bias in CD11b. ACSA-2 shows a mild bias, the same in both arms (see `03_artifacts/gene_length_quality_index.tsv`).
-- **Still unconfirmed:** pairing of fractions by replicate number; SPP1 modality and timing; age.
+- **Confirmed later (user):**
+  - Replicate *k* is the same animal in both fractions (6 mice total).
+  - Sort method: MACS.
+  - Age at harvest: 8 months.
+  - SPP1 silencing: L2-siRNA, 15 nmol, single ICV injection at 6 months, so harvest was 2 months post-injection.
 
 ## Does 5xFAD pathology differ between SPP1 and NTC? (round 2, `09_pathology/`)
 **No pathology-associated program differs detectably.**
@@ -58,7 +62,7 @@
 - **No WT group and no 5xFAD-vs-WT contrast is possible.** Genotype is not stated anywhere in the files.
 - **All 12 samples are male** (Xist ≈ 0 CPM; Ddx3y/Uty/Kdm5d/Eif2s3y expressed).
 - The facility annotation contains only mouse genes plus 92 ERCC spike-ins. The ERCC spike-ins carry essentially zero reads, so they were probably not added. **Human APP/PSEN1 transgenes cannot be checked from this matrix.**
-- **Likely paired design.** Residual expression profiles link CD11b replicate *k* with ACSA-2 replicate *k* in both arms (matched pairing ranks 1st of 6 in both arms; chance probability ≈ 1/36). Replicate *k* is probably the same animal or processing slot. Please confirm.
+- **Likely paired design.** Residual expression profiles link CD11b replicate *k* with ACSA-2 replicate *k* in both arms (matched pairing ranks 1st of 6 in both arms; chance probability ≈ 1/36). **Confirmed by the user: replicate k is the same animal.**
 
 ## High confidence
 1. **The CD11b+ sort is pure microglia:** about 96–99% microglial RNA by deconvolution. Astrocyte, oligodendrocyte and neuron markers are about 1% of their ACSA-2 levels.
@@ -118,9 +122,9 @@ With n = 3 vs 3:
 
 ## Open questions for you (answers change the analysis)
 1. ~~Genotype~~: answered, all 5xFAD. Still open: age; any WT sorted data?
-2. **SPP1 modality.** Is it an ASO, AAV-shRNA, CRISPRi or siRNA? What is the route and the time from dosing to harvest? Is there a vector sequence (for reads in unmapped FASTQs)?
-3. **Pairing.** Do replicate numbers mean the same animal across fractions?
-4. **Sorting** (partly answered: CD11b depleted first, warm dissociation, whole brain). Still open: MACS or FACS? Transcription inhibitors?
+2. ~~SPP1 modality~~: answered. L2-siRNA, 15 nmol, single ICV injection at 6 months, harvest at 8 months.
+3. ~~Pairing~~: answered. Same animal.
+4. ~~Sorting~~: answered. MACS. Still open: were transcription inhibitors used during dissociation?
 5. ~~rerun~~: answered (poor RNA the first time). Still open: RIN/DV200 of the rerun, and whether arms were extracted or prepped on different days.
 6. **Raw data.** Can you provide FASTQs for transgene confirmation and gene-body coverage?
 7. **Pathology.** Are plaque load or Iba1 data available per animal?

@@ -44,7 +44,10 @@ Conventions: dots = individual animals (circle = female, triangle = male); line 
 - whole-dura bulk RNA-seq;
 - known limitations carried into the analysis.
 
-**00b_workflow_sorted_cells.** Sorted-cell design: 5xFAD males, 3 per arm; whole-brain warm dissociation; CD11b+ selection; ACSA-2+ selection from the CD11b-depleted fraction. Purity of each fraction, and items still to confirm (sort method, age, SPP1 modality, animal pairing).
+**00b_workflow_sorted_cells.** Sorted-cell design:
+- 5xFAD males, 3 per arm, given a single 15 nmol ICV dose of Spp1-targeting or non-targeting L2-siRNA at 6 months and harvested at 8 months (2 months post-injection).
+- Whole-brain warm dissociation; CD11b+ MACS; ACSA-2+ MACS from the CD11b-depleted fraction.
+- Both fractions come from the same 6 mice.
 
 **00c_workflow_analysis.** Shared analysis pipeline: QC → composition/purity → DESeq2 (+ adjusted models) → camera gene sets → cross-tissue integration and upload kits.
 

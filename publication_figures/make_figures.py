@@ -266,22 +266,24 @@ def schematic_sorted():
     fig, ax = plt.subplots(figsize=(11, 6.2))
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
     ax.text(0.0, 0.97, "Sorted brain cell workflow (run 55ZS67)", fontsize=13, fontweight="bold", va="top")
-    box(ax, 0.06, 0.76, 0.38, 0.12, "5xFAD + NTC\nn = 3 males", fc="white", ec=COL["NTC"], fs=9.5, bold=True)
-    box(ax, 0.56, 0.76, 0.38, 0.12, "5xFAD + SPP1-targeting\nn = 3 males", fc="white", ec=COL["SPP1"], fs=9.5, bold=True)
-    arrow(ax, 0.25, 0.75, 0.42, 0.68); arrow(ax, 0.75, 0.75, 0.58, 0.68)
-    box(ax, 0.30, 0.58, 0.40, 0.10, "Whole brain → warm (enzymatic) dissociation\n→ single-cell suspension", fs=8.6)
+    box(ax, 0.02, 0.76, 0.32, 0.12, "5xFAD + NTC L2-siRNA\nn = 3 males", fc="white", ec=COL["NTC"], fs=9.5, bold=True)
+    box(ax, 0.66, 0.76, 0.32, 0.12, "5xFAD + Spp1 L2-siRNA\nn = 3 males", fc="white", ec=COL["SPP1"], fs=9.5, bold=True)
+    ax.text(0.5, 0.82, "15 nmol, single ICV injection\nat 6 months", ha="center", va="center", fontsize=8.4)
+    ax.text(0.5, 0.715, "2 months", ha="center", va="center", fontsize=8.4, fontweight="bold")
+    arrow(ax, 0.18, 0.75, 0.40, 0.685); arrow(ax, 0.82, 0.75, 0.60, 0.685)
+    box(ax, 0.30, 0.58, 0.40, 0.10, "Harvest at 8 months: whole brain → warm (enzymatic)\ndissociation → single-cell suspension", fs=8.4)
     arrow(ax, 0.5, 0.575, 0.5, 0.52)
-    box(ax, 0.30, 0.42, 0.40, 0.10, "CD11b+ selection", fs=9, bold=True)
+    box(ax, 0.30, 0.42, 0.40, 0.10, "CD11b+ selection (MACS)", fs=9, bold=True)
     arrow(ax, 0.30, 0.47, 0.20, 0.38); arrow(ax, 0.70, 0.47, 0.80, 0.38)
     box(ax, 0.03, 0.24, 0.34, 0.14, "CD11b+ fraction\n(microglia; 96-99% microglial RNA)\n6 libraries", fc="#eef5fd", ec=COL["WT_NTC"], fs=8.6)
-    box(ax, 0.60, 0.28, 0.37, 0.10, "CD11b-depleted flow-through\n→ ACSA-2+ selection", fs=8.6)
+    box(ax, 0.60, 0.28, 0.37, 0.10, "CD11b-depleted flow-through\n→ ACSA-2+ selection (MACS)", fs=8.6)
     arrow(ax, 0.785, 0.275, 0.785, 0.235)
     box(ax, 0.60, 0.10, 0.37, 0.13, "ACSA-2+ fraction (\"astrocyte\")\n~30-40% astrocyte, ~55% oligodendrocyte,\n~6% ependymal RNA; 6 libraries", fc="#eef5fd", ec=COL["WT_NTC"], fs=8.2)
     box(ax, 0.03, 0.04, 0.50, 0.15,
         "Bulk RNA-seq of each fraction (libraries re-run after poor first RNA)\n"
         "~19.9 M reads/sample; facility alignment + counts\n"
-        "Replicate k of CD11b and ACSA-2 likely the same animal (inferred, unconfirmed)\n"
-        "Sort method (MACS/FACS), age and SPP1 modality: to confirm", fc="#fbf3ec", ec="#eb6834", fs=7.9)
+        "Both fractions come from the same animal (replicate k = mouse k), 6 mice total\n"
+        "Not checkable in RNA: 5xFAD transgenes (mouse-only reference)", fc="#fbf3ec", ec="#eb6834", fs=7.9)
     save(fig, "00b_workflow_sorted_cells.png")
 
 
